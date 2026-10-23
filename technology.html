@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Technology | HAKA SOLUTIONS</title>
+  <meta name="description" content="Discover how technology-enabled approaches from HAKA SOLUTIONS support business operations, improve workflows and help organizations respond to changing needs.">
+  <meta name="theme-color" content="#183D32">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HAKA SOLUTIONS">
+  <meta property="og:title" content="Technology | HAKA SOLUTIONS">
+  <meta property="og:description" content="Technology that moves business forward. Explore our practical, responsible approach.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/logo/logobg-trimmed.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* ============================================================
+       HAKA SOLUTIONS — TECHNOLOGY PAGE (SINGLE FILE)
+       ============================================================ */
+
+    :root {
+      --green:       #183D32;
+      --green-hover: #122F26;
+      --green-900:   #0E241E;
+      --ivory:       #FAF8F2;
+      --gold:        #C19A5B;
+      --gold-hover:  #AD8649;
+      --warm-grey:   #E7E4DA;
+
+      --surface:     #FFFFFF;
+      --surface-alt: #F4F1E8;
+
+      --text:        #4B514B;
+      --text-muted:  #6B716B;
+
+      --line:        #E0DDD2;
+      --line-strong: #D2CFC3;
+
+      --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Instrument Serif', Georgia, serif;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --header-h: 88px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-h);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--ivory);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.hk-home { padding-top: var(--header-h); }
+
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    ul, ol { list-style: none; }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    ::selection { background: var(--gold); color: var(--green); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---------- HEADER ---------- */
+    .main-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; width: 100%;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 2rem;
+      height: var(--header-h);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .navbar-brand { display: flex; align-items: center; height: 100%; padding: 8px 0; }
+    .brand-logo-img { height: 68px; width: auto; object-fit: contain; display: block; background: transparent; }
+    .nav-container { display: flex; align-items: center; }
+    .nav-menu {
+      display: flex; align-items: center; gap: 0.35rem;
+      padding: 0.35rem 0.5rem;
+      background: #F8F7F2;
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+    }
+    .nav-link {
+      position: relative;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-size: 0.9rem; font-weight: 500;
+      color: #3C4D47;
+      padding: 0.45rem 0.85rem;
+      border-radius: 9999px;
+      transition: all 0.22s var(--ease);
+    }
+    .nav-icon { display: inline-flex; align-items: center; color: #6A7973; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--green); background-color: #ECE7DA; }
+    .nav-link:hover .nav-icon { color: var(--green); }
+    .nav-link.active {
+      color: var(--green); font-weight: 700;
+      background-color: #FFFFFF;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.08);
+    }
+    .nav-link.active .nav-icon { color: var(--gold); }
+    .nav-link.active::after {
+      content: ""; position: absolute;
+      bottom: 3px; left: 50%; transform: translateX(-50%);
+      width: 14px; height: 2px;
+      background-color: var(--gold); border-radius: 2px;
+    }
+    .header-action { display: flex; align-items: center; gap: 1rem; }
+    .nav-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.92rem; font-weight: 600;
+      color: #FFFFFF; background-color: var(--green);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(24, 61, 50, 0.15);
+      transition: all 0.2s ease;
+    }
+    .nav-btn .btn-arrow { transition: transform 0.2s ease; }
+    .nav-btn:hover { background-color: var(--green-hover); box-shadow: 0 4px 12px rgba(24, 61, 50, 0.25); }
+    .nav-btn:hover .btn-arrow { transform: translateX(3px); }
+    .hamburger-btn {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 6px; background: none; border: none; cursor: pointer;
+    }
+    .hamburger-btn span {
+      display: block; width: 24px; height: 2.5px;
+      background-color: var(--green); border-radius: 2px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .main-footer {
+      position: relative;
+      padding: 5rem 2rem 2rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      color: #333;
+      border-top: 1px solid var(--line);
+    }
+    .main-footer::before {
+      content: ""; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--gold) 50%, var(--green) 100%);
+    }
+    .footer-inner {
+      max-width: 1240px; margin: 0 auto 3.5rem;
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.6fr;
+      gap: 3.5rem;
+    }
+    .footer-brand { display: inline-block; margin-bottom: 1.25rem; transition: transform 0.2s ease; }
+    .footer-brand:hover { transform: translateY(-2px); }
+    .footer-logo-img { height: 86px; width: auto; object-fit: contain; display: block; background: transparent; }
+    .brand-desc { max-width: 310px; font-size: 0.92rem; line-height: 1.6; color: #556661; letter-spacing: 0.01em; }
+    .footer-socials { display: flex; gap: 0.65rem; margin-top: 1.4rem; }
+    .social-icon-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      color: var(--green); background: #FFFFFF;
+      border: 1px solid var(--line); border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(24, 61, 50, 0.04);
+      transition: all 0.2s ease;
+    }
+    .social-icon-btn:hover {
+      color: #FFFFFF; background-color: var(--green);
+      border-color: var(--green); transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(24, 61, 50, 0.15);
+    }
+    .col-title {
+      display: inline-block; position: relative;
+      margin-bottom: 1.4rem; padding-bottom: 6px;
+      font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--green);
+    }
+    .col-title::after {
+      content: ""; position: absolute; bottom: 0; left: 0;
+      width: 22px; height: 2px;
+      background-color: var(--gold); border-radius: 2px;
+    }
+    .footer-links li { margin-bottom: 0.85rem; }
+    .footer-links a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.94rem; font-weight: 500; color: #4F5E59;
+      transition: all 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--green); transform: translateX(4px); }
+    .badge-hiring {
+      padding: 2px 7px; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: #8C6629; background: rgba(193, 154, 91, 0.16);
+      border-radius: 12px;
+    }
+    .office-card {
+      padding: 1.25rem 1.4rem;
+      background: #FFFFFF; border: 1px solid var(--line);
+      border-radius: 10px; box-shadow: 0 4px 12px rgba(24, 61, 50, 0.03);
+    }
+    .office-card-row {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.9rem; line-height: 1.5; color: #4F5E59;
+    }
+    .office-card-row:last-child { margin-bottom: 0; padding-top: 0.5rem; border-top: 1px dashed var(--line); }
+    .office-icon { flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+    .office-link { color: var(--green); font-weight: 600; }
+    .office-link:hover { color: var(--gold); text-decoration: underline; }
+    .status-indicator-dot {
+      display: inline-block; flex-shrink: 0;
+      width: 8px; height: 8px; margin-top: 6px; border-radius: 50%;
+      background-color: #27AE60; box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+    }
+    .footer-bottom { padding-top: 2rem; border-top: 1px solid var(--line); }
+    .footer-bottom-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: center; gap: 1rem;
+      font-size: 0.88rem; color: #6C7A75;
+    }
+    .footer-legal { display: flex; align-items: center; gap: 0.85rem; }
+    .footer-legal a { color: #6C7A75; transition: color 0.2s ease; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-legal .sep { font-size: 0.7rem; color: #C5BFB0; }
+
+    /* ---------- LAYOUT ---------- */
+    .hk-wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+    .hk-section { padding: clamp(4rem, 9vw, 8rem) 0; }
+    .hk-section--alt { background: var(--surface-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    /* ---------- TYPOGRAPHY ---------- */
+    .hk-display {
+      font-family: var(--font-display);
+      font-weight: 400; letter-spacing: -0.01em; line-height: 1.04;
+      color: var(--green);
+    }
+    .hk-display em { font-style: italic; color: var(--gold); }
+    .hk-h1 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); }
+    .hk-h2 { font-size: clamp(2rem, 3.6vw, 3rem); margin-bottom: 1.25rem; }
+    .hk-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+    }
+    .hk-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+    .hk-lead {
+      font-size: clamp(1rem, 1.25vw, 1.125rem);
+      line-height: 1.7; color: var(--text-muted); max-width: 52ch;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .hk-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.5rem; padding: 1rem 1.75rem;
+      border-radius: 999px;
+      font-size: 0.9375rem; font-weight: 500;
+      border: 1px solid transparent; cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+    .hk-btn--primary {
+      background: var(--green); color: var(--ivory);
+      box-shadow: 0 12px 24px -8px rgba(24, 61, 50, 0.4);
+    }
+    .hk-btn--primary:hover {
+      background: var(--green-hover); transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(24, 61, 50, 0.5);
+    }
+    .hk-btn--ghost {
+      background: transparent; color: var(--green);
+      border-color: rgba(24, 61, 50, 0.25);
+    }
+    .hk-btn--ghost:hover {
+      background: var(--green); color: var(--ivory);
+      border-color: var(--green); transform: translateY(-2px);
+    }
+    .hk-btn--light { background: var(--ivory); color: var(--green-900); }
+    .hk-btn--light:hover {
+      background: #FFFFFF; transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.3);
+    }
+    .hk-btn--light-outline {
+      background: transparent;
+      color: var(--ivory);
+      border-color: rgba(243, 240, 231, 0.35);
+    }
+    .hk-btn--light-outline:hover {
+      background: rgba(243, 240, 231, 0.1);
+      border-color: var(--ivory);
+      transform: translateY(-2px);
+    }
+    .hk-btn .arrow { transition: transform 0.3s var(--ease); }
+    .hk-btn:hover .arrow { transform: translateX(4px); }
+
+    /* ============================================================
+       01. TECHNOLOGY HERO — deep green with rotating data cube
+       ============================================================ */
+    .hk-tech-hero {
+      position: relative;
+      padding: clamp(4rem, 9vw, 8rem) 0 clamp(5rem, 10vw, 9rem);
+      background: var(--green);
+      color: var(--ivory);
+      overflow: hidden;
+      perspective: 1400px;
+    }
+    .hk-tech-hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.15), transparent 65%);
+      pointer-events: none;
+    }
+    .hk-tech-hero::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.08), transparent 65%);
+      pointer-events: none;
+    }
+    .hk-tech-hero .hk-display { color: var(--ivory); }
+    .hk-tech-hero .hk-eyebrow { color: #D9B679; }
+    .hk-tech-hero .hk-eyebrow::before { background: #D9B679; }
+
+    .hk-tech-hero__grid {
+      position: relative;
+      display: grid; grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 4rem); align-items: center;
+      z-index: 2;
+    }
+    @media (min-width: 1000px) {
+      .hk-tech-hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: clamp(3rem, 5vw, 5rem); }
+    }
+
+    .hk-tech-hero__lead {
+      color: rgba(243, 240, 231, 0.78);
+      max-width: 56ch;
+      margin-bottom: 2.25rem;
+    }
+
+    /* 3D rotating cube scene */
+    .hk-cube-stage {
+      position: relative;
+      height: 540px;
+      transform-style: preserve-3d;
+    }
+    @media (max-width: 999px) { .hk-cube-stage { height: 440px; } }
+    @media (max-width: 600px) { .hk-cube-stage { height: 380px; } }
+
+    .hk-cube-stage__inner {
+      position: absolute; inset: 0;
+      transform-style: preserve-3d;
+      transition: transform 0.4s var(--ease);
+    }
+
+    .hk-cube-stage__halo {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 440px; height: 440px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.22), transparent 65%);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .hk-cube-stage__grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(243, 240, 231, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(243, 240, 231, 0.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 65% 70% at 50% 50%, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 65% 70% at 50% 50%, #000 30%, transparent 75%);
+    }
+
+    /* Rotating data cube */
+    .hk-cube {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 160px; height: 160px;
+      margin: -80px 0 0 -80px;
+      transform-style: preserve-3d;
+      animation: hkCubeSpin 20s linear infinite;
+    }
+    @keyframes hkCubeSpin {
+      from { transform: rotateX(-20deg) rotateY(0deg); }
+      to   { transform: rotateX(-20deg) rotateY(360deg); }
+    }
+
+    .hk-cube__face {
+      position: absolute;
+      width: 160px; height: 160px;
+      background: linear-gradient(135deg, rgba(250, 248, 242, 0.96) 0%, rgba(244, 241, 232, 0.96) 100%);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(193, 154, 91, 0.45);
+      box-shadow:
+        inset 0 0 60px rgba(193, 154, 91, 0.10),
+        0 20px 40px -20px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--green);
+      border-radius: 8px;
+    }
+    .hk-cube__face svg { color: var(--gold); }
+    .hk-cube__face span {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .hk-cube__face small {
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .hk-cube__face--front  { transform: translateZ(80px); }
+    .hk-cube__face--back   { transform: rotateY(180deg) translateZ(80px); }
+    .hk-cube__face--right  { transform: rotateY(90deg)  translateZ(80px); }
+    .hk-cube__face--left   { transform: rotateY(-90deg) translateZ(80px); }
+    .hk-cube__face--top    { transform: rotateX(90deg)  translateZ(80px); }
+    .hk-cube__face--bottom { transform: rotateX(-90deg) translateZ(80px); }
+
+    /* Orbiting rings */
+    .hk-cube-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      border: 1px dashed rgba(243, 240, 231, 0.15);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotateX(72deg);
+      transform-style: preserve-3d;
+      pointer-events: none;
+    }
+    .hk-cube-ring--1 { width: 340px; height: 340px; animation: hkRingSpin 30s linear infinite; }
+    .hk-cube-ring--2 { width: 480px; height: 480px; animation: hkRingSpin 45s linear reverse infinite; }
+    .hk-cube-ring--3 { width: 620px; height: 620px; animation: hkRingSpin 60s linear infinite; }
+    @keyframes hkRingSpin {
+      from { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(0deg); }
+      to   { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(360deg); }
+    }
+
+    /* Floating tech chips */
+    .hk-tech-chip {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.65rem 1rem;
+      background: rgba(250, 248, 242, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      border-radius: 999px;
+      box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.3);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green);
+      white-space: nowrap;
+      animation: hkChipFloat 7s ease-in-out infinite;
+    }
+    .hk-tech-chip__dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--gold);
+    }
+    .hk-tech-chip--1 { top: 10%; left: 0%;   animation-delay: 0s; }
+    .hk-tech-chip--2 { top: 28%; right: 0%;  animation-delay: -1.75s; }
+    .hk-tech-chip--3 { bottom: 28%; left: 2%; animation-delay: -3.5s; }
+    .hk-tech-chip--4 { bottom: 8%;  right: 4%; animation-delay: -5.25s; }
+
+    @keyframes hkChipFloat {
+      0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+      50%      { transform: translateY(-12px) rotate(0.5deg); }
+    }
+
+    /* ============================================================
+       02. TECHNOLOGY FOCUS — Elevated Executive Bento Architecture
+       ============================================================ */
+    .hk-focus {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
+    }
+    @media (min-width: 680px) { .hk-focus { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1040px) { .hk-focus { grid-template-columns: repeat(4, 1fr); gap: 1.45rem; } }
+
+    .hk-focus-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 320px;
+      padding: 2.25rem 1.85rem 1.75rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(24, 61, 50, 0.08);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(24, 61, 50, 0.035);
+      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Ambient atmospheric glow on cards */
+    .hk-focus-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3.5px;
+      background: rgba(24, 61, 50, 0.08);
+      transition: all 0.4s ease;
+    }
+
+    .hk-focus-card::after {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.12), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
+    }
+
+    .hk-focus-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(193, 154, 91, 0.45);
+      box-shadow: 0 24px 50px -12px rgba(24, 61, 50, 0.16), 0 0 0 1px rgba(193, 154, 91, 0.18);
+    }
+
+    .hk-focus-card:hover::before {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-focus-card:hover::after {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+
+    .hk-focus-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .hk-focus-card__icon {
+      width: 50px;
+      height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      border-radius: 14px;
+      transition: all 0.4s ease;
+    }
+
+    .hk-focus-card:hover .hk-focus-card__icon {
+      background: var(--green);
+      color: #FFFFFF;
+      transform: scale(1.08) rotate(-4deg);
+      box-shadow: 0 8px 18px rgba(24, 61, 50, 0.22);
+    }
+
+    .hk-focus-card__num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 700;
+      opacity: 0.85;
+      letter-spacing: -0.02em;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .hk-focus-card:hover .hk-focus-card__num {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .hk-focus-card__body {
+      flex: 1;
+    }
+
+    .hk-focus-card__badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+
+    .hk-focus-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+      line-height: 1.28;
+      letter-spacing: -0.015em;
+    }
+
+    .hk-focus-card p {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hk-focus-card__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      width: 100%;
+      padding-top: 1rem;
+      border-top: 1px dashed rgba(24, 61, 50, 0.1);
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--green);
+      transition: color 0.3s var(--ease);
+      margin-top: auto;
+    }
+
+    .hk-focus-card__link svg {
+      transition: transform 0.3s ease;
+      color: var(--gold);
+    }
+
+    .hk-focus-card:hover .hk-focus-card__link {
+      color: var(--green-dark);
+    }
+
+    .hk-focus-card:hover .hk-focus-card__link svg {
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 600px) {
+      .hk-focus-card {
+        padding: 1.75rem 1.4rem 1.5rem;
+        min-height: auto;
+      }
+    }
+
+    /* ============================================================
+       03. TECHNOLOGY FOR BETTER WORKFLOWS — split with highlights
+       ============================================================ */
+    .hk-workflow__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+    @media (min-width: 960px) { .hk-workflow__grid { grid-template-columns: 1.05fr 0.95fr; } }
+
+    .hk-workflow__highlights {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .hk-workflow-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      transition: all 0.35s var(--ease);
+      transform-style: preserve-3d;
+    }
+    .hk-workflow-item:hover {
+      transform: translateX(8px) translateZ(10px);
+      border-color: rgba(193, 154, 91, 0.5);
+      box-shadow: 0 16px 36px -14px rgba(24, 61, 50, 0.15);
+    }
+    .hk-workflow-item__check {
+      width: 32px; height: 32px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: rgba(193, 154, 91, 0.15);
+      color: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .hk-workflow-item__text {
+      flex-grow: 1;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    .hk-workflow__img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow:
+        0 32px 70px -20px rgba(24, 61, 50, 0.3),
+        0 0 0 1px rgba(24, 61, 50, 0.08);
+    }
+    .hk-workflow__img img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: transform 1.2s var(--ease);
+    }
+    .hk-workflow__img:hover img { transform: scale(1.05); }
+
+    /* ============================================================
+       04. OUR TECHNOLOGY APPROACH — animated timeline
+       ============================================================ */
+    .hk-approach__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      position: relative;
+    }
+    @media (min-width: 768px) { .hk-approach__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-approach__grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .hk-approach__line {
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .hk-approach__line {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: var(--line-strong);
+        overflow: hidden;
+        z-index: 0;
+      }
+      .hk-approach__line::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: hkLineGrow 2s 0.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      }
+      @keyframes hkLineGrow {
+        to { transform: scaleX(1); }
+      }
+    }
+
+    .hk-approach-step {
+      position: relative;
+      z-index: 1;
+    }
+    .hk-approach-step__badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px; height: 64px;
+      margin-bottom: 1.5rem;
+      background: #FFFFFF;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green);
+      box-shadow: 0 4px 14px rgba(24, 61, 50, 0.08);
+      transition: all 0.4s var(--ease);
+    }
+    .hk-approach-step:hover .hk-approach-step__badge {
+      background: var(--green);
+      color: var(--ivory);
+      border-color: var(--green);
+      transform: scale(1.06);
+    }
+    .hk-approach-step h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .hk-approach-step p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       05. RESPONSIBLE & PRACTICAL TECHNOLOGY — warm grey, 2-col
+       ============================================================ */
+    .hk-responsible {
+      background: var(--warm-grey);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .hk-responsible__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: start;
+    }
+    @media (min-width: 960px) { .hk-responsible__grid { grid-template-columns: 0.9fr 1.1fr; } }
+
+    .hk-responsible__sticky {
+      align-self: start;
+    }
+    @media (min-width: 960px) {
+      .hk-responsible__sticky {
+        position: sticky;
+        top: calc(var(--header-h) + 2rem);
+      }
+    }
+
+    .hk-responsible__list {
+      display: grid;
+      gap: 1rem;
+    }
+    .hk-responsible-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      padding: 1.5rem 1.75rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      transition: all 0.4s var(--ease);
+      transform-style: preserve-3d;
+    }
+    .hk-responsible-item:hover {
+      transform: translateX(8px) translateZ(10px);
+      border-color: rgba(193, 154, 91, 0.5);
+      box-shadow: 0 20px 40px -16px rgba(24, 61, 50, 0.16);
+    }
+    .hk-responsible-item__icon {
+      width: 44px; height: 44px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      border-radius: 12px;
+      flex-shrink: 0;
+      transition: all 0.4s var(--ease);
+    }
+    .hk-responsible-item:hover .hk-responsible-item__icon {
+      background: var(--green);
+      color: var(--ivory);
+      transform: rotate(-8deg) scale(1.06);
+    }
+    .hk-responsible-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.01em;
+    }
+    .hk-responsible-item p {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       06. FINAL CTA
+       ============================================================ */
+    .hk-cta {
+      position: relative;
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      background: var(--green);
+      color: var(--ivory);
+      text-align: center;
+      overflow: hidden;
+    }
+    .hk-cta::before {
+      content: "";
+      position: absolute;
+      top: -40%; left: 50%;
+      width: 600px; height: 600px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .hk-cta__inner {
+      position: relative;
+      max-width: 720px; margin: 0 auto;
+    }
+    .hk-cta .hk-display { color: var(--ivory); margin-bottom: 1.5rem; }
+    .hk-cta p {
+      max-width: 56ch;
+      margin: 0 auto 2.5rem;
+      font-size: 1.0625rem; line-height: 1.7;
+      color: rgba(243, 240, 231, 0.75);
+    }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    html.js [data-reveal] {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+    html.js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ---------- RESPONSIVE ---------- */
+    /* responsive header delegated to css/style.css */
+      .hamburger-btn { display: flex; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --header-h: 72px; }
+      .header-inner { padding: 0 1rem; }
+      .brand-logo-img { height: 48px; }
+      .footer-logo-img { height: 64px; }
+      .nav-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .main-footer { padding: 3.5rem 1.25rem 1.5rem; }
+      .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+      .hk-cube { width: 110px; height: 110px; margin: -55px 0 0 -55px; }
+      .hk-cube__face { width: 110px; height: 110px; }
+      .hk-cube__face--front  { transform: translateZ(55px); }
+      .hk-cube__face--back   { transform: rotateY(180deg) translateZ(55px); }
+      .hk-cube__face--right  { transform: rotateY(90deg)  translateZ(55px); }
+      .hk-cube__face--left   { transform: rotateY(-90deg) translateZ(55px); }
+      .hk-cube__face--top    { transform: rotateX(90deg)  translateZ(55px); }
+      .hk-cube__face--bottom { transform: rotateX(-90deg) translateZ(55px); }
+      .hk-cube__face span { font-size: 1rem; }
+      .hk-cube__face small { font-size: 0.55rem; }
+      .hk-cube__face svg { width: 20px; height: 20px; }
+
+      .hk-cube-ring--1 { width: 240px; height: 240px; }
+      .hk-cube-ring--2 { width: 340px; height: 340px; }
+      .hk-cube-ring--3 { width: 440px; height: 440px; }
+
+      .hk-tech-chip { font-size: 0.68rem; padding: 0.4rem 0.75rem; }
+      .hk-tech-chip--1 { left: -4%; }
+      .hk-tech-chip--2 { right: -4%; }
+    }
+
+    /* ---------- REDUCED MOTION ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html.js [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .hk-cube,
+      .hk-cube-ring,
+      .hk-tech-chip { animation: none !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="hk-home">
+
+  <!-- Shared header -->
+  <div id="header-placeholder"></div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         01. TECHNOLOGY HERO — deep green with rotating data cube
+         ============================================================= -->
+    <section class="hk-tech-hero" id="tech-hero" aria-labelledby="tech-hero-heading">
+      <div class="hk-wrap">
+        <div class="hk-tech-hero__grid">
+
+          <div data-reveal>
+            <p class="hk-eyebrow">Our Technology</p>
+
+            <h1 id="tech-hero-heading" class="hk-display hk-h1" style="margin-bottom: 1.5rem;">
+              Technology that <em>moves</em> business forward.
+            </h1>
+
+            <p class="hk-lead hk-tech-hero__lead">
+              Discover how technology-enabled approaches can support business operations,
+              improve workflows and help organizations respond to changing needs.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.875rem;">
+              <a href="#approach" class="hk-btn hk-btn--light">
+                Explore our approach <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="contact.html" class="hk-btn hk-btn--light-outline">
+                Contact us
+              </a>
+            </div>
+          </div>
+
+          <!-- Rotating 3D data cube -->
+          <div class="hk-cube-stage" aria-hidden="true">
+            <div class="hk-cube-stage__inner" id="techCubeStage">
+              <div class="hk-cube-stage__halo"></div>
+              <div class="hk-cube-stage__grid"></div>
+
+              <div class="hk-cube-ring hk-cube-ring--1"></div>
+              <div class="hk-cube-ring hk-cube-ring--2"></div>
+              <div class="hk-cube-ring hk-cube-ring--3"></div>
+
+              <div class="hk-cube">
+                <div class="hk-cube__face hk-cube__face--front">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                    <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                    <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path>
+                  </svg>
+                  <span>Data</span>
+                  <small>Structured</small>
+                </div>
+                <div class="hk-cube__face hk-cube__face--back">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 11a8 8 0 0 0-13.9-5.4L3 8"></path>
+                    <path d="M3 4v4h4"></path>
+                    <path d="M4 13a8 8 0 0 0 13.9 5.4L21 16"></path>
+                    <path d="M21 20v-4h-4"></path>
+                  </svg>
+                  <span>Process</span>
+                  <small>Improved</small>
+                </div>
+                <div class="hk-cube__face hk-cube__face--right">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="7" y="7" width="10" height="10" rx="1.5"></rect>
+                    <path d="M4 10h3M4 14h3M17 10h3M17 14h3M10 4v3M14 4v3M10 17v3M14 17v3"></path>
+                  </svg>
+                  <span>Systems</span>
+                  <small>Connected</small>
+                </div>
+                <div class="hk-cube__face hk-cube__face--left">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="M9 12l2 2 4-4"></path>
+                  </svg>
+                  <span>Security</span>
+                  <small>Considered</small>
+                </div>
+                <div class="hk-cube__face hk-cube__face--top">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                  <span>Haka</span>
+                  <small>Technology</small>
+                </div>
+                <div class="hk-cube__face hk-cube__face--bottom">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                  </svg>
+                  <span>Growth</span>
+                  <small>Ongoing</small>
+                </div>
+              </div>
+
+              <div class="hk-tech-chip hk-tech-chip--1">
+                <span class="hk-tech-chip__dot"></span>
+                Digital workflows
+              </div>
+              <div class="hk-tech-chip hk-tech-chip--2">
+                <span class="hk-tech-chip__dot"></span>
+                Process improvement
+              </div>
+              <div class="hk-tech-chip hk-tech-chip--3">
+                <span class="hk-tech-chip__dot"></span>
+                Business aligned
+              </div>
+              <div class="hk-tech-chip hk-tech-chip--4">
+                <span class="hk-tech-chip__dot"></span>
+                Continuous review
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02. OUR TECHNOLOGY FOCUS
+         ============================================================= -->
+    <section class="hk-section" id="focus" aria-labelledby="focus-heading">
+      <div class="hk-wrap">
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <div>
+            <p class="hk-eyebrow">Our Technology Focus</p>
+            <h2 id="focus-heading" class="hk-display hk-h2">
+              Technology with a <em>business purpose.</em>
+            </h2>
+          </div>
+          <p class="hk-lead">
+            Four areas where technology directly supports day-to-day business operations
+            and improves the way work gets done.
+          </p>
+        </div>
+
+        <div class="hk-focus">
+
+          <!-- 01 Digital Workflows -->
+          <article class="hk-focus-card" data-reveal>
+            <div class="hk-focus-card__head">
+              <div class="hk-focus-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                  <path d="M8 20h8M12 16v4"></path>
+                </svg>
+              </div>
+              <span class="hk-focus-card__num">01</span>
+            </div>
+            <div class="hk-focus-card__body">
+              <span class="hk-focus-card__badge">Execution Systems</span>
+              <h3>Digital Workflows</h3>
+              <p>Support structured digital processes, clear responsibility handoffs, and everyday team activities.</p>
+            </div>
+            <a href="contact.html" class="hk-focus-card__link">
+              <span>Discuss this area</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- 02 Data & Information Handling -->
+          <article class="hk-focus-card" data-reveal>
+            <div class="hk-focus-card__head">
+              <div class="hk-focus-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                  <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                  <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path>
+                </svg>
+              </div>
+              <span class="hk-focus-card__num">02</span>
+            </div>
+            <div class="hk-focus-card__body">
+              <span class="hk-focus-card__badge">Data Integrity</span>
+              <h3>Data &amp; Information Handling</h3>
+              <p>Support organized dataset validation, automated intake hygiene, and secure compliance logs.</p>
+            </div>
+            <a href="contact.html" class="hk-focus-card__link">
+              <span>Discuss this area</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- 03 Process Improvement -->
+          <article class="hk-focus-card" data-reveal>
+            <div class="hk-focus-card__head">
+              <div class="hk-focus-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 11a8 8 0 0 0-13.9-5.4L3 8"></path>
+                  <path d="M3 4v4h4"></path>
+                  <path d="M4 13a8 8 0 0 0 13.9 5.4L21 16"></path>
+                  <path d="M21 20v-4h-4"></path>
+                </svg>
+              </div>
+              <span class="hk-focus-card__num">03</span>
+            </div>
+            <div class="hk-focus-card__body">
+              <span class="hk-focus-card__badge">Continuous SLA</span>
+              <h3>Process Improvement</h3>
+              <p>Identify operational bottlenecks, eliminate duplicated effort, and simplify repetitive manual tasks.</p>
+            </div>
+            <a href="contact.html" class="hk-focus-card__link">
+              <span>Discuss this area</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- 04 Technology Solutions -->
+          <article class="hk-focus-card" data-reveal>
+            <div class="hk-focus-card__head">
+              <div class="hk-focus-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.5-6.5-2.1 2.1m-8.8 8.8-2.1 2.1m13 0-2.1-2.1m-8.8-8.8-2.1-2.1"></path>
+                </svg>
+              </div>
+              <span class="hk-focus-card__num">04</span>
+            </div>
+            <div class="hk-focus-card__body">
+              <span class="hk-focus-card__badge">Pragmatic Tools</span>
+              <h3>Technology Solutions</h3>
+              <p>Explore technology-enabled approaches and lean cloud tools strictly aligned with business goals.</p>
+            </div>
+            <a href="contact.html" class="hk-focus-card__link">
+              <span>Discuss this area</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03. TECHNOLOGY FOR BETTER WORKFLOWS
+         ============================================================= -->
+    <section class="hk-section hk-section--alt" id="workflows" aria-labelledby="workflows-heading">
+      <div class="hk-wrap">
+        <div class="hk-workflow__grid">
+
+          <div data-reveal>
+            <p class="hk-eyebrow">Technology for Better Workflows</p>
+            <h2 id="workflows-heading" class="hk-display hk-h2">
+              Simplifying the way <em>work gets done.</em>
+            </h2>
+            <p class="hk-lead">
+              The right technology approach can help teams organize tasks, manage information
+              and establish clearer workflows.
+            </p>
+
+            <div class="hk-workflow__highlights">
+              <div class="hk-workflow-item">
+                <span class="hk-workflow-item__check" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span class="hk-workflow-item__text">Better-organized processes</span>
+              </div>
+              <div class="hk-workflow-item">
+                <span class="hk-workflow-item__check" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span class="hk-workflow-item__text">Consistent information handling</span>
+              </div>
+              <div class="hk-workflow-item">
+                <span class="hk-workflow-item__check" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span class="hk-workflow-item__text">Reduced repetitive manual effort where practical</span>
+              </div>
+              <div class="hk-workflow-item">
+                <span class="hk-workflow-item__check" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span class="hk-workflow-item__text">Clearer operational coordination</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hk-workflow__img" data-reveal>
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80"
+              alt="Two colleagues reviewing a digital workflow on a laptop in a modern workspace"
+              loading="lazy" width="1000" height="500">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04. OUR TECHNOLOGY APPROACH
+         ============================================================= -->
+    <section class="hk-section" id="approach" aria-labelledby="approach-heading">
+      <div class="hk-wrap">
+        <div style="max-width: 640px; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <p class="hk-eyebrow">Our Technology Approach</p>
+          <h2 id="approach-heading" class="hk-display hk-h2">
+            Start with the <em>requirement.</em>
+          </h2>
+          <p class="hk-lead">
+            A straightforward four-stage approach so technology is applied where it
+            actually supports the business.
+          </p>
+        </div>
+
+        <div class="hk-approach__grid">
+          <div class="hk-approach__line" aria-hidden="true"></div>
+
+          <div class="hk-approach-step" data-reveal>
+            <span class="hk-approach-step__badge">01</span>
+            <h3>Understand</h3>
+            <p>Identify the business need and current workflow.</p>
+          </div>
+
+          <div class="hk-approach-step" data-reveal>
+            <span class="hk-approach-step__badge">02</span>
+            <h3>Evaluate</h3>
+            <p>Consider suitable approaches based on the requirement.</p>
+          </div>
+
+          <div class="hk-approach-step" data-reveal>
+            <span class="hk-approach-step__badge">03</span>
+            <h3>Implement</h3>
+            <p>Put the agreed approach into practice.</p>
+          </div>
+
+          <div class="hk-approach-step" data-reveal>
+            <span class="hk-approach-step__badge">04</span>
+            <h3>Review</h3>
+            <p>Assess the workflow and identify possible improvements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05. RESPONSIBLE & PRACTICAL TECHNOLOGY
+         ============================================================= -->
+    <section class="hk-section hk-responsible" id="responsible" aria-labelledby="responsible-heading">
+      <div class="hk-wrap">
+        <div class="hk-responsible__grid">
+
+          <div class="hk-responsible__sticky" data-reveal>
+            <p class="hk-eyebrow">Responsible &amp; Practical</p>
+            <h2 id="responsible-heading" class="hk-display hk-h2">
+              Technology should <em>work for people.</em>
+            </h2>
+            <p class="hk-lead">
+              We treat technology as a tool that supports the business — not an end in itself.
+              Every approach is shaped around practicality, usability and careful handling
+              of business information.
+            </p>
+          </div>
+
+          <div class="hk-responsible__list">
+
+            <div class="hk-responsible-item" data-reveal>
+              <div class="hk-responsible-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Solutions aligned with actual business needs</h3>
+                <p>Technology is chosen for the requirement at hand, not for novelty.</p>
+              </div>
+            </div>
+
+            <div class="hk-responsible-item" data-reveal>
+              <div class="hk-responsible-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 8v4M12 16h.01"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Usability and operational practicality</h3>
+                <p>Approaches that teams can use day to day, without unnecessary complexity.</p>
+              </div>
+            </div>
+
+            <div class="hk-responsible-item" data-reveal>
+              <div class="hk-responsible-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M9 12l2 2 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Careful handling of business information</h3>
+                <p>Attention to data protection and secure practices throughout.</p>
+              </div>
+            </div>
+
+            <div class="hk-responsible-item" data-reveal>
+              <div class="hk-responsible-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Collaboration between people and processes</h3>
+                <p>Technology that strengthens how teams work together, not replaces them.</p>
+              </div>
+            </div>
+
+            <div class="hk-responsible-item" data-reveal>
+              <div class="hk-responsible-item__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3>Continuous review and improvement</h3>
+                <p>Ongoing assessment and refinement beyond the initial implementation.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06. FINAL CTA
+         ============================================================= -->
+    <section class="hk-cta" id="talk" aria-labelledby="cta-heading">
+      <div class="hk-wrap">
+        <div class="hk-cta__inner">
+          <p class="hk-eyebrow" style="color: #D9B679; justify-content: center;">Talk to Our Team</p>
+          <h2 id="cta-heading" class="hk-display hk-h2" style="font-size: clamp(2rem, 4vw, 3.5rem);">
+            Have a <em>technology</em> requirement?
+          </h2>
+          <p>
+            Let's discuss your business needs and explore a practical approach that fits
+            your requirements.
+          </p>
+          <a href="contact.html" class="hk-btn hk-btn--light">
+            Talk to our team <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="components/header.js"></script>
+  <script src="components/footer.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Inline interactions: scroll reveal + 3D parallax + card tilt -->
+  <script>
+    (function () {
+      'use strict';
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---- Scroll reveal ---- */
+      var els = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && els.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* ---- Hero parallax on the cube stage ---- */
+      var stage = document.getElementById('techCubeStage');
+      var hero = document.getElementById('tech-hero');
+      if (stage && hero && !reduceMotion) {
+        hero.addEventListener('mousemove', function (e) {
+          var r = hero.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          stage.style.transform =
+            'rotateY(' + (x * 12) + 'deg) rotateX(' + (-y * 12) + 'deg)';
+        });
+        hero.addEventListener('mouseleave', function () {
+          stage.style.transform = 'rotateY(0) rotateX(0)';
+        });
+      }
+
+      /* ---- Framer-style 3D tilt on focus cards ---- */
+      if (!reduceMotion) {
+        document.querySelectorAll('.hk-focus-card').forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            var px = (e.clientX - rect.left) / rect.width - 0.5;
+            var py = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform =
+              'perspective(1000px) rotateX(' + (-py * 6).toFixed(2) + 'deg) ' +
+              'rotateY(' + (px * 6).toFixed(2) + 'deg) translateY(-6px)';
+          });
+          card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

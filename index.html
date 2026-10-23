@@ -1,0 +1,4470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HAKA SOLUTIONS | Technology &amp; Digital Business Solutions</title>
+  <meta name="description" content="HAKA SOLUTIONS provides technology-driven digital, data and business solutions designed to help organizations operate smarter and grow efficiently.">
+  <meta name="theme-color" content="#183D32">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HAKA SOLUTIONS">
+  <meta property="og:title" content="HAKA SOLUTIONS | Technology &amp; Digital Business Solutions">
+  <meta property="og:description" content="Technology-driven digital, data and business solutions designed to help organizations operate smarter and grow efficiently.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/logo/logobg-trimmed.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* ============================================================
+       HAKA SOLUTIONS — SINGLE FILE HOMEPAGE
+       ============================================================ */
+
+    /* ---------- 01. Tokens ---------- */
+    :root {
+      --green:       #183D32;
+      --green-hover: #122F26;
+      --green-900:   #0E241E;
+      --ivory:       #FAF8F2;
+      --gold:        #C19A5B;
+      --gold-hover:  #AD8649;
+      --warm-grey:   #E7E4DA;
+
+      --surface:     #FFFFFF;
+      --surface-alt: #F4F1E8;
+
+      --text:        #4B514B;
+      --text-muted:  #6B716B;
+
+      --line:        #E0DDD2;
+      --line-strong: #D2CFC3;
+
+      --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Instrument Serif', Georgia, serif;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --header-h: 88px;
+    }
+
+    /* ---------- 02. Reset ---------- */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-h);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--ivory);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.hk-home {
+      padding-top: var(--header-h);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    ul, ol { list-style: none; }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    ::selection { background: var(--gold); color: var(--green); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---------- 03. Header (matches components/header.js) ---------- */
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand { display: flex; align-items: center; height: 100%; padding: 8px 0; }
+
+    .brand-logo-img {
+      height: 68px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      background: transparent;
+    }
+
+    .nav-container { display: flex; align-items: center; }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.5rem;
+      background: #F8F7F2;
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+    }
+
+    .nav-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #3C4D47;
+      padding: 0.45rem 0.85rem;
+      border-radius: 9999px;
+      transition: all 0.22s var(--ease);
+    }
+
+    .nav-icon { display: inline-flex; align-items: center; color: #6A7973; transition: color 0.2s ease; }
+
+    .nav-link:hover { color: var(--green); background-color: #ECE7DA; }
+    .nav-link:hover .nav-icon { color: var(--green); }
+
+    .nav-link.active {
+      color: var(--green);
+      font-weight: 700;
+      background-color: #FFFFFF;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.08);
+    }
+
+    .nav-link.active .nav-icon { color: var(--gold); }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 2px;
+      background-color: var(--gold);
+      border-radius: 2px;
+    }
+
+    .header-action { display: flex; align-items: center; gap: 1rem; }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      background-color: var(--green);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(24, 61, 50, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn .btn-arrow { transition: transform 0.2s ease; }
+    .nav-btn:hover { background-color: var(--green-hover); box-shadow: 0 4px 12px rgba(24, 61, 50, 0.25); }
+    .nav-btn:hover .btn-arrow { transform: translateX(3px); }
+
+    .hamburger-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background-color: var(--green);
+      border-radius: 2px;
+    }
+
+    /* ---------- 04. Footer (matches components/footer.js) ---------- */
+    .main-footer {
+      position: relative;
+      padding: 5rem 2rem 2rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      color: #333;
+      border-top: 1px solid var(--line);
+    }
+
+    .main-footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--gold) 50%, var(--green) 100%);
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto 3.5rem;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1.6fr;
+      gap: 3.5rem;
+    }
+
+    .footer-brand { display: inline-block; margin-bottom: 1.25rem; transition: transform 0.2s ease; }
+    .footer-brand:hover { transform: translateY(-2px); }
+
+    .footer-logo-img {
+      height: 86px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      background: transparent;
+    }
+
+    .brand-desc {
+      max-width: 310px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #556661;
+      letter-spacing: 0.01em;
+    }
+
+    .footer-socials { display: flex; gap: 0.65rem; margin-top: 1.4rem; }
+
+    .social-icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      color: var(--green);
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(24, 61, 50, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .social-icon-btn:hover {
+      color: #FFFFFF;
+      background-color: var(--green);
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(24, 61, 50, 0.15);
+    }
+
+    .col-title {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 1.4rem;
+      padding-bottom: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .col-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 22px; height: 2px;
+      background-color: var(--gold);
+      border-radius: 2px;
+    }
+
+    .footer-links li { margin-bottom: 0.85rem; }
+
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.94rem;
+      font-weight: 500;
+      color: #4F5E59;
+      transition: all 0.2s ease;
+    }
+
+    .footer-links a:hover { color: var(--green); transform: translateX(4px); }
+
+    .badge-hiring {
+      padding: 2px 7px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #8C6629;
+      background: rgba(193, 154, 91, 0.16);
+      border-radius: 12px;
+    }
+
+    .office-card {
+      padding: 1.25rem 1.4rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(24, 61, 50, 0.03);
+    }
+
+    .office-card-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #4F5E59;
+    }
+
+    .office-card-row:last-child {
+      margin-bottom: 0;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--line);
+    }
+
+    .office-icon { flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+    .office-link { color: var(--green); font-weight: 600; }
+    .office-link:hover { color: var(--gold); text-decoration: underline; }
+
+    .status-indicator-dot {
+      display: inline-block;
+      flex-shrink: 0;
+      width: 8px; height: 8px;
+      margin-top: 6px;
+      border-radius: 50%;
+      background-color: #27AE60;
+      box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+    }
+
+    .footer-bottom { padding-top: 2rem; border-top: 1px solid var(--line); }
+
+    .footer-bottom-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6C7A75;
+    }
+
+    .footer-legal { display: flex; align-items: center; gap: 0.85rem; }
+    .footer-legal a { color: #6C7A75; transition: color 0.2s ease; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-legal .sep { font-size: 0.7rem; color: #C5BFB0; }
+
+    /* ---------- 05. Page layout ---------- */
+    .hk-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    .hk-section {
+      padding: clamp(4rem, 9vw, 8rem) 0;
+    }
+
+    .hk-section--alt {
+      background: var(--surface-alt);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hk-section--dark {
+      position: relative;
+      background: var(--green);
+      color: var(--ivory);
+      overflow: hidden;
+    }
+
+    /* ---------- 06. Typography ---------- */
+    .hk-display {
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.04;
+      color: var(--green);
+    }
+
+    .hk-display em { font-style: italic; color: var(--gold); }
+
+    .hk-h1 {
+      font-size: clamp(2.5rem, 5.4vw, 4.5rem);
+    }
+
+    .hk-h2 {
+      font-size: clamp(2rem, 3.6vw, 3rem);
+      margin-bottom: 1.25rem;
+    }
+
+    .hk-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hk-eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hk-lead {
+      font-size: clamp(1rem, 1.25vw, 1.125rem);
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 52ch;
+    }
+
+    /* ---------- 07. Buttons ---------- */
+    .hk-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 1.75rem;
+      border-radius: 999px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      will-change: transform;
+    }
+
+    .hk-btn--primary {
+      background: var(--green);
+      color: var(--ivory);
+      box-shadow: 0 12px 24px -8px rgba(24, 61, 50, 0.4);
+    }
+
+    .hk-btn--primary:hover {
+      background: var(--green-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(24, 61, 50, 0.5);
+    }
+
+    .hk-btn--ghost {
+      background: transparent;
+      color: var(--green);
+      border-color: rgba(24, 61, 50, 0.25);
+    }
+
+    .hk-btn--ghost:hover {
+      background: var(--green);
+      color: var(--ivory);
+      border-color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .hk-btn--light {
+      background: var(--ivory);
+      color: var(--green-900);
+    }
+
+    .hk-btn--light:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.3);
+    }
+
+    .hk-btn .arrow {
+      transition: transform 0.3s var(--ease);
+    }
+
+    .hk-btn:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* ============================================================
+       08. HERO — 3D floating scene
+       ============================================================ */
+    .hk-hero {
+      position: relative;
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem);
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 10%, rgba(193, 154, 91, 0.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 0% 80%, rgba(24, 61, 50, 0.06), transparent 60%),
+        var(--ivory);
+      overflow: hidden;
+      perspective: 1400px;
+    }
+
+    .hk-hero__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 4rem);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 1000px) {
+      .hk-hero__grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(3rem, 5vw, 5rem);
+      }
+    }
+
+    .hk-hero__title {
+      margin-bottom: 1.5rem;
+    }
+
+    .hk-hero__lead {
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      line-height: 1.75;
+      color: var(--text);
+      max-width: 52ch;
+      margin-bottom: 2.25rem;
+    }
+
+    .hk-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hk-hero__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .hk-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hk-chip::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* --- 3D scene --- */
+    .hk-scene {
+      position: relative;
+      height: 520px;
+      transform-style: preserve-3d;
+    }
+
+    @media (max-width: 999px) {
+      .hk-scene { height: 420px; }
+    }
+
+    @media (max-width: 600px) {
+      .hk-scene { height: 340px; }
+    }
+
+    .hk-orbit {
+      position: absolute;
+      inset: 50% 50% auto auto;
+      width: 1px;
+      height: 1px;
+      transform-style: preserve-3d;
+      animation: hkOrbit 22s linear infinite;
+    }
+
+    @keyframes hkOrbit {
+      from { transform: rotateX(18deg) rotateY(0deg); }
+      to   { transform: rotateX(18deg) rotateY(360deg); }
+    }
+
+    .hk-plane {
+      position: absolute;
+      border: 1px solid rgba(193, 154, 91, 0.5);
+      border-radius: 4px;
+      transform-style: preserve-3d;
+    }
+
+    /* concentric rings */
+    .hk-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 1px dashed rgba(24, 61, 50, 0.18);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transform-style: preserve-3d;
+    }
+
+    .hk-ring--1 { width: 320px; height: 320px; animation: hkSpin 30s linear infinite; }
+    .hk-ring--2 { width: 460px; height: 460px; animation: hkSpin 45s linear infinite reverse; }
+    .hk-ring--3 { width: 600px; height: 600px; animation: hkSpin 60s linear infinite; }
+
+    @keyframes hkSpin {
+      from { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+      to   { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+    }
+
+    /* central cube */
+    .hk-cube {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      transform: translate(-50%, -50%) rotateX(-20deg) rotateY(30deg);
+      transform-style: preserve-3d;
+      animation: hkCubeSpin 14s linear infinite;
+    }
+
+    @keyframes hkCubeSpin {
+      from { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(0deg); }
+      to   { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(360deg); }
+    }
+
+    .hk-cube__face {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border: 1px solid var(--gold);
+      background: rgba(250, 248, 242, 0.85);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--green);
+      box-shadow: inset 0 0 40px rgba(193, 154, 91, 0.15);
+    }
+
+    .hk-cube__face--front  { transform: translateZ(60px); }
+    .hk-cube__face--back   { transform: rotateY(180deg) translateZ(60px); }
+    .hk-cube__face--right  { transform: rotateY(90deg)  translateZ(60px); }
+    .hk-cube__face--left   { transform: rotateY(-90deg) translateZ(60px); }
+    .hk-cube__face--top    { transform: rotateX(90deg)  translateZ(60px); }
+    .hk-cube__face--bottom { transform: rotateX(-90deg) translateZ(60px); }
+
+    /* floating cards */
+    .hk-float {
+      position: absolute;
+      padding: 0.75rem 1rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 20px 40px -12px rgba(24, 61, 50, 0.2);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      animation: hkFloat 6s ease-in-out infinite;
+    }
+
+    .hk-float::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hk-float--1 { top: 12%; left: 4%; animation-delay: 0s; }
+    .hk-float--2 { top: 30%; right: 2%; animation-delay: -1.5s; }
+    .hk-float--3 { bottom: 22%; left: 8%; animation-delay: -3s; }
+    .hk-float--4 { bottom: 10%; right: 10%; animation-delay: -4.5s; }
+
+    @keyframes hkFloat {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50%      { transform: translateY(-14px) rotate(1deg); }
+    }
+
+    /* orbiting sphere */
+    .hk-sphere {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      margin: -12px 0 0 -12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #D9B679, #AD8649);
+      box-shadow: 0 0 20px rgba(193, 154, 91, 0.6);
+      transform-style: preserve-3d;
+      animation: hkSphereOrbit 10s linear infinite;
+    }
+
+    @keyframes hkSphereOrbit {
+      from { transform: rotateX(70deg) rotateZ(0deg) translateX(200px) rotateZ(0deg); }
+      to   { transform: rotateX(70deg) rotateZ(360deg) translateX(200px) rotateZ(-360deg); }
+    }
+
+    /* mouse parallax target */
+    .hk-scene__inner {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.4s var(--ease);
+    }
+
+    /* ============================================================
+       09. MARQUEE
+       ============================================================ */
+    .hk-marquee {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-alt);
+      padding: 1rem 0;
+      overflow: hidden;
+    }
+
+    .hk-marquee__track {
+      display: flex;
+      width: max-content;
+      animation: hkMarquee 38s linear infinite;
+    }
+
+    .hk-marquee:hover .hk-marquee__track {
+      animation-play-state: paused;
+    }
+
+    @keyframes hkMarquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .hk-marquee__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 0 2rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .hk-marquee__dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ============================================================
+       10. SECTION HEADERS
+       ============================================================ */
+    .hk-head {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    @media (min-width: 900px) {
+      .hk-head {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: end;
+        gap: 3rem;
+      }
+    }
+
+    /* ============================================================
+       11. INTRO (CREATIVE BENTO & COMPOSITE MEDIA LAYOUT)
+       ============================================================ */
+    .hk-intro__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(3rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hk-intro__grid { 
+        grid-template-columns: 1.08fr 1.12fr; 
+      }
+    }
+
+    /* Composite Visual Canvas - Modern Asymmetric Dual-Image Collage */
+    .hk-intro__composite {
+      position: relative;
+      padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+    }
+
+    .hk-intro__collage {
+      position: relative;
+      width: 100%;
+      min-height: 480px;
+    }
+
+    /* Primary Main Visual Card */
+    .hk-intro__card--primary {
+      position: relative;
+      width: 82%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(24, 61, 50, 0.28), 0 0 0 1px rgba(24, 61, 50, 0.08);
+      z-index: 1;
+      transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+    }
+
+    .hk-intro__card--primary img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: transform 1.2s var(--ease);
+    }
+
+    .hk-intro__composite:hover .hk-intro__card--primary img {
+      transform: scale(1.05);
+    }
+
+    /* Secondary Overlapping Accent Card */
+    .hk-intro__card--secondary {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 54%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.25), 0 0 0 4px #FFFFFF;
+      z-index: 2;
+      transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+    }
+
+    .hk-intro__card--secondary img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 1s var(--ease);
+    }
+
+    .hk-intro__composite:hover .hk-intro__card--secondary {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 30px 60px -12px rgba(24, 61, 50, 0.35), 0 0 0 4px #FFFFFF;
+    }
+
+    .hk-intro__composite:hover .hk-intro__card--secondary img {
+      transform: scale(1.06);
+    }
+
+    /* Gradient overlay tag on image */
+    .hk-intro__overlay-tag {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      background: rgba(24, 61, 50, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 9999px;
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      z-index: 3;
+    }
+
+    .hk-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #27ae60;
+      box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.35);
+      animation: hkPulseGreen 2s infinite;
+    }
+
+    @keyframes hkPulseGreen {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.6; }
+    }
+
+    /* Ambient atmospheric glow */
+    .hk-intro__composite::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      background: radial-gradient(circle at 75% 75%, rgba(193, 154, 91, 0.3), rgba(24, 61, 50, 0.15) 50%, transparent 70%);
+      border-radius: 40px;
+      z-index: -1;
+      filter: blur(28px);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    /* Floating Metric Pill */
+    .hk-float-card {
+      position: absolute;
+      z-index: 4;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(193, 154, 91, 0.3);
+      box-shadow: 0 16px 36px -8px rgba(24, 61, 50, 0.2);
+      border-radius: 18px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hk-float-card--top {
+      top: -0.5rem;
+      right: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.8rem 1.25rem;
+      animation: hkFloatCardTop 6s ease-in-out infinite;
+    }
+
+    @keyframes hkFloatCardTop {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    .hk-float-card__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(24, 61, 50, 0.08);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hk-float-card__info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .hk-float-card__title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .hk-float-card__sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Floating Experience / Delivery Badge */
+    .hk-float-card--accent {
+      left: -0.5rem;
+      bottom: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 16px;
+      background: #FFFFFF;
+      box-shadow: 0 20px 40px -10px rgba(24, 61, 50, 0.22);
+      border-left: 3px solid var(--gold);
+      animation: hkFloatBadge 5.5s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes hkFloatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .hk-float-card--accent:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 24px 45px -10px rgba(24, 61, 50, 0.28);
+    }
+
+    .hk-intro-stat__num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .hk-intro-stat__text {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.74rem;
+      line-height: 1.25;
+    }
+
+    .hk-intro-stat__title {
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.01em;
+    }
+
+    .hk-intro-stat__label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .hk-intro__collage {
+        min-height: 400px;
+      }
+      .hk-intro__card--primary {
+        width: 88%;
+      }
+      .hk-intro__card--primary img {
+        height: 290px;
+      }
+      .hk-intro__card--secondary {
+        width: 60%;
+        bottom: 0;
+      }
+      .hk-intro__card--secondary img {
+        height: 160px;
+      }
+      .hk-float-card--accent {
+        left: 0.5rem;
+        bottom: 0.5rem;
+      }
+    }
+
+    /* Section Tag with Accent Line */
+    .hk-section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hk-section-tag__line {
+      width: 28px;
+      height: 2px;
+      background-color: var(--gold);
+      display: inline-block;
+    }
+
+    #about.hk-section {
+      padding-top: clamp(2.5rem, 5vw, 4rem);
+      padding-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .hk-intro__heading {
+      line-height: 1.18;
+      margin-bottom: 1.15rem;
+    }
+
+    .hk-intro__prose p {
+      margin-bottom: 0.85rem;
+      color: var(--text);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* Bento Grid Pillars */
+    .hk-bento-pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      margin-top: 1.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .hk-bento-pillars {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hk-bento-pillar {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.1rem 1rem;
+      box-shadow: 0 4px 14px rgba(24, 61, 50, 0.04);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hk-bento-pillar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--line);
+      transition: background 0.3s ease;
+    }
+
+    .hk-bento-pillar:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px -8px rgba(24, 61, 50, 0.14);
+      border-color: rgba(193, 154, 91, 0.4);
+    }
+
+    .hk-bento-pillar:hover::after {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-bento-pillar--featured {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      border-color: rgba(193, 154, 91, 0.35);
+    }
+
+    .hk-bento-pillar--featured::after {
+      background: var(--gold);
+    }
+
+    .hk-bento-pillar__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .hk-bento-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .hk-bento-pillar:hover .hk-bento-icon {
+      background: var(--green);
+      color: #FFFFFF;
+      transform: scale(1.08);
+    }
+
+    .hk-bento-step {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    .hk-bento-pillar h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hk-bento-pillar p {
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       12. SERVICES (TRENDING HORIZON & BENTO HUB)
+       ============================================================ */
+    .hk-services__modern-hub {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    /* 1. Hero Feature Row */
+    .hk-service-row--hero {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.25rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      box-shadow: 0 4px 18px rgba(24, 61, 50, 0.04);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @media (min-width: 992px) {
+      .hk-service-row--hero {
+        grid-template-columns: 1.15fr 1.3fr 0.55fr;
+      }
+    }
+
+    .hk-service-row--hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--gold), var(--green));
+    }
+
+    .hk-service-row--hero:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px -10px rgba(24, 61, 50, 0.12);
+      border-color: rgba(193, 154, 91, 0.4);
+    }
+
+    .hk-service-row__left {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .hk-service-row__num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hk-service-row__icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: var(--green);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .hk-service-row--hero:hover .hk-service-row__icon-wrap {
+      transform: scale(1.08) rotate(-4deg);
+    }
+
+    .hk-service-row__title-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hk-service-row__tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .hk-service-row__title-group h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .hk-service-row__mid p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 0.85rem;
+    }
+
+    .hk-service-row__caps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .hk-service-row__caps span {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      background: #FAF8F2;
+      border: 1px solid var(--line);
+      color: var(--green);
+    }
+
+    .hk-service-row__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 9999px;
+      background: var(--green);
+      color: #FFFFFF !important;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(24, 61, 50, 0.15);
+      border: 1px solid transparent;
+    }
+
+    .hk-service-row__btn span,
+    .hk-service-row__btn svg {
+      color: #FFFFFF !important;
+      stroke: #FFFFFF !important;
+    }
+
+    .hk-service-row__btn:hover {
+      background: var(--green-hover) !important;
+      color: #FFFFFF !important;
+      transform: translateX(4px);
+      box-shadow: 0 8px 20px rgba(24, 61, 50, 0.3);
+      border-color: var(--gold);
+    }
+
+    .hk-service-row__btn:hover span,
+    .hk-service-row__btn:hover svg {
+      color: #FFFFFF !important;
+      stroke: #FFFFFF !important;
+    }
+
+    /* 2. Split Dual Cards */
+    .hk-service-split-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hk-service-split-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .hk-service-split-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.25rem;
+      box-shadow: 0 4px 18px rgba(24, 61, 50, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hk-service-split-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(193, 154, 91, 0.5);
+      box-shadow: 0 18px 40px -10px rgba(24, 61, 50, 0.12);
+    }
+
+    .hk-split-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+
+    .hk-service-split__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .hk-service-split-card:hover .hk-service-split__icon {
+      background: var(--green);
+      color: #FFFFFF;
+      transform: scale(1.08);
+    }
+
+    .hk-service-split-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.65rem;
+    }
+
+    .hk-service-split-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .hk-split-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .hk-split-badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #8C6629;
+      background: rgba(193, 154, 91, 0.14);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+    }
+
+    .hk-split-link {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .hk-split-link:hover {
+      color: var(--gold);
+      gap: 0.65rem;
+    }
+
+    /* 3. Interactive Floating Capsule Cards (04, 05, 06) */
+    .hk-capsule-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .hk-capsule-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hk-capsule-card {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.6rem 1.5rem;
+      box-shadow: 0 4px 14px rgba(24, 61, 50, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    .hk-capsule-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--line);
+      transition: background 0.3s ease;
+    }
+
+    .hk-capsule-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(193, 154, 91, 0.45);
+      box-shadow: 0 16px 36px -10px rgba(24, 61, 50, 0.12);
+    }
+
+    .hk-capsule-card:hover::before {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-capsule-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.15rem;
+    }
+
+    .hk-capsule-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(24, 61, 50, 0.05);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .hk-capsule-card:hover .hk-capsule-icon-wrap {
+      background: var(--green);
+      color: #FFFFFF;
+      transform: scale(1.08) rotate(-4deg);
+    }
+
+    .hk-capsule-num {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hk-capsule-content h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hk-capsule-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+    }
+
+    .hk-capsule-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green);
+      transition: all 0.25s ease;
+    }
+
+    .hk-capsule-arrow {
+      font-size: 1.1rem;
+      color: var(--gold);
+      transition: transform 0.25s ease;
+    }
+
+    .hk-capsule-card:hover .hk-capsule-action {
+      color: var(--gold);
+    }
+
+    .hk-capsule-card:hover .hk-capsule-arrow {
+      transform: translateX(5px);
+    }
+
+    /* ============================================================
+       13. FEATURED SOLUTIONS
+       ============================================================ */
+    .hk-featured {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 960px) {
+      .hk-featured { grid-template-columns: 0.8fr 1.2fr; gap: 5rem; }
+    }
+
+    .hk-featured__sticky {
+      align-self: start;
+    }
+
+    @media (min-width: 960px) {
+      .hk-featured__sticky {
+        position: sticky;
+        top: calc(var(--header-h) + 2rem);
+      }
+    }
+
+    .hk-featured__list {
+      border-top: 1px solid var(--line);
+    }
+
+    .hk-feature {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding 0.4s var(--ease), background 0.4s var(--ease);
+    }
+
+    .hk-feature:hover {
+      padding-left: 1rem;
+      background: rgba(244, 241, 232, 0.5);
+    }
+
+    .hk-feature__num {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--gold);
+    }
+
+    .hk-feature h3 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 0.375rem;
+    }
+
+    .hk-feature p {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+    }
+
+    .hk-feature__arrow {
+      color: var(--green);
+      margin-top: 0.25rem;
+      transition: transform 0.3s var(--ease);
+    }
+
+    .hk-feature:hover .hk-feature__arrow {
+      transform: translateX(4px);
+    }
+
+    .hk-featured__note {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      font-size: 0.9375rem;
+      color: var(--text);
+    }
+
+    .hk-featured__note-mark {
+      flex-shrink: 0;
+      width: 3px;
+      height: 20px;
+      margin-top: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* ============================================================
+       14. WHY HAKA (dark, layered)
+       ============================================================ */
+    .hk-why {
+      position: relative;
+      padding: clamp(4rem, 9vw, 8rem) 0;
+      background: var(--green);
+      color: var(--ivory);
+      overflow: hidden;
+    }
+
+    .hk-why::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(193, 154, 91, 0.12), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(193, 154, 91, 0.08), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hk-why .hk-display,
+    .hk-why .hk-h2 {
+      color: var(--ivory);
+    }
+
+    .hk-why .hk-eyebrow {
+      color: #D9B679;
+    }
+
+    .hk-why .hk-eyebrow::before {
+      background: #D9B679;
+    }
+
+    .hk-why__grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-top: 1px solid rgba(243, 240, 231, 0.15);
+    }
+
+    @media (min-width: 640px) {
+      .hk-why__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .hk-why__grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .hk-principle {
+      padding: 2rem 2rem 2rem 0;
+      border-bottom: 1px solid rgba(243, 240, 231, 0.15);
+    }
+
+    @media (min-width: 640px) {
+      .hk-principle {
+        padding: 2rem;
+        border-right: 1px solid rgba(243, 240, 231, 0.15);
+      }
+      .hk-principle:nth-child(2n) { border-right: none; }
+    }
+
+    @media (min-width: 1024px) {
+      .hk-principle {
+        border-right: 1px solid rgba(243, 240, 231, 0.15);
+      }
+      .hk-principle:nth-child(2n) { border-right: 1px solid rgba(243, 240, 231, 0.15); }
+      .hk-principle:nth-child(3n) { border-right: none; }
+    }
+
+    .hk-principle::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin-bottom: 1rem;
+      background: var(--gold);
+    }
+
+    .hk-principle h3 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--ivory);
+      margin-bottom: 0.5rem;
+    }
+
+    .hk-principle p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: rgba(243, 240, 231, 0.7);
+    }
+
+    /* ============================================================
+       15. TECHNOLOGY (MODERN INTERACTIVE SHOWCASE HUB)
+       ============================================================ */
+    .hk-tech__showcase {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: stretch;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hk-tech__showcase {
+        grid-template-columns: 1.15fr 0.95fr;
+        gap: 2.5rem;
+      }
+    }
+
+    /* Left Nav Cards Column */
+    .hk-tech__nav-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .hk-tech__card {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.25rem 1.4rem;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 8px rgba(24, 61, 50, 0.03);
+      overflow: hidden;
+    }
+
+    .hk-tech__card:hover {
+      transform: translateX(6px);
+      border-color: rgba(193, 154, 91, 0.5);
+      box-shadow: 0 8px 24px -6px rgba(24, 61, 50, 0.08);
+    }
+
+    .hk-tech__card.is-active {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F2 100%);
+      border-color: var(--gold);
+      box-shadow: 0 12px 30px -8px rgba(24, 61, 50, 0.12);
+      transform: translateX(8px);
+    }
+
+    .hk-tech__card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hk-tech__badge {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 30px;
+    }
+
+    .hk-tech__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .hk-tech__card.is-active .hk-tech__icon,
+    .hk-tech__card:hover .hk-tech__icon {
+      background: var(--green);
+      color: #FFFFFF;
+    }
+
+    .hk-tech__card-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hk-tech__card-body p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .hk-tech__indicator {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    .hk-tech__card.is-active .hk-tech__indicator {
+      background: linear-gradient(180deg, var(--gold), var(--green));
+    }
+
+    /* Right Interactive Console Preview Panel */
+    .hk-tech__preview-panel {
+      height: fit-content;
+    }
+
+    @media (min-width: 992px) {
+      .hk-tech__preview-panel {
+        position: sticky;
+        top: 110px;
+      }
+    }
+
+    .hk-tech__console {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 20px 45px -12px rgba(24, 61, 50, 0.12);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hk-tech__console-header {
+      background: #FAF8F2;
+      border-bottom: 1px solid var(--line);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hk-tech__dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .hk-tech__dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #DDDCD2;
+      display: inline-block;
+    }
+
+    .hk-tech__dots span:nth-child(1) { background: #e74c3c; }
+    .hk-tech__dots span:nth-child(2) { background: #f39c12; }
+    .hk-tech__dots span:nth-child(3) { background: #27ae60; }
+
+    .hk-tech__console-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .hk-tech__console-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(193, 154, 91, 0.18);
+      color: #8C6629;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .hk-tech__console-body {
+      padding: 1.75rem 1.5rem;
+    }
+
+    .hk-tech__metric-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hk-tech__metric {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hk-tech__metric-val {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.1;
+    }
+
+    .hk-tech__metric-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .hk-tech__spec-box h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hk-tech__spec-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .hk-tech__spec-list li {
+      position: relative;
+      padding-left: 1.35rem;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .hk-tech__spec-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .hk-tech__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .hk-tech__pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      background: #FAF8F2;
+      border: 1px solid var(--line);
+      color: var(--green);
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+    }
+
+    .hk-tech__pill:hover {
+      background: var(--green);
+      color: #FFFFFF;
+      border-color: var(--green);
+    }
+
+    /* ============================================================
+       16. PROCESS
+       ============================================================ */
+    .hk-process {
+      position: relative;
+    }
+
+    .hk-process__line {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .hk-process__line {
+        display: block;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--line-strong);
+        overflow: hidden;
+      }
+
+      .hk-process__line::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: hkLineGrow 2s 0.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      }
+    }
+
+    @keyframes hkLineGrow {
+      to { transform: scaleX(1); }
+    }
+
+    .hk-process__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .hk-process__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .hk-process__grid { grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
+    }
+
+    .hk-step {
+      position: relative;
+    }
+
+    .hk-step__badge {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1.5rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--green);
+      box-shadow: 0 4px 12px rgba(24, 61, 50, 0.06);
+      transition: all 0.4s var(--ease);
+    }
+
+    .hk-step:hover .hk-step__badge {
+      background: var(--green);
+      color: var(--ivory);
+      border-color: var(--green);
+      transform: scale(1.06);
+    }
+
+    .hk-step h3 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .hk-step p {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       17. INDUSTRIES (MODERN INTERACTIVE BENTO SHOWCASE)
+       ============================================================ */
+    .hk-ind__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hk-ind__grid { 
+        grid-template-columns: 1.15fr 0.85fr; 
+        gap: 3.5rem; 
+      }
+    }
+
+    /* Modern Interactive Industry Grid */
+    .hk-ind__cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .hk-ind__card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.15rem 1.25rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(24, 61, 50, 0.08);
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(24, 61, 50, 0.03);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .hk-ind__card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hk-ind__card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(193, 154, 91, 0.45);
+      box-shadow: 0 12px 24px -6px rgba(24, 61, 50, 0.1), 0 0 0 1px rgba(193, 154, 91, 0.2);
+    }
+
+    .hk-ind__card:hover::before {
+      opacity: 1;
+    }
+
+    .hk-ind__icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(24, 61, 50, 0.05);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.35s ease;
+    }
+
+    .hk-ind__card:hover .hk-ind__icon {
+      background: var(--green);
+      color: #FFFFFF;
+      transform: scale(1.06);
+    }
+
+    .hk-ind__card-body {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .hk-ind__card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.2;
+      transition: color 0.3s ease;
+    }
+
+    .hk-ind__card:hover .hk-ind__card-title {
+      color: var(--green-dark);
+    }
+
+    .hk-ind__card-desc {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Right Visual Showcase Canvas */
+    .hk-ind__showcase {
+      position: relative;
+    }
+
+    .hk-ind__showcase-frame {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 32px 70px -15px rgba(24, 61, 50, 0.3), 0 0 0 1px rgba(24, 61, 50, 0.08);
+      background: var(--green-dark);
+    }
+
+    .hk-ind__showcase-frame img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    }
+
+    .hk-ind__showcase:hover .hk-ind__showcase-frame img {
+      transform: scale(1.05);
+    }
+
+    /* Atmospheric Glow Behind Image */
+    .hk-ind__showcase::before {
+      content: "";
+      position: absolute;
+      inset: -12px;
+      background: radial-gradient(circle at 75% 25%, rgba(193, 154, 91, 0.25), rgba(24, 61, 50, 0.15) 50%, transparent 70%);
+      border-radius: 36px;
+      z-index: -1;
+      filter: blur(28px);
+      pointer-events: none;
+    }
+
+    /* Floating Pill 1: Top Floating Pill */
+    .hk-ind__float-pill {
+      position: absolute;
+      top: 1.5rem;
+      right: -1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 9999px;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      box-shadow: 0 16px 36px -8px rgba(24, 61, 50, 0.22);
+      z-index: 3;
+      animation: hkFloatCardTop 6s ease-in-out infinite;
+    }
+
+    .hk-ind__float-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #27ae60;
+      box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3);
+    }
+
+    .hk-ind__float-text {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.02em;
+    }
+
+    /* Floating Banner 2: Bottom Strategic Badge */
+    .hk-ind__float-banner {
+      position: absolute;
+      bottom: -1rem;
+      left: -1rem;
+      background: #FFFFFF;
+      padding: 1rem 1.4rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 45px -10px rgba(24, 61, 50, 0.25);
+      border-left: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 3;
+      animation: hkFloatBadge 5.5s ease-in-out infinite 0.4s;
+    }
+
+    .hk-ind__banner-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(193, 154, 91, 0.15);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .hk-ind__banner-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .hk-ind__banner-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .hk-ind__banner-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .hk-ind__cards {
+        grid-template-columns: 1fr;
+      }
+      .hk-ind__float-pill {
+        right: 0.5rem;
+        top: 1rem;
+      }
+      .hk-ind__float-banner {
+        left: 0.5rem;
+        bottom: 0.5rem;
+      }
+      .hk-ind__showcase-frame img {
+        height: 380px;
+      }
+    }
+
+    /* ============================================================
+       18. CASE STUDIES (CREATIVE SPLIT EDITORIAL HEADER & PIPELINE)
+       ============================================================ */
+    .hk-cases__hero-header {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    @media (min-width: 960px) {
+      .hk-cases__hero-header {
+        grid-template-columns: 1.15fr 1fr;
+        gap: 3.5rem;
+      }
+    }
+
+    .hk-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.95rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.04);
+    }
+
+    .hk-tag-pill__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hk-cases__title {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--green);
+    }
+
+    .hk-highlight-gold {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hk-cases__desc-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-left: 3.5px solid var(--gold);
+      border-radius: 16px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 4px 16px rgba(24, 61, 50, 0.04);
+    }
+
+    .hk-cases__desc-card p {
+      font-size: 0.96rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hk-cases__status-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green);
+      background: #FAF8F2;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .hk-badge-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #27ae60;
+      box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.25);
+      animation: hkPulseGreen 2s infinite;
+    }
+
+    .hk-case-pipeline {
+      position: relative;
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
+
+    .hk-case-pipeline__track {
+      position: relative;
+    }
+
+    /* Glowing connecting line on desktop */
+    .hk-case-pipeline__line {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .hk-case-pipeline__line {
+        display: block;
+        position: absolute;
+        top: 26px;
+        left: 8%;
+        right: 8%;
+        height: 2px;
+        background: linear-gradient(90deg, 
+          rgba(193, 154, 91, 0.2) 0%, 
+          var(--gold) 35%, 
+          var(--green) 70%, 
+          rgba(24, 61, 50, 0.2) 100%
+        );
+        z-index: 1;
+      }
+    }
+
+    .hk-case-pipeline__steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 640px) {
+      .hk-case-pipeline__steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hk-case-pipeline__steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    .hk-pipeline-node {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .hk-pipeline-node__marker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hk-pipeline-node__idx {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: #FAF8F2;
+      padding: 0 0.5rem;
+      border-radius: 6px;
+      line-height: 1;
+      z-index: 3;
+    }
+
+    .hk-pipeline-node__dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 3.5px solid var(--gold);
+      box-shadow: 0 0 0 4px rgba(193, 154, 91, 0.2);
+      transition: all 0.3s ease;
+      z-index: 3;
+    }
+
+    .hk-pipeline-node:hover .hk-pipeline-node__dot {
+      background: var(--green);
+      border-color: var(--green);
+      box-shadow: 0 0 0 6px rgba(24, 61, 50, 0.2);
+      transform: scale(1.2);
+    }
+
+    .hk-pipeline-node__card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.75rem 1.4rem;
+      box-shadow: 0 4px 16px rgba(24, 61, 50, 0.04);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hk-pipeline-node__card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--line);
+      transition: background 0.3s ease;
+    }
+
+    .hk-pipeline-node:hover .hk-pipeline-node__card {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px -10px rgba(24, 61, 50, 0.12);
+      border-color: rgba(193, 154, 91, 0.45);
+    }
+
+    .hk-pipeline-node:hover .hk-pipeline-node__card::before {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-pipeline-node__card--verified {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      border-color: rgba(193, 154, 91, 0.35);
+    }
+
+    .hk-pipeline-node__card--verified::before {
+      background: var(--gold);
+    }
+
+    .hk-pipeline-node__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.15rem;
+      transition: all 0.3s ease;
+    }
+
+    .hk-pipeline-node:hover .hk-pipeline-node__icon {
+      background: var(--green);
+      color: #FFFFFF;
+      transform: scale(1.08);
+    }
+
+    .hk-pipeline-node__card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hk-pipeline-node__card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .hk-pipeline-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: #FAF8F2;
+      border: 1px solid var(--line);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    .hk-pipeline-tag--gold {
+      color: #8C6629;
+      background: rgba(193, 154, 91, 0.14);
+      border-color: rgba(193, 154, 91, 0.3);
+    }
+
+    .hk-cases__cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    /* ============================================================
+       19. CAREERS
+       ============================================================ */
+    .hk-careers__card {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px -24px rgba(24, 61, 50, 0.18);
+    }
+
+    @media (min-width: 900px) {
+      .hk-careers__card { grid-template-columns: 1.1fr 0.9fr; }
+    }
+
+    .hk-careers__body {
+      padding: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .hk-careers__body h2 {
+      margin-bottom: 1.25rem;
+    }
+
+    .hk-careers__body p {
+      margin-bottom: 2rem;
+      max-width: 46ch;
+      color: var(--text-muted);
+    }
+
+    .hk-careers__img {
+      position: relative;
+      min-height: 280px;
+    }
+
+    .hk-careers__img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ============================================================
+       20. FINAL CTA
+       ============================================================ */
+    .hk-cta {
+      position: relative;
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      background: var(--green);
+      color: var(--ivory);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hk-cta::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hk-cta__inner {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hk-cta .hk-display {
+      color: var(--ivory);
+      margin-bottom: 1.5rem;
+    }
+
+    .hk-cta p {
+      max-width: 56ch;
+      margin: 0 auto 2.5rem;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: rgba(243, 240, 231, 0.75);
+    }
+
+    /* ============================================================
+       21. CONTACT
+       ============================================================ */
+    .hk-contact__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 960px) {
+      .hk-contact__grid { grid-template-columns: 0.85fr 1.15fr; gap: 5rem; }
+    }
+
+    .hk-contact__aside {
+      padding: 1.5rem;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+
+    .hk-contact__aside-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .hk-contact__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.375rem 0;
+      font-size: 0.9375rem;
+      color: var(--text);
+    }
+
+    .hk-contact__list li::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      margin-top: 0.55rem;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .hk-contact__aside-note {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--line);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .hk-contact__aside-note a {
+      color: var(--green);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* Form */
+    .hk-form {
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px -20px rgba(24, 61, 50, 0.15);
+    }
+
+    .hk-form__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .hk-form__row { grid-template-columns: 1fr 1fr; }
+    }
+
+    .hk-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hk-field:not(.hk-form__row .hk-field) {
+      margin-bottom: 1.25rem;
+    }
+
+    .hk-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .hk-req { color: var(--gold); }
+
+    .hk-input,
+    .hk-select,
+    .hk-textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: var(--ivory);
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+      font-size: 0.9375rem;
+      color: var(--text);
+      transition: all 0.25s var(--ease);
+    }
+
+    .hk-input::placeholder,
+    .hk-textarea::placeholder {
+      color: rgba(107, 113, 107, 0.6);
+    }
+
+    .hk-input:focus,
+    .hk-select:focus,
+    .hk-textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(193, 154, 91, 0.2);
+    }
+
+    .hk-textarea { resize: vertical; min-height: 120px; }
+
+    .hk-error {
+      min-height: 1rem;
+      margin-top: 0.375rem;
+      font-size: 0.75rem;
+      color: #B91C1C;
+    }
+
+    .hk-input-error {
+      border-color: #B91C1C !important;
+      background: #FEF2F2 !important;
+    }
+
+    .hk-input-success {
+      border-color: #15803D !important;
+    }
+
+    .hk-form__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (min-width: 640px) {
+      .hk-form__actions {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .hk-form__note {
+      max-width: 34ch;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .hk-form__status {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .hk-form__status.is-success { color: #15803D; }
+    .hk-form__status.is-error { color: #B91C1C; }
+
+    /* ============================================================
+       22. SCROLL REVEAL
+       ============================================================ */
+    html.js [data-reveal] {
+      opacity: 0;
+      transform: translateY(32px);
+      transition:
+        opacity 0.9s var(--ease),
+        transform 0.9s var(--ease);
+    }
+
+    html.js [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       23. RESPONSIVE
+       ============================================================ */
+    /* responsive header delegated to css/style.css */
+      .hamburger-btn { display: flex; }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      :root { --header-h: 72px; }
+
+      .header-inner { padding: 0 1rem; }
+      .brand-logo-img { height: 48px; }
+      .footer-logo-img { height: 64px; }
+      .nav-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .main-footer { padding: 3.5rem 1.25rem 1.5rem; }
+      .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+      .hk-float { font-size: 0.6875rem; padding: 0.5rem 0.75rem; }
+      .hk-cube, .hk-cube__face { width: 84px; height: 84px; }
+      .hk-cube__face--front  { transform: translateZ(42px); }
+      .hk-cube__face--back   { transform: rotateY(180deg) translateZ(42px); }
+      .hk-cube__face--right  { transform: rotateY(90deg)  translateZ(42px); }
+      .hk-cube__face--left   { transform: rotateY(-90deg) translateZ(42px); }
+      .hk-cube__face--top    { transform: rotateX(90deg)  translateZ(42px); }
+      .hk-cube__face--bottom { transform: rotateX(-90deg) translateZ(42px); }
+
+      .hk-ring--1 { width: 220px; height: 220px; }
+      .hk-ring--2 { width: 320px; height: 320px; }
+      .hk-ring--3 { width: 420px; height: 420px; }
+    }
+
+    /* ============================================================
+       24. REDUCED MOTION
+       ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      html.js [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .hk-orbit,
+      .hk-cube,
+      .hk-ring,
+      .hk-float,
+      .hk-sphere,
+      .hk-marquee__track {
+        animation: none !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="hk-home">
+
+  <!-- Shared header -->
+  <div id="header-placeholder"></div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         HERO — 3D floating scene
+    ============================================================= -->
+    <section class="hk-hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hk-wrap">
+        <div class="hk-hero__grid">
+
+          <div class="hk-hero__content" data-reveal>
+            <p class="hk-eyebrow">Technology · Digital · Growth</p>
+
+            <h1 id="hero-heading" class="hk-display hk-h1 hk-hero__title">
+              Powering businesses through
+              <em>smarter</em> digital solutions.
+            </h1>
+
+            <p class="hk-hero__lead">
+              HAKA SOLUTIONS delivers reliable technology, digital operations and business
+              support solutions designed to help organizations work smarter, scale faster
+              and achieve sustainable growth.
+            </p>
+
+            <div class="hk-hero__actions">
+              <a href="solutions.html" class="hk-btn hk-btn--primary">
+                Explore our solutions <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="contact.html" class="hk-btn hk-btn--ghost">
+                Talk to us
+              </a>
+            </div>
+
+            <div class="hk-hero__chips">
+              <span class="hk-chip">Structured workflows</span>
+              <span class="hk-chip">Practical technology</span>
+              <span class="hk-chip">Dependable support</span>
+            </div>
+          </div>
+
+          <!-- 3D scene -->
+          <div class="hk-scene" aria-hidden="true">
+            <div class="hk-scene__inner" id="heroScene">
+              <div class="hk-ring hk-ring--1"></div>
+              <div class="hk-ring hk-ring--2"></div>
+              <div class="hk-ring hk-ring--3"></div>
+
+              <div class="hk-orbit">
+                <div class="hk-plane" style="width: 200px; height: 200px; top: -100px; left: -100px;"></div>
+                <div class="hk-plane" style="width: 260px; height: 260px; top: -130px; left: -130px; border-color: rgba(24,61,50,0.2);"></div>
+              </div>
+
+              <div class="hk-cube">
+                <div class="hk-cube__face hk-cube__face--front">H</div>
+                <div class="hk-cube__face hk-cube__face--back">K</div>
+                <div class="hk-cube__face hk-cube__face--right">A</div>
+                <div class="hk-cube__face hk-cube__face--left">S</div>
+                <div class="hk-cube__face hk-cube__face--top">◆</div>
+                <div class="hk-cube__face hk-cube__face--bottom">◆</div>
+              </div>
+
+              <div class="hk-sphere"></div>
+
+              <div class="hk-float hk-float--1">Data operations</div>
+              <div class="hk-float hk-float--2">Workflow management</div>
+              <div class="hk-float hk-float--3">Business automation</div>
+              <div class="hk-float hk-float--4">Digital workforce</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="hk-marquee" aria-hidden="true">
+      <div class="hk-marquee__track">
+        <div class="hk-marquee__item">
+          <span>Data Operations</span><span class="hk-marquee__dot"></span>
+          <span>Workflow Management</span><span class="hk-marquee__dot"></span>
+          <span>Business Automation</span><span class="hk-marquee__dot"></span>
+          <span>Digital Workforce</span><span class="hk-marquee__dot"></span>
+          <span>Technology Solutions</span><span class="hk-marquee__dot"></span>
+          <span>Process Support</span><span class="hk-marquee__dot"></span>
+        </div>
+        <div class="hk-marquee__item">
+          <span>Data Operations</span><span class="hk-marquee__dot"></span>
+          <span>Workflow Management</span><span class="hk-marquee__dot"></span>
+          <span>Business Automation</span><span class="hk-marquee__dot"></span>
+          <span>Digital Workforce</span><span class="hk-marquee__dot"></span>
+          <span>Technology Solutions</span><span class="hk-marquee__dot"></span>
+          <span>Process Support</span><span class="hk-marquee__dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         INTRO
+    ============================================================= -->
+    <section class="hk-section" id="about" aria-labelledby="intro-heading">
+      <div class="hk-wrap">
+        <div class="hk-intro__grid">
+
+          <div class="hk-intro__composite" data-reveal>
+            <div class="hk-intro__collage">
+              <!-- Primary Main Visual Card -->
+              <div class="hk-intro__card--primary">
+                <img
+                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80"
+                  alt="HAKA engineering workspace"
+                  loading="lazy" width="1000" height="520">
+                <div class="hk-intro__overlay-tag">
+                  <span class="hk-pulse-dot"></span>
+                  <span>Active Operations</span>
+                </div>
+              </div>
+
+              <!-- Secondary Overlapping Visual Card -->
+              <div class="hk-intro__card--secondary">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=650&q=80"
+                  alt="Collaborative technical strategy"
+                  loading="lazy" width="650" height="400">
+              </div>
+
+              <!-- Floating Glass Widget: System Uptime -->
+              <div class="hk-float-card hk-float-card--top">
+                <div class="hk-float-card__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <div class="hk-float-card__info">
+                  <span class="hk-float-card__title">Reliability First</span>
+                  <span class="hk-float-card__sub">99.9% Uptime SLA</span>
+                </div>
+              </div>
+
+              <!-- Floating Modern Delivery Badge -->
+              <div class="hk-float-card hk-float-card--accent">
+                <span class="hk-intro-stat__num">100%</span>
+                <div class="hk-intro-stat__text">
+                  <span class="hk-intro-stat__title">Practical Execution</span>
+                  <span class="hk-intro-stat__label">Purpose-built systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hk-intro__story" data-reveal>
+            <div class="hk-section-tag">
+              <span class="hk-section-tag__line"></span>
+              <span class="hk-eyebrow" style="margin:0;">Who We Are</span>
+            </div>
+
+            <h2 id="intro-heading" class="hk-display hk-h2 hk-intro__heading">
+              Building digital solutions that <span class="hk-highlight-serif">move businesses</span> forward.
+            </h2>
+
+            <div class="hk-prose hk-intro__prose">
+              <p>
+                HAKA SOLUTIONS is a technology and digital solutions company focused on reliable
+                technology, digital operations and business support. We work with organizations
+                that need dependable systems behind their day-to-day work — not additional
+                complexity.
+              </p>
+              <p>
+                Our approach is practical. We look at how a process currently runs, identify
+                where effort is being duplicated or information is getting lost, and then apply
+                structured workflows, appropriate technology and consistent operational support
+                to improve it.
+              </p>
+            </div>
+
+            <!-- Modern Interactive Bento Pillars -->
+            <div class="hk-bento-pillars">
+              <div class="hk-bento-pillar">
+                <div class="hk-bento-pillar__header">
+                  <div class="hk-bento-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                  </div>
+                  <span class="hk-bento-step">01</span>
+                </div>
+                <h3>Structured</h3>
+                <p>Clear process steps, transparent execution & defined ownership.</p>
+              </div>
+
+              <div class="hk-bento-pillar hk-bento-pillar--featured">
+                <div class="hk-bento-pillar__header">
+                  <div class="hk-bento-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <span class="hk-bento-step">02</span>
+                </div>
+                <h3>Practical</h3>
+                <p>Lean tools carefully chosen for the specific need, not hype.</p>
+              </div>
+
+              <div class="hk-bento-pillar">
+                <div class="hk-bento-pillar__header">
+                  <div class="hk-bento-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <span class="hk-bento-step">03</span>
+                </div>
+                <h3>Reliable</h3>
+                <p>Uncompromising support that holds firm as operations scale.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+    ============================================================= -->
+    <section class="hk-section hk-section--alt" id="services" aria-labelledby="services-heading">
+      <div class="hk-wrap">
+
+        <div class="hk-head">
+          <div data-reveal>
+            <p class="hk-eyebrow">Our Expertise</p>
+            <h2 id="services-heading" class="hk-display hk-h2">
+              Solutions designed around your business.
+            </h2>
+          </div>
+          <p class="hk-lead" data-reveal>
+            Explore our technology-enabled services and operational support designed to address
+            business requirements and improve efficiency.
+          </p>
+        </div>
+
+        <!-- Trending Enterprise Service Showcase Layout -->
+        <div class="hk-services__modern-hub">
+          
+          <!-- Category 1: Digital & Data Operations (Large Feature Bento) -->
+          <article class="hk-service-row hk-service-row--hero" data-reveal>
+            <div class="hk-service-row__left">
+              <span class="hk-service-row__num">01</span>
+              <div class="hk-service-row__icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                  <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/>
+                  <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/>
+                </svg>
+              </div>
+              <div class="hk-service-row__title-group">
+                <span class="hk-service-row__tag">Operational Excellence</span>
+                <h3>Data &amp; Digital Operations</h3>
+              </div>
+            </div>
+
+            <div class="hk-service-row__mid">
+              <p>End-to-end data processing, structured verification, enterprise documentation, and continuous operational pipeline support.</p>
+              <div class="hk-service-row__caps">
+                <span>Data Ingestion</span>
+                <span>Verification</span>
+                <span>Audit Reporting</span>
+              </div>
+            </div>
+
+            <div class="hk-service-row__right">
+              <a href="services.html" class="hk-service-row__btn">
+                <span>Explore Service</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2 & 3: Technology Solutions & Business Process Support -->
+          <div class="hk-service-split-row">
+            <article class="hk-service-split-card" data-reveal>
+              <div class="hk-split-card__head">
+                <span class="hk-service-row__num">02</span>
+                <span class="hk-service-split__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="7" y="7" width="10" height="10" rx="1.5"/>
+                    <path d="M4 10h3M4 14h3M17 10h3M17 14h3M10 4v3M14 4v3M10 17v3M14 17v3"/>
+                  </svg>
+                </span>
+              </div>
+              <h3>Technology Solutions</h3>
+              <p>Modern, technology-enabled solutions and software architecture designed to accelerate operational velocity.</p>
+              <div class="hk-split-card__footer">
+                <span class="hk-split-badge">Cloud &amp; Microservices</span>
+                <a href="services.html" class="hk-split-link">
+                  <span>Learn more</span>
+                  <span class="arrow">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="hk-service-split-card" data-reveal>
+              <div class="hk-split-card__head">
+                <span class="hk-service-row__num">03</span>
+                <span class="hk-service-split__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 11a8 8 0 0 0-13.9-5.4L3 8"/>
+                    <path d="M3 4v4h4"/>
+                    <path d="M4 13a8 8 0 0 0 13.9 5.4L21 16"/>
+                    <path d="M21 20v-4h-4"/>
+                  </svg>
+                </span>
+              </div>
+              <h3>Business Process Support</h3>
+              <p>Structured operational systems for organizations aiming to streamline repetitive processes and remove workflow bottlenecks.</p>
+              <div class="hk-split-card__footer">
+                <span class="hk-split-badge">Workflow Optimization</span>
+                <a href="services.html" class="hk-split-link">
+                  <span>Learn more</span>
+                  <span class="arrow">&rarr;</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 4, 5, 6: Interactive Floating Interactive Capsule Cards -->
+          <div class="hk-capsule-grid" data-reveal>
+            <!-- 04 Digital Services -->
+            <article class="hk-capsule-card">
+              <div class="hk-capsule-card__top">
+                <div class="hk-capsule-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <span class="hk-capsule-num">04</span>
+              </div>
+              <div class="hk-capsule-content">
+                <h4>Digital Services</h4>
+                <p>Custom digital workflows, web platforms, and technology-backed operational services.</p>
+              </div>
+              <a href="services.html" class="hk-capsule-action">
+                <span>Explore</span>
+                <span class="hk-capsule-arrow">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- 05 Custom Solutions -->
+            <article class="hk-capsule-card">
+              <div class="hk-capsule-card__top">
+                <div class="hk-capsule-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                </div>
+                <span class="hk-capsule-num">05</span>
+              </div>
+              <div class="hk-capsule-content">
+                <h4>Custom Solutions</h4>
+                <p>Bespoke engineering and proprietary tools designed precisely around unique business requirements.</p>
+              </div>
+              <a href="services.html" class="hk-capsule-action">
+                <span>Explore</span>
+                <span class="hk-capsule-arrow">&rarr;</span>
+              </a>
+            </article>
+
+            <!-- 06 Support & Operations -->
+            <article class="hk-capsule-card">
+              <div class="hk-capsule-card__top">
+                <div class="hk-capsule-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <span class="hk-capsule-num">06</span>
+              </div>
+              <div class="hk-capsule-content">
+                <h4>Support &amp; Operations</h4>
+                <p>Reliable 24/7 ongoing technical monitoring and operational stewardship for mission-critical apps.</p>
+              </div>
+              <a href="services.html" class="hk-capsule-action">
+                <span>Explore</span>
+                <span class="hk-capsule-arrow">&rarr;</span>
+              </a>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURED SOLUTIONS
+    ============================================================= -->
+    <section class="hk-section" id="solutions" aria-labelledby="featured-heading">
+      <div class="hk-wrap">
+        <div class="hk-featured">
+
+          <div class="hk-featured__sticky" data-reveal>
+            <p class="hk-eyebrow">What We Deliver</p>
+            <h2 id="featured-heading" class="hk-display hk-h2">
+              Practical solutions. Smarter workflows.
+            </h2>
+            <p class="hk-lead">
+              Each solution area is shaped around the way your team already works.
+            </p>
+          </div>
+
+          <div>
+            <div class="hk-featured__list">
+              <article class="hk-feature" data-reveal>
+                <span class="hk-feature__num">01</span>
+                <div>
+                  <h3>Digital Workforce</h3>
+                  <p>Technology-enabled workforce solutions that support day-to-day operational delivery.</p>
+                </div>
+                <span class="hk-feature__arrow" aria-hidden="true">→</span>
+              </article>
+
+              <article class="hk-feature" data-reveal>
+                <span class="hk-feature__num">02</span>
+                <div>
+                  <h3>Data Operations</h3>
+                  <p>Efficient and structured data management workflows.</p>
+                </div>
+                <span class="hk-feature__arrow" aria-hidden="true">→</span>
+              </article>
+
+              <article class="hk-feature" data-reveal>
+                <span class="hk-feature__num">03</span>
+                <div>
+                  <h3>Business Automation</h3>
+                  <p>Reduce repetitive work and improve efficiency.</p>
+                </div>
+                <span class="hk-feature__arrow" aria-hidden="true">→</span>
+              </article>
+
+              <article class="hk-feature" data-reveal>
+                <span class="hk-feature__num">04</span>
+                <div>
+                  <h3>Workflow Management</h3>
+                  <p>Organize people, processes, and information.</p>
+                </div>
+                <span class="hk-feature__arrow" aria-hidden="true">→</span>
+              </article>
+            </div>
+
+            <p class="hk-featured__note" data-reveal>
+              <span class="hk-featured__note-mark" aria-hidden="true"></span>
+              <span><strong>Also available:</strong> Custom Technology — built around requirements that fall outside a standard solution area.</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY HAKA
+    ============================================================= -->
+    <section class="hk-why" id="why-haka" aria-labelledby="why-heading">
+      <div class="hk-wrap">
+        <div data-reveal style="max-width: 640px; margin-bottom: 3rem;">
+          <p class="hk-eyebrow">Why HAKA Solutions</p>
+          <h2 id="why-heading" class="hk-display hk-h2">
+            A reliable partner for business progress.
+          </h2>
+        </div>
+
+        <div class="hk-why__grid">
+          <div class="hk-principle" data-reveal>
+            <h3>Reliability</h3>
+            <p>Dependable delivery and consistent operational support, agreed in advance.</p>
+          </div>
+          <div class="hk-principle" data-reveal>
+            <h3>Scalability</h3>
+            <p>Solutions that can adjust as requirements, volumes and teams change.</p>
+          </div>
+          <div class="hk-principle" data-reveal>
+            <h3>Technology Driven</h3>
+            <p>Practical use of technology to improve how work actually gets done.</p>
+          </div>
+          <div class="hk-principle" data-reveal>
+            <h3>Security</h3>
+            <p>Careful handling of data, access and business information throughout.</p>
+          </div>
+          <div class="hk-principle" data-reveal>
+            <h3>Flexibility</h3>
+            <p>Engagement models shaped around your processes, not ours.</p>
+          </div>
+          <div class="hk-principle" data-reveal>
+            <h3>Long-Term Partnership</h3>
+            <p>Support that continues after implementation, as requirements evolve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TECHNOLOGY
+    ============================================================= -->
+    <section class="hk-section" id="technology" aria-labelledby="tech-heading">
+      <div class="hk-wrap">
+        <div class="hk-head">
+          <div data-reveal>
+            <p class="hk-eyebrow">Our Capabilities</p>
+            <h2 id="tech-heading" class="hk-display hk-h2">
+              Technology that supports better business.
+            </h2>
+          </div>
+          <p class="hk-lead" data-reveal>
+            Capability areas we apply when designing and supporting business solutions.
+          </p>
+        </div>
+
+        <div class="hk-tech__showcase">
+          <!-- Left Interactive Hub Cards -->
+          <div class="hk-tech__nav-cards">
+            <!-- 01 Data & Analytics -->
+            <div class="hk-tech__card is-active" data-tech="data" data-reveal>
+              <div class="hk-tech__card-header">
+                <div class="hk-tech__badge">01</div>
+                <div class="hk-tech__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="hk-tech__card-body">
+                <h3>Data &amp; Analytics</h3>
+                <p>Processing, reporting, and business intelligence pipelines.</p>
+              </div>
+              <div class="hk-tech__indicator"></div>
+            </div>
+
+            <!-- 02 Cloud -->
+            <div class="hk-tech__card" data-tech="cloud" data-reveal>
+              <div class="hk-tech__card-header">
+                <div class="hk-tech__badge">02</div>
+                <div class="hk-tech__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="hk-tech__card-body">
+                <h3>Cloud Systems</h3>
+                <p>Elastic infrastructure, microservices, and high-security storage.</p>
+              </div>
+              <div class="hk-tech__indicator"></div>
+            </div>
+
+            <!-- 03 Automation -->
+            <div class="hk-tech__card" data-tech="automation" data-reveal>
+              <div class="hk-tech__card-header">
+                <div class="hk-tech__badge">03</div>
+                <div class="hk-tech__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <polyline points="1 20 1 14 7 14"></polyline>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="hk-tech__card-body">
+                <h3>Automation</h3>
+                <p>Workflow automation, bots, and systematic process optimization.</p>
+              </div>
+              <div class="hk-tech__indicator"></div>
+            </div>
+
+            <!-- 04 AI -->
+            <div class="hk-tech__card" data-tech="ai" data-reveal>
+              <div class="hk-tech__card-header">
+                <div class="hk-tech__badge">04</div>
+                <div class="hk-tech__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.5-6.5-2.1 2.1m-8.8 8.8-2.1 2.1m13 0-2.1-2.1m-8.8-8.8-2.1-2.1"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="hk-tech__card-body">
+                <h3>AI &amp; Machine Learning</h3>
+                <p>AI-assisted workflows, smart agents, and data-driven insights.</p>
+              </div>
+              <div class="hk-tech__indicator"></div>
+            </div>
+
+            <!-- 05 Security -->
+            <div class="hk-tech__card" data-tech="security" data-reveal>
+              <div class="hk-tech__card-header">
+                <div class="hk-tech__badge">05</div>
+                <div class="hk-tech__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="hk-tech__card-body">
+                <h3>Security &amp; Governance</h3>
+                <p>Zero-trust protection, access control, and secure data workflows.</p>
+              </div>
+              <div class="hk-tech__indicator"></div>
+            </div>
+          </div>
+
+          <!-- Right Deep-Tech Interactive Preview Console -->
+          <div class="hk-tech__preview-panel" data-reveal>
+            <div class="hk-tech__console">
+              <div class="hk-tech__console-header">
+                <div class="hk-tech__dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="hk-tech__console-title" id="techPanelTitle">Data &amp; Analytics Framework</span>
+                <span class="hk-tech__console-tag">Active Stack</span>
+              </div>
+
+              <div class="hk-tech__console-body">
+                <div class="hk-tech__metric-row">
+                  <div class="hk-tech__metric">
+                    <span class="hk-tech__metric-val" id="techMetric1">100M+</span>
+                    <span class="hk-tech__metric-label" id="techLabel1">Records Processed / Day</span>
+                  </div>
+                  <div class="hk-tech__metric">
+                    <span class="hk-tech__metric-val" id="techMetric2">&lt; 150ms</span>
+                    <span class="hk-tech__metric-label" id="techLabel2">Query Latency</span>
+                  </div>
+                </div>
+
+                <div class="hk-tech__spec-box">
+                  <h4 id="techSpecHeading">Core Architectural Capabilities</h4>
+                  <ul class="hk-tech__spec-list" id="techSpecList">
+                    <li>Automated ETL/ELT pipelines with schema validation</li>
+                    <li>Interactive multi-dimensional business dashboards</li>
+                    <li>Real-time telemetry and operational anomaly detection</li>
+                  </ul>
+                </div>
+
+                <div class="hk-tech__tags" id="techTags">
+                  <span class="hk-tech__pill">PostgreSQL</span>
+                  <span class="hk-tech__pill">Apache Kafka</span>
+                  <span class="hk-tech__pill">PowerBI &amp; Tableau</span>
+                  <span class="hk-tech__pill">Python Data Pipelines</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOW WE WORK
+    ============================================================= -->
+    <section class="hk-section hk-section--alt" id="how-we-work" aria-labelledby="process-heading">
+      <div class="hk-wrap">
+        <div class="hk-head">
+          <div data-reveal>
+            <p class="hk-eyebrow">How We Work</p>
+            <h2 id="process-heading" class="hk-display hk-h2">
+              A clear path from challenge to improvement.
+            </h2>
+          </div>
+          <p class="hk-lead" data-reveal>
+            A straightforward four-stage approach, so expectations and responsibilities stay
+            clear at every step.
+          </p>
+        </div>
+
+        <div class="hk-process">
+          <div class="hk-process__line" aria-hidden="true"></div>
+          <div class="hk-process__grid">
+            <div class="hk-step" data-reveal>
+              <span class="hk-step__badge">01</span>
+              <h3>Understand</h3>
+              <p>Understand business requirements and challenges.</p>
+            </div>
+            <div class="hk-step" data-reveal>
+              <span class="hk-step__badge">02</span>
+              <h3>Design</h3>
+              <p>Design a solution aligned with business goals.</p>
+            </div>
+            <div class="hk-step" data-reveal>
+              <span class="hk-step__badge">03</span>
+              <h3>Implement</h3>
+              <p>Implement the required process or technology.</p>
+            </div>
+            <div class="hk-step" data-reveal>
+              <span class="hk-step__badge">04</span>
+              <h3>Improve</h3>
+              <p>Continuously monitor, optimize, and improve.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INDUSTRIES
+    ============================================================= -->
+    <section class="hk-section" id="industries" aria-labelledby="industries-heading">
+      <div class="hk-wrap">
+        <div class="hk-ind__grid">
+
+          <div data-reveal>
+            <div class="hk-section-tag">
+              <span class="hk-section-tag__line"></span>
+              <span class="hk-eyebrow" style="margin:0;">Industries</span>
+            </div>
+            <h2 id="industries-heading" class="hk-display hk-h2">
+              Supporting different <span class="hk-highlight-serif">business needs</span>.
+            </h2>
+            <p class="hk-lead" style="margin-bottom: 1.25rem;">
+              Tailored digital infrastructure, structured workflows, and dependable system support engineered for key sectors.
+            </p>
+
+            <div class="hk-ind__cards">
+              <!-- Card 1: Technology -->
+              <div class="hk-ind__card">
+                <div class="hk-ind__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div class="hk-ind__card-body">
+                  <span class="hk-ind__card-title">Technology</span>
+                  <span class="hk-ind__card-desc">SaaS &amp; platform architecture</span>
+                </div>
+              </div>
+
+              <!-- Card 2: E-Commerce -->
+              <div class="hk-ind__card">
+                <div class="hk-ind__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                </div>
+                <div class="hk-ind__card-body">
+                  <span class="hk-ind__card-title">E-Commerce</span>
+                  <span class="hk-ind__card-desc">Storefronts &amp; order flows</span>
+                </div>
+              </div>
+
+              <!-- Card 3: Finance -->
+              <div class="hk-ind__card">
+                <div class="hk-ind__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+                <div class="hk-ind__card-body">
+                  <span class="hk-ind__card-title">Finance</span>
+                  <span class="hk-ind__card-desc">Secure data &amp; compliance tools</span>
+                </div>
+              </div>
+
+              <!-- Card 4: Education -->
+              <div class="hk-ind__card">
+                <div class="hk-ind__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div class="hk-ind__card-body">
+                  <span class="hk-ind__card-title">Education</span>
+                  <span class="hk-ind__card-desc">LMS portals &amp; student systems</span>
+                </div>
+              </div>
+
+              <!-- Card 5: Healthcare -->
+              <div class="hk-ind__card">
+                <div class="hk-ind__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                </div>
+                <div class="hk-ind__card-body">
+                  <span class="hk-ind__card-title">Healthcare</span>
+                  <span class="hk-ind__card-desc">Reliable operations &amp; records</span>
+                </div>
+              </div>
+
+              <!-- Card 6: Retail -->
+              <div class="hk-ind__card">
+                <div class="hk-ind__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <div class="hk-ind__card-body">
+                  <span class="hk-ind__card-title">Retail</span>
+                  <span class="hk-ind__card-desc">Inventory &amp; POS integration</span>
+                </div>
+              </div>
+
+              <!-- Card 7: Professional Services -->
+              <div class="hk-ind__card">
+                <div class="hk-ind__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="hk-ind__card-body">
+                  <span class="hk-ind__card-title">Professional Services</span>
+                  <span class="hk-ind__card-desc">Billing &amp; client workflows</span>
+                </div>
+              </div>
+
+              <!-- Card 8: Startups & SMEs -->
+              <div class="hk-ind__card">
+                <div class="hk-ind__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div class="hk-ind__card-body">
+                  <span class="hk-ind__card-title">Startups &amp; SMEs</span>
+                  <span class="hk-ind__card-desc">Agile launchpads &amp; scale-up</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Showcase Canvas with Overlays -->
+          <div class="hk-ind__showcase" data-reveal>
+            <!-- Floating Live Status -->
+            <div class="hk-ind__float-pill">
+              <span class="hk-ind__float-dot"></span>
+              <span class="hk-ind__float-text">Cross-Industry Operational Reach</span>
+            </div>
+
+            <!-- Framing Visual -->
+            <div class="hk-ind__showcase-frame">
+              <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80"
+                alt="A diverse professional team collaborating in a modern workspace"
+                loading="lazy" width="1000" height="560">
+            </div>
+
+            <!-- Floating Strategic Banner -->
+            <div class="hk-ind__float-banner">
+              <div class="hk-ind__banner-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="hk-ind__banner-info">
+                <span class="hk-ind__banner-title">Industry-Grade Standards</span>
+                <span class="hk-ind__banner-sub">Dependable, compliant execution</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CASE STUDIES
+    ============================================================= -->
+    <section class="hk-section hk-section--alt" id="case-studies" aria-labelledby="cases-heading">
+      <div class="hk-wrap">
+        <!-- Creative Editorial Split Header -->
+        <div class="hk-cases__hero-header" data-reveal>
+          <div class="hk-cases__title-side">
+            <div class="hk-tag-pill">
+              <span class="hk-tag-pill__dot"></span>
+              <span>Our Work &bull; Case Studies</span>
+            </div>
+            <h2 id="cases-heading" class="hk-display hk-h2 hk-cases__title">
+              Real challenges. <br><span class="hk-highlight-gold">Thoughtful solutions.</span>
+            </h2>
+          </div>
+
+          <div class="hk-cases__desc-side">
+            <div class="hk-cases__desc-card">
+              <p>
+                Case studies will be published here once project details have been reviewed and approved for release. 
+                Each entry will document the business challenge, the solution delivered, how it was implemented, 
+                and the verified outcome &mdash; with no estimated or illustrative figures.
+              </p>
+              <div class="hk-cases__status-strip">
+                <span class="hk-badge-pulse"></span>
+                <span>Audit &amp; Outcome Verification In Progress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Connected Methodology Pipeline Layout -->
+        <div class="hk-case-pipeline" data-reveal>
+          <div class="hk-case-pipeline__track">
+            <!-- Connecting glowing gradient line -->
+            <div class="hk-case-pipeline__line" aria-hidden="true"></div>
+
+            <div class="hk-case-pipeline__steps">
+              <!-- Step 01 -->
+              <div class="hk-pipeline-node">
+                <div class="hk-pipeline-node__marker">
+                  <span class="hk-pipeline-node__idx">01</span>
+                  <div class="hk-pipeline-node__dot"></div>
+                </div>
+                <div class="hk-pipeline-node__card">
+                  <div class="hk-pipeline-node__icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                  </div>
+                  <h3>Business Challenge</h3>
+                  <p>Diagnosing root inefficiencies, operational friction, and exact change requirements.</p>
+                  <span class="hk-pipeline-tag">Diagnostic Phase</span>
+                </div>
+              </div>
+
+              <!-- Step 02 -->
+              <div class="hk-pipeline-node">
+                <div class="hk-pipeline-node__marker">
+                  <span class="hk-pipeline-node__idx">02</span>
+                  <div class="hk-pipeline-node__dot"></div>
+                </div>
+                <div class="hk-pipeline-node__card">
+                  <div class="hk-pipeline-node__icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </div>
+                  <h3>Tailored Solution</h3>
+                  <p>Architecting fit-for-purpose software, data workflows, and support systems.</p>
+                  <span class="hk-pipeline-tag">Blueprint &amp; Design</span>
+                </div>
+              </div>
+
+              <!-- Step 03 -->
+              <div class="hk-pipeline-node">
+                <div class="hk-pipeline-node__marker">
+                  <span class="hk-pipeline-node__idx">03</span>
+                  <div class="hk-pipeline-node__dot"></div>
+                </div>
+                <div class="hk-pipeline-node__card">
+                  <div class="hk-pipeline-node__icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <h3>Implementation</h3>
+                  <p>Agile deployment, system integration, rigorous QA, and user onboarding.</p>
+                  <span class="hk-pipeline-tag">Execution &amp; Rollout</span>
+                </div>
+              </div>
+
+              <!-- Step 04 -->
+              <div class="hk-pipeline-node">
+                <div class="hk-pipeline-node__marker">
+                  <span class="hk-pipeline-node__idx">04</span>
+                  <div class="hk-pipeline-node__dot"></div>
+                </div>
+                <div class="hk-pipeline-node__card hk-pipeline-node__card--verified">
+                  <div class="hk-pipeline-node__icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                  <h3>Verified Result</h3>
+                  <p>Real verified KPIs, sustainable efficiency gains, and measurable outcomes.</p>
+                  <span class="hk-pipeline-tag hk-pipeline-tag--gold">Measurable Impact</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hk-cases__cta" data-reveal>
+          <a href="case-studies.html" class="hk-btn hk-btn--ghost">
+            Visit case studies <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CAREERS
+    ============================================================= -->
+    <section class="hk-section" id="careers" aria-labelledby="careers-heading">
+      <div class="hk-wrap">
+        <div class="hk-careers__card" data-reveal>
+          <div class="hk-careers__body">
+            <p class="hk-eyebrow">Careers</p>
+            <h2 id="careers-heading" class="hk-display hk-h2">
+              Build your future with HAKA.
+            </h2>
+            <p>
+              Explore opportunities to learn, contribute, and grow with HAKA SOLUTIONS.
+            </p>
+            <a href="careers.html" class="hk-btn hk-btn--primary">
+              View careers <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div class="hk-careers__img">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80"
+              alt="Professionals working together in a bright collaborative office"
+              loading="lazy" width="900" height="600">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+    ============================================================= -->
+    <section class="hk-cta" id="get-started" aria-labelledby="cta-heading">
+      <div class="hk-wrap">
+        <div class="hk-cta__inner">
+          <h2 id="cta-heading" class="hk-display hk-h2" style="font-size: clamp(2rem, 4vw, 3.5rem);">
+            Let's build something better together.
+          </h2>
+          <p>
+            Tell us about your business requirements and explore how technology, digital
+            operations, and business support solutions may help your organization move forward.
+          </p>
+          <a href="contact.html" class="hk-btn hk-btn--light">
+            Let's talk <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================= -->
+    <section class="hk-section" id="contact" aria-labelledby="contact-heading">
+      <div class="hk-wrap">
+        <div class="hk-contact__grid">
+
+          <div data-reveal>
+            <p class="hk-eyebrow">Get In Touch</p>
+            <h2 id="contact-heading" class="hk-display hk-h2">
+              Let's talk about your requirements.
+            </h2>
+            <p class="hk-lead">
+              Share your requirements with us so we can understand what kind of business support
+              or technology solution you are looking for.
+            </p>
+
+            <div class="hk-contact__aside">
+              <p class="hk-contact__aside-title">It helps to include</p>
+              <ul class="hk-contact__list">
+                <li>The process or challenge you want to improve</li>
+                <li>The areas of your operation that are affected</li>
+                <li>Any timeline or constraints already in place</li>
+              </ul>
+              <p class="hk-contact__aside-note">
+                Prefer to review our details first?
+                <a href="contact.html">See our contact page</a>.
+              </p>
+            </div>
+          </div>
+
+          <div data-reveal>
+            <form id="hk-contact-form" class="hk-form" novalidate>
+
+              <div class="hk-form__row">
+                <div class="hk-field">
+                  <label class="hk-label" for="fullName">
+                    Full Name <span class="hk-req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="hk-input" type="text" id="fullName" name="fullName"
+                         autocomplete="name" required aria-describedby="fullName-error">
+                  <p class="hk-error" id="fullName-error"></p>
+                </div>
+
+                <div class="hk-field">
+                  <label class="hk-label" for="company">Company Name</label>
+                  <input class="hk-input" type="text" id="company" name="company"
+                         autocomplete="organization">
+                  <p class="hk-error" id="company-error"></p>
+                </div>
+              </div>
+
+              <div class="hk-form__row">
+                <div class="hk-field">
+                  <label class="hk-label" for="email">
+                    Email <span class="hk-req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="hk-input" type="email" id="email" name="email" inputmode="email"
+                         autocomplete="email" required aria-describedby="email-error">
+                  <p class="hk-error" id="email-error"></p>
+                </div>
+
+                <div class="hk-field">
+                  <label class="hk-label" for="phone">Phone</label>
+                  <input class="hk-input" type="tel" id="phone" name="phone" inputmode="tel"
+                         autocomplete="tel" aria-describedby="phone-error">
+                  <p class="hk-error" id="phone-error"></p>
+                </div>
+              </div>
+
+              <div class="hk-field">
+                <label class="hk-label" for="service">
+                  Service Required <span class="hk-req" aria-hidden="true">*</span>
+                </label>
+                <select class="hk-select" id="service" name="service" required
+                        aria-describedby="service-error">
+                  <option value="">Select a service</option>
+                  <option value="Business Services">Business Services</option>
+                  <option value="Technology Solutions">Technology Solutions</option>
+                  <option value="Partnership">Partnership</option>
+                  <option value="Career">Career</option>
+                  <option value="General Enquiry">General Enquiry</option>
+                </select>
+                <p class="hk-error" id="service-error"></p>
+              </div>
+
+              <div class="hk-field">
+                <label class="hk-label" for="message">
+                  Message <span class="hk-req" aria-hidden="true">*</span>
+                </label>
+                <textarea class="hk-textarea" id="message" name="message" rows="5" required
+                          aria-describedby="message-error"></textarea>
+                <p class="hk-error" id="message-error"></p>
+              </div>
+
+              <div class="hk-form__actions">
+                <button type="submit" class="hk-btn hk-btn--primary">
+                  Send enquiry <span class="arrow" aria-hidden="true">→</span>
+                </button>
+                <p class="hk-form__note">
+                  This form is validated in your browser only. Nothing is transmitted until it
+                  is connected to an email service or backend.
+                </p>
+              </div>
+
+              <p class="hk-form__status" id="hk-form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="components/header.js"></script>
+  <script src="components/footer.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Inline interactions: reveal, form, 3D parallax -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---- Scroll reveal ---- */
+      var els = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && els.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* ---- Hero 3D parallax ---- */
+      var scene = document.getElementById('heroScene');
+      var hero = document.getElementById('hero');
+      if (scene && hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        hero.addEventListener('mousemove', function (e) {
+          var r = hero.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          scene.style.transform =
+            'rotateY(' + (x * 12) + 'deg) rotateX(' + (-y * 12) + 'deg)';
+        });
+        hero.addEventListener('mouseleave', function () {
+          scene.style.transform = 'rotateY(0) rotateX(0)';
+        });
+      }
+
+      /* ---- Subtle Parallax / Hover depth for 'Who We Are' Dual Collage ---- */
+      var introCollage = document.querySelector('.hk-intro__collage');
+      var introCardSec = document.querySelector('.hk-intro__card--secondary');
+      if (introCollage && introCardSec && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        introCollage.addEventListener('mousemove', function (e) {
+          var rect = introCollage.getBoundingClientRect();
+          var px = (e.clientX - rect.left) / rect.width - 0.5;
+          var py = (e.clientY - rect.top) / rect.height - 0.5;
+          introCardSec.style.transform = 'translate3d(' + (px * 14).toFixed(2) + 'px, ' + (py * 14 - 4).toFixed(2) + 'px, 0) scale(1.02)';
+        });
+        introCollage.addEventListener('mouseleave', function () {
+          introCardSec.style.transform = '';
+        });
+      }
+
+      /* ---- Interactive Technology Console Switcher ---- */
+      var techCards = document.querySelectorAll('.hk-tech__card');
+      var techData = {
+        data: {
+          title: 'Data & Analytics Framework',
+          metric1: '100M+',
+          label1: 'Records Processed / Day',
+          metric2: '< 150ms',
+          label2: 'Query Latency',
+          heading: 'Core Architectural Capabilities',
+          specs: [
+            'Automated ETL/ELT pipelines with schema validation',
+            'Interactive multi-dimensional business dashboards',
+            'Real-time telemetry and operational anomaly detection'
+          ],
+          tags: ['PostgreSQL', 'Apache Kafka', 'PowerBI & Tableau', 'Python Data Pipelines']
+        },
+        cloud: {
+          title: 'Cloud Systems Architecture',
+          metric1: '99.99%',
+          label1: 'High-Availability SLA',
+          metric2: 'Multi-Region',
+          label2: 'Disaster Recovery Failover',
+          heading: 'Cloud Infrastructure Features',
+          specs: [
+            'Elastic Kubernetes container orchestration with auto-scaling',
+            'Distributed microservices with zero single points of failure',
+            'Secure cloud storage & continuous automated backup routines'
+          ],
+          tags: ['AWS / Cloud VPS', 'Docker & Kubernetes', 'Terraform', 'CI/CD Pipelines']
+        },
+        automation: {
+          title: 'Workflow Automation Hub',
+          metric1: '75%',
+          label1: 'Manual Effort Reduction',
+          metric2: '24/7',
+          label2: 'Continuous Bot Operations',
+          heading: 'Automation & Orchestration Suite',
+          specs: [
+            'Cross-platform webhook and API pipeline integrations',
+            'Intelligent RPA bots handling high-volume operational tasks',
+            'Automated exception reporting & alerting workflows'
+          ],
+          tags: ['Node.js Workflows', 'REST & GraphQL APIs', 'RPA Tools', 'Event Sinks']
+        },
+        ai: {
+          title: 'AI & Machine Learning Engine',
+          metric1: '98.4%',
+          label1: 'Predictive Model Accuracy',
+          metric2: 'Real-Time',
+          label2: 'Inference Speed',
+          heading: 'Enterprise AI Implementations',
+          specs: [
+            'Custom fine-tuned LLMs & autonomous enterprise search agents',
+            'Automated document parsing & intelligent OCR categorization',
+            'Predictive business intelligence and forecasting models'
+          ],
+          tags: ['PyTorch', 'HuggingFace', 'FastAPI', 'Vector Databases', 'LangChain']
+        },
+        security: {
+          title: 'Zero-Trust Security & Compliance',
+          metric1: 'Zero',
+          label1: 'Critical Breaches Tolerated',
+          metric2: 'ISO & SOC',
+          label2: 'Audit Compliance Ready',
+          heading: 'Enterprise Governance Controls',
+          specs: [
+            'Strict Role-Based Access Control (RBAC) with MFA enforcement',
+            'End-to-end AES-256 data encryption at rest and in transit',
+            'Continuous automated vulnerability audits & penetration tests'
+          ],
+          tags: ['Zero-Trust', 'OAuth 2.0 / JWT', 'End-to-End Encryption', 'Audit Logging']
+        }
+      };
+
+      if (techCards.length) {
+        techCards.forEach(function (card) {
+          card.addEventListener('click', function () {
+            var key = card.getAttribute('data-tech');
+            var item = techData[key];
+            if (!item) return;
+
+            techCards.forEach(function (c) { c.classList.remove('is-active'); });
+            card.classList.add('is-active');
+
+            var panelTitle = document.getElementById('techPanelTitle');
+            var m1 = document.getElementById('techMetric1');
+            var l1 = document.getElementById('techLabel1');
+            var m2 = document.getElementById('techMetric2');
+            var l2 = document.getElementById('techLabel2');
+            var heading = document.getElementById('techSpecHeading');
+            var specList = document.getElementById('techSpecList');
+            var tagsContainer = document.getElementById('techTags');
+
+            if (panelTitle) panelTitle.textContent = item.title;
+            if (m1) m1.textContent = item.metric1;
+            if (l1) l1.textContent = item.label1;
+            if (m2) m2.textContent = item.metric2;
+            if (l2) l2.textContent = item.label2;
+            if (heading) heading.textContent = item.heading;
+
+            if (specList) {
+              specList.innerHTML = item.specs.map(function (s) {
+                return '<li>' + s + '</li>';
+              }).join('');
+            }
+
+            if (tagsContainer) {
+              tagsContainer.innerHTML = item.tags.map(function (t) {
+                return '<span class="hk-tech__pill">' + t + '</span>';
+              }).join('');
+            }
+          });
+        });
+      }
+      if (!form) return;
+
+      var status = document.getElementById('hk-form-status');
+      var rules = {
+        fullName: { required: true, msg: 'Please enter your full name.' },
+        email:    { required: true, email: true, msg: 'Please enter a valid email address.' },
+        service:  { required: true, msg: 'Please select a service.' },
+        message:  { required: true, msg: 'Please tell us about your requirements.' }
+      };
+
+      function setError(name, msg) {
+        var input = form.elements[name];
+        var err = document.getElementById(name + '-error');
+        if (!input || !err) return;
+        if (msg) {
+          input.classList.add('hk-input-error');
+          input.classList.remove('hk-input-success');
+          input.setAttribute('aria-invalid', 'true');
+          err.textContent = msg;
+        } else {
+          input.classList.remove('hk-input-error');
+          input.classList.add('hk-input-success');
+          input.removeAttribute('aria-invalid');
+          err.textContent = '';
+        }
+      }
+
+      function validateField(name) {
+        var input = form.elements[name];
+        if (!input) return true;
+        var v = (input.value || '').trim();
+        var rule = rules[name];
+        if (!rule) { setError(name, ''); return true; }
+        if (rule.required && !v) { setError(name, rule.msg); return false; }
+        if (rule.email && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+          setError(name, rule.msg); return false;
+        }
+        setError(name, '');
+        return true;
+      }
+
+      Object.keys(rules).forEach(function (name) {
+        var input = form.elements[name];
+        if (input) input.addEventListener('blur', function () { validateField(name); });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var ok = Object.keys(rules).every(function (n) { return validateField(n); });
+        if (!ok) {
+          if (status) {
+            status.textContent = 'Please correct the highlighted fields and try again.';
+            status.className = 'hk-form__status is-error';
+          }
+          var first = form.querySelector('.hk-input-error');
+          if (first) first.focus();
+          return;
+        }
+        if (status) {
+          status.textContent = 'Thank you — your enquiry has been validated locally. Connect this form to an email service or backend to enable delivery.';
+          status.className = 'hk-form__status is-success';
+        }
+        form.reset();
+        form.querySelectorAll('.hk-input-success').forEach(function (el) {
+          el.classList.remove('hk-input-success');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

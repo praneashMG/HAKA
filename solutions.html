@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Solutions | HAKA SOLUTIONS</title>
+  <meta name="description" content="Explore practical, technology-enabled solutions from HAKA SOLUTIONS — designed to support business operations, simplify workflows and address evolving organizational needs.">
+  <meta name="theme-color" content="#183D32">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HAKA SOLUTIONS">
+  <meta property="og:title" content="Solutions | HAKA SOLUTIONS">
+  <meta property="og:description" content="Solutions built around your business. Explore our practical, technology-enabled approach.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/logo/logobg-trimmed.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    
+    /* ============================================================
+       01b. INTERACTIVE 3D EXPANDABLE CARDS (CLICK & HOVER FOCUS)
+       ============================================================ */
+    .hk-sol-card {
+      cursor: pointer;
+      width: 275px;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid rgba(193, 154, 91, 0.4);
+      border-radius: 20px;
+      transition: 
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.3s ease,
+        z-index 0.1s step-start;
+      z-index: 10;
+      outline: none;
+    }
+
+    .hk-sol-card:focus-visible {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(193, 154, 91, 0.5);
+    }
+
+    /* Hidden full content by default */
+    .hk-sol-card__expand-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transform: translateY(10px);
+      transition: 
+        max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .hk-sol-card__spec-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      border-top: 1px dashed var(--line);
+      padding-top: 0.85rem;
+    }
+
+    .hk-sol-card__spec-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.78rem;
+      color: #3C4D47;
+      line-height: 1.5;
+      margin-bottom: 0.4rem;
+    }
+
+    .hk-sol-card__spec-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .hk-sol-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green);
+      padding: 0.4rem 0;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .hk-sol-card__cta:hover {
+      color: var(--gold);
+      gap: 0.65rem;
+    }
+
+    .hk-sol-card__hint {
+      margin-left: auto;
+      font-size: 0.68rem;
+      color: #8C9993;
+      font-weight: 500;
+      transition: opacity 0.2s ease;
+    }
+
+    /* Full card reveal on hover or active click */
+    .hk-sol-card:hover,
+    .hk-sol-card.is-expanded {
+      z-index: 100 !important;
+      animation-play-state: paused !important;
+      background: #FFFFFF !important;
+      border-color: var(--gold) !important;
+      box-shadow: 
+        0 25px 60px -12px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(193, 154, 91, 0.5),
+        0 0 25px rgba(193, 154, 91, 0.18) !important;
+    }
+
+    @media (min-width: 992px) {
+      .hk-sol-card:hover,
+      .hk-sol-card.is-expanded {
+        width: 320px;
+      }
+      .hk-sol-card--1:hover,
+      .hk-sol-card--1.is-expanded {
+        transform: translate3d(0, -10px, 140px) rotateY(0deg) rotateX(0deg) scale(1.06) !important;
+      }
+      .hk-sol-card--2:hover,
+      .hk-sol-card--2.is-expanded {
+        transform: translate3d(0, -15px, 140px) rotateY(0deg) rotateX(0deg) scale(1.06) !important;
+      }
+      .hk-sol-card--3:hover,
+      .hk-sol-card--3.is-expanded {
+        transform: translate3d(0, -10px, 140px) rotateY(0deg) rotateX(0deg) scale(1.06) !important;
+      }
+      .hk-sol-stack__inner:hover .hk-sol-card:not(:hover):not(.is-expanded) {
+        opacity: 0.6;
+        filter: blur(0.5px);
+        transform: scale(0.96);
+      }
+    }
+
+    @media (max-width: 991px) {
+      .hk-sol-card:hover,
+      .hk-sol-card.is-expanded {
+        transform: translateY(-4px) !important;
+      }
+    }
+
+    .hk-sol-card:hover .hk-sol-card__expand-content,
+    .hk-sol-card.is-expanded .hk-sol-card__expand-content {
+      max-height: 260px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hk-sol-card:hover .hk-sol-card__hint,
+    .hk-sol-card.is-expanded .hk-sol-card__hint {
+      opacity: 0;
+    }
+
+    .hk-sol-card:hover .hk-sol-card__icon,
+    .hk-sol-card.is-expanded .hk-sol-card__icon {
+      background: var(--gold);
+      color: #FFFFFF;
+      transform: scale(1.1);
+    }
+
+/* ============================================================
+       HAKA SOLUTIONS — SOLUTIONS PAGE (SINGLE FILE)
+       ============================================================ */
+
+    :root {
+      --green:       #183D32;
+      --green-hover: #122F26;
+      --green-900:   #0E241E;
+      --ivory:       #FAF8F2;
+      --gold:        #C19A5B;
+      --gold-hover:  #AD8649;
+      --warm-grey:   #E7E4DA;
+
+      --surface:     #FFFFFF;
+      --surface-alt: #F4F1E8;
+
+      --text:        #4B514B;
+      --text-muted:  #6B716B;
+
+      --line:        #E0DDD2;
+      --line-strong: #D2CFC3;
+
+      --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Instrument Serif', Georgia, serif;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --header-h: 88px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-h);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--ivory);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.hk-home { padding-top: var(--header-h); }
+
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    ul, ol { list-style: none; }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    ::selection { background: var(--gold); color: var(--green); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---------- HEADER ---------- */
+    .main-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; width: 100%;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 2rem;
+      height: var(--header-h);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .navbar-brand { display: flex; align-items: center; height: 100%; padding: 8px 0; }
+    .brand-logo-img { height: 68px; width: auto; object-fit: contain; display: block; background: transparent; }
+    .nav-container { display: flex; align-items: center; }
+    .nav-menu {
+      display: flex; align-items: center; gap: 0.35rem;
+      padding: 0.35rem 0.5rem;
+      background: #F8F7F2;
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+    }
+    .nav-link {
+      position: relative;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-size: 0.9rem; font-weight: 500;
+      color: #3C4D47;
+      padding: 0.45rem 0.85rem;
+      border-radius: 9999px;
+      transition: all 0.22s var(--ease);
+    }
+    .nav-icon { display: inline-flex; align-items: center; color: #6A7973; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--green); background-color: #ECE7DA; }
+    .nav-link:hover .nav-icon { color: var(--green); }
+    .nav-link.active {
+      color: var(--green); font-weight: 700;
+      background-color: #FFFFFF;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.08);
+    }
+    .nav-link.active .nav-icon { color: var(--gold); }
+    .nav-link.active::after {
+      content: ""; position: absolute;
+      bottom: 3px; left: 50%; transform: translateX(-50%);
+      width: 14px; height: 2px;
+      background-color: var(--gold); border-radius: 2px;
+    }
+    .header-action { display: flex; align-items: center; gap: 1rem; }
+    .nav-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.92rem; font-weight: 600;
+      color: #FFFFFF; background-color: var(--green);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(24, 61, 50, 0.15);
+      transition: all 0.2s ease;
+    }
+    .nav-btn .btn-arrow { transition: transform 0.2s ease; }
+    .nav-btn:hover { background-color: var(--green-hover); box-shadow: 0 4px 12px rgba(24, 61, 50, 0.25); }
+    .nav-btn:hover .btn-arrow { transform: translateX(3px); }
+    .hamburger-btn {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 6px; background: none; border: none; cursor: pointer;
+    }
+    .hamburger-btn span {
+      display: block; width: 24px; height: 2.5px;
+      background-color: var(--green); border-radius: 2px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .main-footer {
+      position: relative;
+      padding: 5rem 2rem 2rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      color: #333;
+      border-top: 1px solid var(--line);
+    }
+    .main-footer::before {
+      content: ""; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--gold) 50%, var(--green) 100%);
+    }
+    .footer-inner {
+      max-width: 1240px; margin: 0 auto 3.5rem;
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.6fr;
+      gap: 3.5rem;
+    }
+    .footer-brand { display: inline-block; margin-bottom: 1.25rem; transition: transform 0.2s ease; }
+    .footer-brand:hover { transform: translateY(-2px); }
+    .footer-logo-img { height: 86px; width: auto; object-fit: contain; display: block; background: transparent; }
+    .brand-desc { max-width: 310px; font-size: 0.92rem; line-height: 1.6; color: #556661; letter-spacing: 0.01em; }
+    .footer-socials { display: flex; gap: 0.65rem; margin-top: 1.4rem; }
+    .social-icon-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      color: var(--green); background: #FFFFFF;
+      border: 1px solid var(--line); border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(24, 61, 50, 0.04);
+      transition: all 0.2s ease;
+    }
+    .social-icon-btn:hover {
+      color: #FFFFFF; background-color: var(--green);
+      border-color: var(--green); transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(24, 61, 50, 0.15);
+    }
+    .col-title {
+      display: inline-block; position: relative;
+      margin-bottom: 1.4rem; padding-bottom: 6px;
+      font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--green);
+    }
+    .col-title::after {
+      content: ""; position: absolute; bottom: 0; left: 0;
+      width: 22px; height: 2px;
+      background-color: var(--gold); border-radius: 2px;
+    }
+    .footer-links li { margin-bottom: 0.85rem; }
+    .footer-links a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.94rem; font-weight: 500; color: #4F5E59;
+      transition: all 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--green); transform: translateX(4px); }
+    .badge-hiring {
+      padding: 2px 7px; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: #8C6629; background: rgba(193, 154, 91, 0.16);
+      border-radius: 12px;
+    }
+    .office-card {
+      padding: 1.25rem 1.4rem;
+      background: #FFFFFF; border: 1px solid var(--line);
+      border-radius: 10px; box-shadow: 0 4px 12px rgba(24, 61, 50, 0.03);
+    }
+    .office-card-row {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.9rem; line-height: 1.5; color: #4F5E59;
+    }
+    .office-card-row:last-child { margin-bottom: 0; padding-top: 0.5rem; border-top: 1px dashed var(--line); }
+    .office-icon { flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+    .office-link { color: var(--green); font-weight: 600; }
+    .office-link:hover { color: var(--gold); text-decoration: underline; }
+    .status-indicator-dot {
+      display: inline-block; flex-shrink: 0;
+      width: 8px; height: 8px; margin-top: 6px; border-radius: 50%;
+      background-color: #27AE60; box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+    }
+    .footer-bottom { padding-top: 2rem; border-top: 1px solid var(--line); }
+    .footer-bottom-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: center; gap: 1rem;
+      font-size: 0.88rem; color: #6C7A75;
+    }
+    .footer-legal { display: flex; align-items: center; gap: 0.85rem; }
+    .footer-legal a { color: #6C7A75; transition: color 0.2s ease; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-legal .sep { font-size: 0.7rem; color: #C5BFB0; }
+
+    /* ---------- LAYOUT ---------- */
+    .hk-wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+    .hk-section { padding: clamp(4rem, 9vw, 8rem) 0; }
+    .hk-section--alt { background: var(--surface-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    /* ---------- TYPOGRAPHY ---------- */
+    .hk-display {
+      font-family: var(--font-display);
+      font-weight: 400; letter-spacing: -0.01em; line-height: 1.04;
+      color: var(--green);
+    }
+    .hk-display em { font-style: italic; color: var(--gold); }
+    .hk-h1 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); }
+    .hk-h2 { font-size: clamp(2rem, 3.6vw, 3rem); margin-bottom: 1.25rem; }
+    .hk-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+    }
+    .hk-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+    .hk-lead {
+      font-size: clamp(1rem, 1.25vw, 1.125rem);
+      line-height: 1.7; color: var(--text-muted); max-width: 52ch;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .hk-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.5rem; padding: 1rem 1.75rem;
+      border-radius: 999px;
+      font-size: 0.9375rem; font-weight: 500;
+      border: 1px solid transparent; cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+    .hk-btn--primary {
+      background: var(--green); color: var(--ivory);
+      box-shadow: 0 12px 24px -8px rgba(24, 61, 50, 0.4);
+    }
+    .hk-btn--primary:hover {
+      background: var(--green-hover); transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(24, 61, 50, 0.5);
+    }
+    .hk-btn--ghost {
+      background: transparent; color: var(--green);
+      border-color: rgba(24, 61, 50, 0.25);
+    }
+    .hk-btn--ghost:hover {
+      background: var(--green); color: var(--ivory);
+      border-color: var(--green); transform: translateY(-2px);
+    }
+    .hk-btn--light { background: var(--ivory); color: var(--green-900); }
+    .hk-btn--light:hover {
+      background: #FFFFFF; transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.3);
+    }
+    .hk-btn--light-outline {
+      background: transparent;
+      color: var(--ivory);
+      border-color: rgba(243, 240, 231, 0.35);
+    }
+    .hk-btn--light-outline:hover {
+      background: rgba(243, 240, 231, 0.1);
+      border-color: var(--ivory);
+      transform: translateY(-2px);
+    }
+    .hk-btn .arrow { transition: transform 0.3s var(--ease); }
+    .hk-btn:hover .arrow { transform: translateX(4px); }
+
+    /* ============================================================
+       01. SOLUTIONS HERO — deep green with floating 3D cards
+       ============================================================ */
+    .hk-sol-hero {
+      position: relative;
+      padding: clamp(4rem, 9vw, 8rem) 0 clamp(5rem, 10vw, 9rem);
+      background: var(--green);
+      color: var(--ivory);
+      overflow: hidden;
+      perspective: 1400px;
+    }
+    .hk-sol-hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.15), transparent 65%);
+      pointer-events: none;
+    }
+    .hk-sol-hero::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.08), transparent 65%);
+      pointer-events: none;
+    }
+    .hk-sol-hero .hk-display { color: var(--ivory); }
+    .hk-sol-hero .hk-eyebrow { color: #D9B679; }
+    .hk-sol-hero .hk-eyebrow::before { background: #D9B679; }
+
+    .hk-sol-hero__grid {
+      position: relative;
+      display: grid; grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 4rem); align-items: center;
+      z-index: 2;
+    }
+    @media (min-width: 1000px) {
+      .hk-sol-hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: clamp(3rem, 5vw, 5rem); }
+    }
+
+    .hk-sol-hero__lead {
+      color: rgba(243, 240, 231, 0.78);
+      max-width: 56ch;
+      margin-bottom: 2.25rem;
+    }
+
+    /* Floating 3D solution cards */
+    .hk-sol-stack {
+      position: relative;
+      height: 540px;
+      transform-style: preserve-3d;
+    }
+
+    .hk-sol-stack__inner {
+      position: absolute; inset: 0;
+      transform-style: preserve-3d;
+      transition: transform 0.4s var(--ease);
+    }
+
+    .hk-sol-stack__halo {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 440px; height: 440px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.22), transparent 65%);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .hk-sol-stack__grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(243, 240, 231, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(243, 240, 231, 0.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 65% 70% at 50% 50%, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 65% 70% at 50% 50%, #000 30%, transparent 75%);
+    }
+
+    /* Floating glass cards in a 3D stack */
+    .hk-sol-card {
+      position: absolute;
+      width: 260px;
+      background: rgba(250, 248, 242, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      border-radius: 20px;
+      padding: 1.5rem 1.4rem;
+      box-shadow:
+        0 30px 60px -20px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+      transform-style: preserve-3d;
+      color: var(--green);
+    }
+
+    @media (min-width: 992px) {
+      .hk-sol-card--1 {
+        top: 8%; left: 0%;
+        transform: translateZ(60px) rotateY(-12deg) rotateX(4deg);
+        animation: hkSolFloat1 7s ease-in-out infinite;
+      }
+      .hk-sol-card--2 {
+        top: 32%; right: 0%;
+        transform: translateZ(40px) rotateY(14deg) rotateX(-3deg);
+        animation: hkSolFloat2 7s ease-in-out infinite;
+        animation-delay: -1.5s;
+      }
+      .hk-sol-card--3 {
+        bottom: 8%; left: 8%;
+        transform: translateZ(20px) rotateY(-8deg) rotateX(2deg);
+        animation: hkSolFloat3 7s ease-in-out infinite;
+        animation-delay: -3s;
+      }
+
+      @keyframes hkSolFloat1 {
+        0%, 100% { transform: translateZ(60px) rotateY(-12deg) rotateX(4deg) translateY(0); }
+        50%      { transform: translateZ(60px) rotateY(-12deg) rotateX(4deg) translateY(-14px); }
+      }
+      @keyframes hkSolFloat2 {
+        0%, 100% { transform: translateZ(40px) rotateY(14deg) rotateX(-3deg) translateY(0); }
+        50%      { transform: translateZ(40px) rotateY(14deg) rotateX(-3deg) translateY(-10px); }
+      }
+      @keyframes hkSolFloat3 {
+        0%, 100% { transform: translateZ(20px) rotateY(-8deg) rotateX(2deg) translateY(0); }
+        50%      { transform: translateZ(20px) rotateY(-8deg) rotateX(2deg) translateY(-12px); }
+      }
+    }
+
+    /* Tablet & Mobile Responsiveness: Convert absolute stack to an elegant responsive grid */
+    @media (max-width: 991px) {
+      .hk-sol-stack {
+        height: auto;
+        margin-top: 1.5rem;
+        transform-style: flat;
+      }
+
+      .hk-sol-stack__inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+        inset: auto;
+        transform: none !important;
+        transform-style: flat;
+      }
+
+      .hk-sol-stack__halo {
+        display: none;
+      }
+
+      .hk-sol-stack__grid {
+        display: none;
+      }
+
+      .hk-sol-card {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        animation: none !important;
+        background: rgba(250, 248, 242, 0.98);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hk-sol-stack__inner {
+        grid-template-columns: 1fr;
+        gap: 1.15rem;
+      }
+      .hk-sol-card {
+        padding: 1.35rem 1.25rem;
+        border-radius: 16px;
+      }
+    }
+
+    .hk-sol-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .hk-sol-card__icon {
+      width: 40px; height: 40px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: var(--green);
+      color: var(--ivory);
+      border-radius: 10px;
+    }
+    .hk-sol-card__num {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .hk-sol-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .hk-sol-card p {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+    .hk-sol-card__footer {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .hk-sol-card__dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: hkPulseGold 2s infinite;
+    }
+    @keyframes hkPulseGold {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    /* ============================================================
+       02. OUR SOLUTION AREAS — 4 tilt cards
+       ============================================================ */
+    .hk-sol-areas {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) { .hk-sol-areas { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-sol-areas { grid-template-columns: repeat(4, 1fr); } }
+
+    .hk-sol-area {
+      position: relative;
+      padding: 2rem 1.75rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+    }
+    .hk-sol-area::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--line);
+      transition: background 0.4s var(--ease);
+    }
+    .hk-sol-area:hover {
+      transform: translateY(-6px) rotateX(2deg) rotateY(-2deg);
+      border-color: rgba(193, 154, 91, 0.45);
+      box-shadow: 0 30px 60px -20px rgba(24, 61, 50, 0.2);
+    }
+    .hk-sol-area:hover::before {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-sol-area__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .hk-sol-area__icon {
+      width: 52px; height: 52px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: var(--green);
+      color: var(--ivory);
+      border-radius: 14px;
+      transition: transform 0.5s var(--ease);
+    }
+    .hk-sol-area:hover .hk-sol-area__icon {
+      transform: rotate(-6deg) scale(1.08);
+    }
+    .hk-sol-area__num {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .hk-sol-area h3 {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .hk-sol-area p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .hk-sol-area__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      width: 100%;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--green);
+      transition: color 0.3s var(--ease);
+    }
+    .hk-sol-area__link span:last-child {
+      transition: transform 0.3s var(--ease);
+    }
+    .hk-sol-area:hover .hk-sol-area__link {
+      color: var(--gold);
+    }
+    .hk-sol-area:hover .hk-sol-area__link span:last-child {
+      transform: translateX(4px);
+    }
+
+    /* ============================================================
+       03. CHALLENGES — split with editorial grid
+       ============================================================ */
+    .hk-challenges__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: start;
+    }
+    @media (min-width: 960px) { .hk-challenges__grid { grid-template-columns: 0.85fr 1.15fr; } }
+
+    .hk-challenges__sticky {
+      align-self: start;
+    }
+    @media (min-width: 960px) {
+      .hk-challenges__sticky {
+        position: sticky;
+        top: calc(var(--header-h) + 2rem);
+      }
+    }
+
+    .hk-challenges__list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hk-challenge-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1.5rem 1.75rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      transition: all 0.4s var(--ease);
+      transform-style: preserve-3d;
+    }
+    .hk-challenge-item:hover {
+      transform: translateX(8px) translateZ(10px);
+      border-color: rgba(193, 154, 91, 0.5);
+      box-shadow: 0 20px 40px -16px rgba(24, 61, 50, 0.16);
+    }
+    .hk-challenge-item__icon {
+      width: 52px; height: 52px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      border-radius: 12px;
+      flex-shrink: 0;
+      transition: all 0.4s var(--ease);
+    }
+    .hk-challenge-item:hover .hk-challenge-item__icon {
+      background: var(--green);
+      color: var(--ivory);
+      transform: rotate(-8deg) scale(1.06);
+    }
+    .hk-challenge-item__content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.01em;
+    }
+    .hk-challenge-item__content p {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       04. HOW WE DELIVER — animated timeline
+       ============================================================ */
+    .hk-deliver__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      position: relative;
+    }
+    @media (min-width: 768px) { .hk-deliver__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-deliver__grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .hk-deliver__line {
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .hk-deliver__line {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: var(--line-strong);
+        overflow: hidden;
+        z-index: 0;
+      }
+      .hk-deliver__line::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: hkLineGrow 2s 0.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      }
+      @keyframes hkLineGrow {
+        to { transform: scaleX(1); }
+      }
+    }
+
+    .hk-deliver-step {
+      position: relative;
+      z-index: 1;
+    }
+    .hk-deliver-step__badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px; height: 64px;
+      margin-bottom: 1.5rem;
+      background: #FFFFFF;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green);
+      box-shadow: 0 4px 14px rgba(24, 61, 50, 0.08);
+      transition: all 0.4s var(--ease);
+    }
+    .hk-deliver-step:hover .hk-deliver-step__badge {
+      background: var(--green);
+      color: var(--ivory);
+      border-color: var(--green);
+      transform: scale(1.06);
+    }
+    .hk-deliver-step h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .hk-deliver-step p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       05. WORKING PRINCIPLES — warm grey background
+       ============================================================ */
+    .hk-principles {
+      background: var(--warm-grey);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hk-principles__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) { .hk-principles__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-principles__grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .hk-principle-card {
+      position: relative;
+      padding: 1.75rem 1.5rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: all 0.4s var(--ease);
+    }
+    .hk-principle-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease);
+    }
+    .hk-principle-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(193, 154, 91, 0.45);
+      box-shadow: 0 20px 40px -16px rgba(24, 61, 50, 0.15);
+    }
+    .hk-principle-card:hover::before {
+      transform: scaleX(1);
+    }
+    .hk-principle-card__icon {
+      width: 44px; height: 44px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      border-radius: 12px;
+      margin-bottom: 1.25rem;
+      transition: all 0.35s var(--ease);
+    }
+    .hk-principle-card:hover .hk-principle-card__icon {
+      background: var(--green);
+      color: var(--ivory);
+      transform: scale(1.08) rotate(-6deg);
+    }
+    .hk-principle-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .hk-principle-card p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       06. FINAL CTA
+       ============================================================ */
+    .hk-cta {
+      position: relative;
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      background: var(--green);
+      color: var(--ivory);
+      text-align: center;
+      overflow: hidden;
+    }
+    .hk-cta::before {
+      content: "";
+      position: absolute;
+      top: -40%; left: 50%;
+      width: 600px; height: 600px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .hk-cta__inner {
+      position: relative;
+      max-width: 720px; margin: 0 auto;
+    }
+    .hk-cta .hk-display { color: var(--ivory); margin-bottom: 1.5rem; }
+    .hk-cta p {
+      max-width: 56ch;
+      margin: 0 auto 2.5rem;
+      font-size: 1.0625rem; line-height: 1.7;
+      color: rgba(243, 240, 231, 0.75);
+    }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    html.js [data-reveal] {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+    html.js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ---------- RESPONSIVE ---------- */
+    /* responsive header delegated to css/style.css */
+      .hamburger-btn { display: flex; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --header-h: 72px; }
+      .header-inner { padding: 0 1rem; }
+      .brand-logo-img { height: 48px; }
+      .footer-logo-img { height: 64px; }
+      .nav-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .main-footer { padding: 3.5rem 1.25rem 1.5rem; }
+      .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+      .hk-sol-card { width: 200px; padding: 1.1rem 1rem; }
+      .hk-sol-card h3 { font-size: 0.875rem; }
+      .hk-sol-card p { font-size: 0.72rem; }
+      .hk-sol-card__icon { width: 32px; height: 32px; }
+      .hk-sol-card--1 { left: -4%; }
+      .hk-sol-card--2 { right: -4%; }
+    }
+
+    /* ---------- REDUCED MOTION ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html.js [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .hk-sol-card { animation: none !important; }
+      .hk-sol-card__dot { animation: none !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="hk-home">
+
+  <!-- Shared header -->
+  <div id="header-placeholder"></div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         01. SOLUTIONS HERO — deep green with floating 3D cards
+         ============================================================= -->
+    <section class="hk-sol-hero" id="sol-hero" aria-labelledby="sol-hero-heading">
+      <div class="hk-wrap">
+        <div class="hk-sol-hero__grid">
+
+          <div data-reveal>
+            <p class="hk-eyebrow">Our Solutions</p>
+
+            <h1 id="sol-hero-heading" class="hk-display hk-h1" style="margin-bottom: 1.5rem;">
+              Solutions built <em>around</em> your business.
+            </h1>
+
+            <p class="hk-lead hk-sol-hero__lead">
+              Explore practical, technology-enabled solutions designed to support business
+              operations, simplify workflows and address evolving organizational needs.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.875rem;">
+              <a href="#solution-areas" class="hk-btn hk-btn--light">
+                Explore solutions <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="contact.html" class="hk-btn hk-btn--light-outline">
+                Contact us
+              </a>
+            </div>
+          </div>
+
+                    <!-- Floating 3D Interactive Expandable Cards -->
+          <div class="hk-sol-stack" aria-hidden="false">
+            <div class="hk-sol-stack__inner" id="solStack">
+              <div class="hk-sol-stack__halo"></div>
+              <div class="hk-sol-stack__grid"></div>
+
+              <!-- Card 1: Digital Operations -->
+              <div class="hk-sol-card hk-sol-card--1" id="solCard1" tabindex="0" role="button" aria-expanded="false" aria-label="Digital Operations Solution Details">
+                <div class="hk-sol-card__head">
+                  <div class="hk-sol-card__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                      <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                      <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path>
+                    </svg>
+                  </div>
+                  <span class="hk-sol-card__num">01</span>
+                </div>
+                <h3>Digital Operations</h3>
+                <p>Structured digital workflows, data verification, and governance.</p>
+
+                <!-- Expanded Content Revealed on Hover/Click -->
+                <div class="hk-sol-card__expand-content">
+                  <ul class="hk-sol-card__spec-list">
+                    <li>Automated data intake &amp; cleansing pipelines</li>
+                    <li>Quality verification &amp; regulatory documentation</li>
+                    <li>Continuous compliance audit reporting</li>
+                  </ul>
+                  <a href="#solution-areas" class="hk-sol-card__cta">
+                    <span>Explore full capability</span>
+                    <span class="arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="hk-sol-card__footer">
+                  <span class="hk-sol-card__dot"></span>
+                  <span class="hk-sol-status-text">Active workflow</span>
+                  <span class="hk-sol-card__hint">Hover / Click to expand</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Business Process -->
+              <div class="hk-sol-card hk-sol-card--2" id="solCard2" tabindex="0" role="button" aria-expanded="false" aria-label="Business Process Support Details">
+                <div class="hk-sol-card__head">
+                  <div class="hk-sol-card__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 11a8 8 0 0 0-13.9-5.4L3 8"></path>
+                      <path d="M3 4v4h4"></path>
+                      <path d="M4 13a8 8 0 0 0 13.9 5.4L21 16"></path>
+                      <path d="M21 20v-4h-4"></path>
+                    </svg>
+                  </div>
+                  <span class="hk-sol-card__num">02</span>
+                </div>
+                <h3>Business Process</h3>
+                <p>Organized recurring operational activities with clear ownership.</p>
+
+                <!-- Expanded Content Revealed on Hover/Click -->
+                <div class="hk-sol-card__expand-content">
+                  <ul class="hk-sol-card__spec-list">
+                    <li>End-to-end SOP standard procedures execution</li>
+                    <li>Streamlined task triage &amp; priority scheduling</li>
+                    <li>Operational bottleneck elimination</li>
+                  </ul>
+                  <a href="#solution-areas" class="hk-sol-card__cta">
+                    <span>Explore full capability</span>
+                    <span class="arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="hk-sol-card__footer">
+                  <span class="hk-sol-card__dot"></span>
+                  <span class="hk-sol-status-text">Process aligned</span>
+                  <span class="hk-sol-card__hint">Hover / Click to expand</span>
+                </div>
+              </div>
+
+              <!-- Card 3: Operational Support -->
+              <div class="hk-sol-card hk-sol-card--3" id="solCard3" tabindex="0" role="button" aria-expanded="false" aria-label="Operational Support Details">
+                <div class="hk-sol-card__head">
+                  <div class="hk-sol-card__icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      <path d="M9 12l2 2 4-4"></path>
+                    </svg>
+                  </div>
+                  <span class="hk-sol-card__num">03</span>
+                </div>
+                <h3>Operational Support</h3>
+                <p>Reliable day-to-day assistance for business-critical activities.</p>
+
+                <!-- Expanded Content Revealed on Hover/Click -->
+                <div class="hk-sol-card__expand-content">
+                  <ul class="hk-sol-card__spec-list">
+                    <li>24/7 technical incident stewardship &amp; escalation</li>
+                    <li>Strict SLA monitoring &amp; proactive system checks</li>
+                    <li>Dedicated team coordination &amp; client communication</li>
+                  </ul>
+                  <a href="#solution-areas" class="hk-sol-card__cta">
+                    <span>Explore full capability</span>
+                    <span class="arrow">&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="hk-sol-card__footer">
+                  <span class="hk-sol-card__dot"></span>
+                  <span class="hk-sol-status-text">Support active</span>
+                  <span class="hk-sol-card__hint">Hover / Click to expand</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02. OUR SOLUTION AREAS
+         ============================================================= -->
+    <section class="hk-section" id="solution-areas" aria-labelledby="areas-heading">
+      <div class="hk-wrap">
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <div>
+            <p class="hk-eyebrow">Our Solution Areas</p>
+            <h2 id="areas-heading" class="hk-display hk-h2">
+              Four areas of <em>practical support.</em>
+            </h2>
+          </div>
+          <p class="hk-lead">
+            Each solution area is shaped around a specific operational requirement, so
+            improvements fit the way your business already works.
+          </p>
+        </div>
+
+        <div class="hk-sol-areas">
+
+          <!-- 01 Digital Operations -->
+          <article class="hk-sol-area" data-reveal>
+            <div class="hk-sol-area__head">
+              <div class="hk-sol-area__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                  <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                  <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path>
+                </svg>
+              </div>
+              <span class="hk-sol-area__num">01</span>
+            </div>
+            <h3>Digital Operations</h3>
+            <p>Support digital workflows, data handling and documentation processes.</p>
+            <a href="contact.html" class="hk-sol-area__link">
+              <span>Discuss this area</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 02 Business Process Solutions -->
+          <article class="hk-sol-area" data-reveal>
+            <div class="hk-sol-area__head">
+              <div class="hk-sol-area__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 11a8 8 0 0 0-13.9-5.4L3 8"></path>
+                  <path d="M3 4v4h4"></path>
+                  <path d="M4 13a8 8 0 0 0 13.9 5.4L21 16"></path>
+                  <path d="M21 20v-4h-4"></path>
+                </svg>
+              </div>
+              <span class="hk-sol-area__num">02</span>
+            </div>
+            <h3>Business Process Solutions</h3>
+            <p>Organize recurring business activities and improve process consistency.</p>
+            <a href="contact.html" class="hk-sol-area__link">
+              <span>Discuss this area</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 03 Technology-Enabled Solutions -->
+          <article class="hk-sol-area" data-reveal>
+            <div class="hk-sol-area__head">
+              <div class="hk-sol-area__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="7" y="7" width="10" height="10" rx="1.5"></rect>
+                  <path d="M4 10h3M4 14h3M17 10h3M17 14h3M10 4v3M14 4v3M10 17v3M14 17v3"></path>
+                </svg>
+              </div>
+              <span class="hk-sol-area__num">03</span>
+            </div>
+            <h3>Technology-Enabled Solutions</h3>
+            <p>Apply suitable technology to address business requirements.</p>
+            <a href="contact.html" class="hk-sol-area__link">
+              <span>Discuss this area</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 04 Operational Support -->
+          <article class="hk-sol-area" data-reveal>
+            <div class="hk-sol-area__head">
+              <div class="hk-sol-area__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M9 12l2 2 4-4"></path>
+                </svg>
+              </div>
+              <span class="hk-sol-area__num">04</span>
+            </div>
+            <h3>Operational Support</h3>
+            <p>Help teams manage day-to-day operational activities and workflows.</p>
+            <a href="contact.html" class="hk-sol-area__link">
+              <span>Discuss this area</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03. CHALLENGES WE HELP ADDRESS
+         ============================================================= -->
+    <section class="hk-section hk-section--alt" id="challenges" aria-labelledby="challenges-heading">
+      <div class="hk-wrap">
+        <div class="hk-challenges__grid">
+
+          <div class="hk-challenges__sticky" data-reveal>
+            <p class="hk-eyebrow">Challenges We Help Address</p>
+            <h2 id="challenges-heading" class="hk-display hk-h2">
+              Turning business challenges into <em>clearer workflows.</em>
+            </h2>
+            <p class="hk-lead">
+              We focus on the practical frictions that slow teams down and make
+              operational work harder than it needs to be.
+            </p>
+          </div>
+
+          <div class="hk-challenges__list">
+
+            <div class="hk-challenge-item" data-reveal>
+              <div class="hk-challenge-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 8v4M12 16h.01"></path>
+                </svg>
+              </div>
+              <div class="hk-challenge-item__content">
+                <h3>Disorganized or repetitive tasks</h3>
+                <p>Clearer steps, defined ownership and less duplicated effort across the team.</p>
+              </div>
+            </div>
+
+            <div class="hk-challenge-item" data-reveal>
+              <div class="hk-challenge-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <div class="hk-challenge-item__content">
+                <h3>Manual data and documentation processes</h3>
+                <p>Structured digital workflows that reduce manual handling and improve consistency.</p>
+              </div>
+            </div>
+
+            <div class="hk-challenge-item" data-reveal>
+              <div class="hk-challenge-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 3H5a2 2 0 0 0-2 2v4"></path>
+                  <path d="M15 3h4a2 2 0 0 1 2 2v4"></path>
+                  <path d="M9 21H5a2 2 0 0 1-2-2v-4"></path>
+                  <path d="M15 21h4a2 2 0 0 0 2-2v-4"></path>
+                  <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+              </div>
+              <div class="hk-challenge-item__content">
+                <h3>Disconnected operational workflows</h3>
+                <p>Better-connected processes so information and tasks flow where they need to go.</p>
+              </div>
+            </div>
+
+            <div class="hk-challenge-item" data-reveal>
+              <div class="hk-challenge-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="hk-challenge-item__content">
+                <h3>Changing business support requirements</h3>
+                <p>Flexible approaches that adapt as operational needs evolve over time.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04. HOW WE DELIVER SOLUTIONS
+         ============================================================= -->
+    <section class="hk-section" id="deliver" aria-labelledby="deliver-heading">
+      <div class="hk-wrap">
+        <div style="max-width: 640px; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <p class="hk-eyebrow">How We Deliver Solutions</p>
+          <h2 id="deliver-heading" class="hk-display hk-h2">
+            From understanding to <em>improvement.</em>
+          </h2>
+          <p class="hk-lead">
+            A straightforward four-stage approach so expectations and responsibilities
+            stay clear at every step.
+          </p>
+        </div>
+
+        <div class="hk-deliver__grid">
+          <div class="hk-deliver__line" aria-hidden="true"></div>
+
+          <div class="hk-deliver-step" data-reveal>
+            <span class="hk-deliver-step__badge">01</span>
+            <h3>Understand</h3>
+            <p>Learn about the business requirement.</p>
+          </div>
+
+          <div class="hk-deliver-step" data-reveal>
+            <span class="hk-deliver-step__badge">02</span>
+            <h3>Plan</h3>
+            <p>Identify a suitable approach and define the scope.</p>
+          </div>
+
+          <div class="hk-deliver-step" data-reveal>
+            <span class="hk-deliver-step__badge">03</span>
+            <h3>Implement</h3>
+            <p>Put the agreed solution into practice.</p>
+          </div>
+
+          <div class="hk-deliver-step" data-reveal>
+            <span class="hk-deliver-step__badge">04</span>
+            <h3>Improve</h3>
+            <p>Review the process and identify opportunities for refinement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05. OUR WORKING PRINCIPLES
+         ============================================================= -->
+    <section class="hk-section hk-principles" id="principles" aria-labelledby="principles-heading">
+      <div class="hk-wrap">
+        <div style="max-width: 640px; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <p class="hk-eyebrow">Our Working Principles</p>
+          <h2 id="principles-heading" class="hk-display hk-h2">
+            A practical approach to <em>business needs.</em>
+          </h2>
+        </div>
+
+        <div class="hk-principles__grid">
+
+          <div class="hk-principle-card" data-reveal>
+            <div class="hk-principle-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </div>
+            <h3>Solutions aligned with requirements</h3>
+            <p>Every approach is shaped around your specific business needs, not a template.</p>
+          </div>
+
+          <div class="hk-principle-card" data-reveal>
+            <div class="hk-principle-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3>Clear communication and collaboration</h3>
+            <p>Open, consistent communication with your team throughout every engagement.</p>
+          </div>
+
+          <div class="hk-principle-card" data-reveal>
+            <div class="hk-principle-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 11a8 8 0 0 0-13.9-5.4L3 8"></path>
+                <path d="M3 4v4h4"></path>
+                <path d="M4 13a8 8 0 0 0 13.9 5.4L21 16"></path>
+                <path d="M21 20v-4h-4"></path>
+              </svg>
+            </div>
+            <h3>Flexible operational support</h3>
+            <p>Support that adjusts as operational priorities shift or scale.</p>
+          </div>
+
+          <div class="hk-principle-card" data-reveal>
+            <div class="hk-principle-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3>Attention to process quality</h3>
+            <p>A disciplined focus on the details that make processes reliable.</p>
+          </div>
+
+          <div class="hk-principle-card" data-reveal>
+            <div class="hk-principle-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <h3>Continuous improvement</h3>
+            <p>Ongoing review and refinement beyond the initial implementation.</p>
+          </div>
+
+          <div class="hk-principle-card" data-reveal>
+            <div class="hk-principle-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>Long-term perspective</h3>
+            <p>A partnership mindset that thinks beyond the immediate engagement.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06. FINAL CTA
+         ============================================================= -->
+    <section class="hk-cta" id="discuss" aria-labelledby="cta-heading">
+      <div class="hk-wrap">
+        <div class="hk-cta__inner">
+          <p class="hk-eyebrow" style="color: #D9B679; justify-content: center;">Let's Find the Right Solution</p>
+          <h2 id="cta-heading" class="hk-display hk-h2" style="font-size: clamp(2rem, 4vw, 3.5rem);">
+            Let's find the right solution for <em>your business.</em>
+          </h2>
+          <p>
+            Have a business requirement to discuss? Connect with HAKA SOLUTIONS to explore
+            an approach suited to your needs.
+          </p>
+          <a href="contact.html" class="hk-btn hk-btn--light">
+            Discuss your requirements <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="components/header.js"></script>
+  <script src="components/footer.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Inline interactions: scroll reveal + 3D parallax + card tilt -->
+  <script>
+    (function () {
+      'use strict';
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---- Scroll reveal ---- */
+      var els = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && els.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* ---- Hero parallax on the 3D card stack ---- */
+      var stack = document.getElementById('solStack');
+      var hero = document.getElementById('sol-hero');
+      if (stack && hero && !reduceMotion) {
+        hero.addEventListener('mousemove', function (e) {
+          var r = hero.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          stack.style.transform =
+            'rotateY(' + (x * 12) + 'deg) rotateX(' + (-y * 12) + 'deg)';
+        });
+        hero.addEventListener('mouseleave', function () {
+          stack.style.transform = 'rotateY(0) rotateX(0)';
+        });
+      }
+
+      /* ---- Framer-style 3D tilt on solution area cards ---- */
+      if (!reduceMotion) {
+        document.querySelectorAll('.hk-sol-area').forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            var px = (e.clientX - rect.left) / rect.width - 0.5;
+            var py = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform =
+              'perspective(1000px) rotateX(' + (-py * 6).toFixed(2) + 'deg) ' +
+              'rotateY(' + (px * 6).toFixed(2) + 'deg) translateY(-6px)';
+          });
+          card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+          });
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var cards = document.querySelectorAll(".hk-sol-card");
+      if (cards.length) {
+        cards.forEach(function (c) {
+          c.addEventListener("click", function (e) {
+            // If user clicked the CTA link inside, let it navigate
+            if (e.target.closest("a")) return;
+
+            var isAlreadyExpanded = c.classList.contains("is-expanded");
+            cards.forEach(function (other) {
+              other.classList.remove("is-expanded");
+              other.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isAlreadyExpanded) {
+              c.classList.add("is-expanded");
+              c.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        // Click outside anywhere in document to collapse active card
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".hk-sol-card")) {
+            cards.forEach(function (c) {
+              c.classList.remove("is-expanded");
+              c.setAttribute("aria-expanded", "false");
+            });
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

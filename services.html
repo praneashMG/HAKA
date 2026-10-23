@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Services | HAKA SOLUTIONS</title>
+  <meta name="description" content="Explore HAKA SOLUTIONS' technology-driven services: data operations, technology solutions, business process support, digital services, custom solutions and ongoing operational support.">
+  <meta name="theme-color" content="#183D32">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HAKA SOLUTIONS">
+  <meta property="og:title" content="Services | HAKA SOLUTIONS">
+  <meta property="og:description" content="Practical solutions. Meaningful progress. Explore our services.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/logo/logobg-trimmed.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    /* ============================================================
+       HAKA SOLUTIONS — SERVICES PAGE (SINGLE FILE)
+       ============================================================ */
+
+    :root {
+      --green:       #183D32;
+      --green-hover: #122F26;
+      --green-900:   #0E241E;
+      --ivory:       #FAF8F2;
+      --gold:        #C19A5B;
+      --gold-hover:  #AD8649;
+      --warm-grey:   #E7E4DA;
+
+      --surface:     #FFFFFF;
+      --surface-alt: #F4F1E8;
+
+      --text:        #4B514B;
+      --text-muted:  #6B716B;
+
+      --line:        #E0DDD2;
+      --line-strong: #D2CFC3;
+
+      --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Instrument Serif', Georgia, serif;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --header-h: 88px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-h);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--ivory);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.hk-home { padding-top: var(--header-h); }
+
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    ul, ol { list-style: none; }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    ::selection { background: var(--gold); color: var(--green); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---------- HEADER ---------- */
+    .main-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; width: 100%;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 2rem;
+      height: var(--header-h);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .navbar-brand { display: flex; align-items: center; height: 100%; padding: 8px 0; }
+    .brand-logo-img { height: 68px; width: auto; object-fit: contain; display: block; background: transparent; }
+    .nav-container { display: flex; align-items: center; }
+    .nav-menu {
+      display: flex; align-items: center; gap: 0.35rem;
+      padding: 0.35rem 0.5rem;
+      background: #F8F7F2;
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+    }
+    .nav-link {
+      position: relative;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-size: 0.9rem; font-weight: 500;
+      color: #3C4D47;
+      padding: 0.45rem 0.85rem;
+      border-radius: 9999px;
+      transition: all 0.22s var(--ease);
+    }
+    .nav-icon { display: inline-flex; align-items: center; color: #6A7973; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--green); background-color: #ECE7DA; }
+    .nav-link:hover .nav-icon { color: var(--green); }
+    .nav-link.active {
+      color: var(--green); font-weight: 700;
+      background-color: #FFFFFF;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.08);
+    }
+    .nav-link.active .nav-icon { color: var(--gold); }
+    .nav-link.active::after {
+      content: ""; position: absolute;
+      bottom: 3px; left: 50%; transform: translateX(-50%);
+      width: 14px; height: 2px;
+      background-color: var(--gold); border-radius: 2px;
+    }
+    .header-action { display: flex; align-items: center; gap: 1rem; }
+    .nav-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.92rem; font-weight: 600;
+      color: #FFFFFF; background-color: var(--green);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(24, 61, 50, 0.15);
+      transition: all 0.2s ease;
+    }
+    .nav-btn .btn-arrow { transition: transform 0.2s ease; }
+    .nav-btn:hover { background-color: var(--green-hover); box-shadow: 0 4px 12px rgba(24, 61, 50, 0.25); }
+    .nav-btn:hover .btn-arrow { transform: translateX(3px); }
+    .hamburger-btn {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 6px; background: none; border: none; cursor: pointer;
+    }
+    .hamburger-btn span {
+      display: block; width: 24px; height: 2.5px;
+      background-color: var(--green); border-radius: 2px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .main-footer {
+      position: relative;
+      padding: 5rem 2rem 2rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      color: #333;
+      border-top: 1px solid var(--line);
+    }
+    .main-footer::before {
+      content: ""; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--gold) 50%, var(--green) 100%);
+    }
+    .footer-inner {
+      max-width: 1240px; margin: 0 auto 3.5rem;
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.6fr;
+      gap: 3.5rem;
+    }
+    .footer-brand { display: inline-block; margin-bottom: 1.25rem; transition: transform 0.2s ease; }
+    .footer-brand:hover { transform: translateY(-2px); }
+    .footer-logo-img { height: 86px; width: auto; object-fit: contain; display: block; background: transparent; }
+    .brand-desc { max-width: 310px; font-size: 0.92rem; line-height: 1.6; color: #556661; letter-spacing: 0.01em; }
+    .footer-socials { display: flex; gap: 0.65rem; margin-top: 1.4rem; }
+    .social-icon-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      color: var(--green); background: #FFFFFF;
+      border: 1px solid var(--line); border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(24, 61, 50, 0.04);
+      transition: all 0.2s ease;
+    }
+    .social-icon-btn:hover {
+      color: #FFFFFF; background-color: var(--green);
+      border-color: var(--green); transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(24, 61, 50, 0.15);
+    }
+    .col-title {
+      display: inline-block; position: relative;
+      margin-bottom: 1.4rem; padding-bottom: 6px;
+      font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--green);
+    }
+    .col-title::after {
+      content: ""; position: absolute; bottom: 0; left: 0;
+      width: 22px; height: 2px;
+      background-color: var(--gold); border-radius: 2px;
+    }
+    .footer-links li { margin-bottom: 0.85rem; }
+    .footer-links a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.94rem; font-weight: 500; color: #4F5E59;
+      transition: all 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--green); transform: translateX(4px); }
+    .badge-hiring {
+      padding: 2px 7px; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: #8C6629; background: rgba(193, 154, 91, 0.16);
+      border-radius: 12px;
+    }
+    .office-card {
+      padding: 1.25rem 1.4rem;
+      background: #FFFFFF; border: 1px solid var(--line);
+      border-radius: 10px; box-shadow: 0 4px 12px rgba(24, 61, 50, 0.03);
+    }
+    .office-card-row {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.9rem; line-height: 1.5; color: #4F5E59;
+    }
+    .office-card-row:last-child { margin-bottom: 0; padding-top: 0.5rem; border-top: 1px dashed var(--line); }
+    .office-icon { flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+    .office-link { color: var(--green); font-weight: 600; }
+    .office-link:hover { color: var(--gold); text-decoration: underline; }
+    .status-indicator-dot {
+      display: inline-block; flex-shrink: 0;
+      width: 8px; height: 8px; margin-top: 6px; border-radius: 50%;
+      background-color: #27AE60; box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+    }
+    .footer-bottom { padding-top: 2rem; border-top: 1px solid var(--line); }
+    .footer-bottom-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: center; gap: 1rem;
+      font-size: 0.88rem; color: #6C7A75;
+    }
+    .footer-legal { display: flex; align-items: center; gap: 0.85rem; }
+    .footer-legal a { color: #6C7A75; transition: color 0.2s ease; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-legal .sep { font-size: 0.7rem; color: #C5BFB0; }
+
+    /* ---------- LAYOUT ---------- */
+    .hk-wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+    .hk-section { padding: clamp(4rem, 9vw, 8rem) 0; }
+    .hk-section--alt { background: var(--surface-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .hk-section--dark {
+      position: relative;
+      background: var(--green);
+      color: var(--ivory);
+      overflow: hidden;
+    }
+
+    /* ---------- TYPOGRAPHY ---------- */
+    .hk-display {
+      font-family: var(--font-display);
+      font-weight: 400; letter-spacing: -0.01em; line-height: 1.04;
+      color: var(--green);
+    }
+    .hk-display em { font-style: italic; color: var(--gold); }
+    .hk-h1 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); }
+    .hk-h2 { font-size: clamp(2rem, 3.6vw, 3rem); margin-bottom: 1.25rem; }
+    .hk-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+    }
+    .hk-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+    .hk-lead {
+      font-size: clamp(1rem, 1.25vw, 1.125rem);
+      line-height: 1.7; color: var(--text-muted); max-width: 52ch;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .hk-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.5rem; padding: 1rem 1.75rem;
+      border-radius: 999px;
+      font-size: 0.9375rem; font-weight: 500;
+      border: 1px solid transparent; cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+    .hk-btn--primary {
+      background: var(--green); color: var(--ivory);
+      box-shadow: 0 12px 24px -8px rgba(24, 61, 50, 0.4);
+    }
+    .hk-btn--primary:hover {
+      background: var(--green-hover); transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(24, 61, 50, 0.5);
+    }
+    .hk-btn--ghost {
+      background: transparent; color: var(--green);
+      border-color: rgba(24, 61, 50, 0.25);
+    }
+    .hk-btn--ghost:hover {
+      background: var(--green); color: var(--ivory);
+      border-color: var(--green); transform: translateY(-2px);
+    }
+    .hk-btn--light { background: var(--ivory); color: var(--green-900); }
+    .hk-btn--light:hover {
+      background: #FFFFFF; transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.3);
+    }
+    .hk-btn .arrow { transition: transform 0.3s var(--ease); }
+    .hk-btn:hover .arrow { transform: translateX(4px); }
+
+    /* ============================================================
+       01. SERVICES HERO — orbit of service chips
+       ============================================================ */
+    .hk-svc-hero {
+      position: relative;
+      padding: clamp(3rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 7rem);
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 10%, rgba(193, 154, 91, 0.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 0% 80%, rgba(24, 61, 50, 0.06), transparent 60%),
+        var(--ivory);
+      overflow: hidden;
+      perspective: 1400px;
+    }
+    .hk-svc-hero__grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 4rem); align-items: center;
+    }
+    @media (min-width: 1000px) {
+      .hk-svc-hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: clamp(3rem, 5vw, 5rem); }
+    }
+
+    /* Orbit visual — services orbiting a core */
+    .hk-orbit-stage {
+      position: relative;
+      height: 540px;
+      transform-style: preserve-3d;
+    }
+    @media (max-width: 999px) { .hk-orbit-stage { height: 440px; } }
+    @media (max-width: 600px) { .hk-orbit-stage { height: 380px; } }
+
+    .hk-orbit-stage__inner {
+      position: absolute; inset: 0;
+      transform-style: preserve-3d;
+      transition: transform 0.4s var(--ease);
+    }
+
+    .hk-orbit-stage__halo {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 440px; height: 440px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.20), transparent 65%);
+      filter: blur(18px);
+      pointer-events: none;
+    }
+
+    .hk-orbit-stage__grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(24, 61, 50, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24, 61, 50, 0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 65% 70% at 50% 50%, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 65% 70% at 50% 50%, #000 30%, transparent 75%);
+    }
+
+    /* Core node */
+    .hk-core {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 140px; height: 140px;
+      margin: -70px 0 0 -70px;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-900) 100%);
+      border-radius: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      color: var(--ivory);
+      box-shadow:
+        0 0 0 1px rgba(193, 154, 91, 0.5),
+        0 30px 60px -20px rgba(24, 61, 50, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transform: rotateX(-8deg) rotateY(12deg);
+      z-index: 3;
+      animation: hkCoreFloat 6s ease-in-out infinite;
+    }
+    @keyframes hkCoreFloat {
+      0%, 100% { transform: rotateX(-8deg) rotateY(12deg) translateY(0); }
+      50%      { transform: rotateX(-8deg) rotateY(12deg) translateY(-10px); }
+    }
+    .hk-core__icon {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(193, 154, 91, 0.2);
+      border-radius: 12px;
+      color: var(--gold);
+    }
+    .hk-core__label {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .hk-core__sub {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Orbiting rings */
+    .hk-orbit-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      border: 1px dashed rgba(24, 61, 50, 0.18);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotateX(72deg);
+      transform-style: preserve-3d;
+      pointer-events: none;
+    }
+    .hk-orbit-ring--1 { width: 340px; height: 340px; animation: hkRingSpin 28s linear infinite; }
+    .hk-orbit-ring--2 { width: 480px; height: 480px; animation: hkRingSpin 42s linear reverse infinite; }
+    .hk-orbit-ring--3 { width: 620px; height: 620px; animation: hkRingSpin 60s linear infinite; }
+    @keyframes hkRingSpin {
+      from { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(0deg); }
+      to   { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(360deg); }
+    }
+
+    /* Orbiting service chips */
+    .hk-orbit-item {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0; height: 0;
+      transform-origin: 0 0;
+      z-index: 2;
+    }
+    .hk-orbit-item--1 { animation: hkOrbitItem1 24s linear infinite; }
+    .hk-orbit-item--2 { animation: hkOrbitItem2 24s linear infinite; animation-delay: -4s; }
+    .hk-orbit-item--3 { animation: hkOrbitItem3 24s linear infinite; animation-delay: -8s; }
+    .hk-orbit-item--4 { animation: hkOrbitItem4 24s linear infinite; animation-delay: -12s; }
+    .hk-orbit-item--5 { animation: hkOrbitItem5 24s linear infinite; animation-delay: -16s; }
+    .hk-orbit-item--6 { animation: hkOrbitItem6 24s linear infinite; animation-delay: -20s; }
+
+    @keyframes hkOrbitItem1 {
+      from { transform: rotateX(72deg) rotateZ(0deg) translateX(200px) rotateZ(0deg) rotateX(-72deg); }
+      to   { transform: rotateX(72deg) rotateZ(360deg) translateX(200px) rotateZ(-360deg) rotateX(-72deg); }
+    }
+    @keyframes hkOrbitItem2 {
+      from { transform: rotateX(72deg) rotateZ(60deg) translateX(200px) rotateZ(-60deg) rotateX(-72deg); }
+      to   { transform: rotateX(72deg) rotateZ(420deg) translateX(200px) rotateZ(-420deg) rotateX(-72deg); }
+    }
+    @keyframes hkOrbitItem3 {
+      from { transform: rotateX(72deg) rotateZ(120deg) translateX(200px) rotateZ(-120deg) rotateX(-72deg); }
+      to   { transform: rotateX(72deg) rotateZ(480deg) translateX(200px) rotateZ(-480deg) rotateX(-72deg); }
+    }
+    @keyframes hkOrbitItem4 {
+      from { transform: rotateX(72deg) rotateZ(180deg) translateX(240px) rotateZ(-180deg) rotateX(-72deg); }
+      to   { transform: rotateX(72deg) rotateZ(540deg) translateX(240px) rotateZ(-540deg) rotateX(-72deg); }
+    }
+    @keyframes hkOrbitItem5 {
+      from { transform: rotateX(72deg) rotateZ(240deg) translateX(240px) rotateZ(-240deg) rotateX(-72deg); }
+      to   { transform: rotateX(72deg) rotateZ(600deg) translateX(240px) rotateZ(-600deg) rotateX(-72deg); }
+    }
+    @keyframes hkOrbitItem6 {
+      from { transform: rotateX(72deg) rotateZ(300deg) translateX(240px) rotateZ(-300deg) rotateX(-72deg); }
+      to   { transform: rotateX(72deg) rotateZ(660deg) translateX(240px) rotateZ(-660deg) rotateX(-72deg); }
+    }
+
+    .hk-orbit-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.95rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: 0 14px 30px -12px rgba(24, 61, 50, 0.22);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green);
+      white-space: nowrap;
+      transform: translate(-50%, -50%);
+    }
+    .hk-orbit-chip__dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ============================================================
+       02. CORE SERVICES — numbered interactive grid
+       ============================================================ */
+    .hk-services__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 768px) { .hk-services__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-services__grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .hk-service-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+    }
+    .hk-service-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--line);
+      transition: background 0.4s var(--ease);
+    }
+    .hk-service-card:hover {
+      transform: translateY(-6px) rotateX(2deg) rotateY(-2deg);
+      border-color: rgba(193, 154, 91, 0.45);
+      box-shadow: 0 30px 60px -20px rgba(24, 61, 50, 0.2);
+    }
+    .hk-service-card:hover::before {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-service-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .hk-service-card__icon {
+      width: 52px; height: 52px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: var(--green);
+      color: var(--ivory);
+      border-radius: 14px;
+      transition: transform 0.5s var(--ease);
+    }
+    .hk-service-card:hover .hk-service-card__icon {
+      transform: rotate(-6deg) scale(1.08);
+    }
+    .hk-service-card__num {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .hk-service-card h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .hk-service-card p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .hk-service-card__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--green);
+      transition: color 0.3s var(--ease);
+    }
+    .hk-service-card__link span:last-child {
+      transition: transform 0.3s var(--ease);
+    }
+    .hk-service-card:hover .hk-service-card__link {
+      color: var(--gold);
+    }
+    .hk-service-card:hover .hk-service-card__link span:last-child {
+      transform: translateX(4px);
+    }
+
+    /* ============================================================
+       03. SOLUTIONS IN ACTION — split editorial
+       ============================================================ */
+    .hk-action__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+    @media (min-width: 960px) { .hk-action__grid { grid-template-columns: 1.1fr 0.9fr; } }
+
+    .hk-action__list {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .hk-action__item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      transition: all 0.35s var(--ease);
+      transform-style: preserve-3d;
+    }
+    .hk-action__item:hover {
+      transform: translateX(8px) translateZ(10px);
+      border-color: rgba(193, 154, 91, 0.5);
+      box-shadow: 0 16px 36px -14px rgba(24, 61, 50, 0.15);
+    }
+    .hk-action__item-num {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 700;
+      min-width: 1.5rem;
+    }
+    .hk-action__item-text {
+      flex-grow: 1;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--green);
+    }
+    .hk-action__item-arrow {
+      color: var(--gold);
+      transition: transform 0.3s var(--ease);
+    }
+    .hk-action__item:hover .hk-action__item-arrow {
+      transform: translateX(4px);
+    }
+
+    .hk-action__img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow:
+        0 32px 70px -20px rgba(24, 61, 50, 0.3),
+        0 0 0 1px rgba(24, 61, 50, 0.08);
+    }
+    .hk-action__img img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: transform 1.2s var(--ease);
+    }
+    .hk-action__img:hover img { transform: scale(1.05); }
+
+    /* ============================================================
+       04. OUR APPROACH — timeline with connecting line
+       ============================================================ */
+    .hk-approach__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      position: relative;
+    }
+    @media (min-width: 768px) { .hk-approach__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-approach__grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .hk-approach__line {
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .hk-approach__line {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: var(--line-strong);
+        overflow: hidden;
+        z-index: 0;
+      }
+      .hk-approach__line::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: hkLineGrow 2s 0.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      }
+      @keyframes hkLineGrow {
+        to { transform: scaleX(1); }
+      }
+    }
+
+    .hk-approach-step {
+      position: relative;
+      z-index: 1;
+    }
+    .hk-approach-step__badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px; height: 64px;
+      margin-bottom: 1.5rem;
+      background: #FFFFFF;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green);
+      box-shadow: 0 4px 14px rgba(24, 61, 50, 0.08);
+      transition: all 0.4s var(--ease);
+    }
+    .hk-approach-step:hover .hk-approach-step__badge {
+      background: var(--green);
+      color: var(--ivory);
+      border-color: var(--green);
+      transform: scale(1.06);
+    }
+    .hk-approach-step h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .hk-approach-step p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       05. WHY CHOOSE HAKA — dark with layered glow
+       ============================================================ */
+    .hk-why {
+      position: relative;
+      padding: clamp(4rem, 9vw, 8rem) 0;
+      background: var(--green);
+      color: var(--ivory);
+      overflow: hidden;
+    }
+    .hk-why::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(193, 154, 91, 0.12), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(193, 154, 91, 0.08), transparent 40%);
+      pointer-events: none;
+    }
+    .hk-why .hk-display,
+    .hk-why .hk-h2 { color: var(--ivory); }
+    .hk-why .hk-eyebrow { color: #D9B679; }
+    .hk-why .hk-eyebrow::before { background: #D9B679; }
+
+    .hk-why__grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-top: 1px solid rgba(243, 240, 231, 0.15);
+    }
+    @media (min-width: 640px) { .hk-why__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-why__grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .hk-why-item {
+      padding: 2rem 2rem 2rem 0;
+      border-bottom: 1px solid rgba(243, 240, 231, 0.15);
+    }
+    @media (min-width: 640px) {
+      .hk-why-item { padding: 2rem; border-right: 1px solid rgba(243, 240, 231, 0.15); }
+      .hk-why-item:nth-child(2n) { border-right: none; }
+    }
+    @media (min-width: 1024px) {
+      .hk-why-item { border-right: 1px solid rgba(243, 240, 231, 0.15); }
+      .hk-why-item:nth-child(2n) { border-right: 1px solid rgba(243, 240, 231, 0.15); }
+      .hk-why-item:nth-child(3n) { border-right: none; }
+    }
+    .hk-why-item::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin-bottom: 1rem;
+      background: var(--gold);
+    }
+    .hk-why-item h3 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--ivory);
+      margin-bottom: 0.5rem;
+    }
+    .hk-why-item p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: rgba(243, 240, 231, 0.7);
+    }
+
+    /* ============================================================
+       06. FINAL CTA
+       ============================================================ */
+    .hk-cta {
+      position: relative;
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      background: var(--green);
+      color: var(--ivory);
+      text-align: center;
+      overflow: hidden;
+    }
+    .hk-cta::before {
+      content: "";
+      position: absolute;
+      top: -40%; left: 50%;
+      width: 600px; height: 600px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .hk-cta__inner {
+      position: relative;
+      max-width: 720px; margin: 0 auto;
+    }
+    .hk-cta .hk-display { color: var(--ivory); margin-bottom: 1.5rem; }
+    .hk-cta p {
+      max-width: 56ch;
+      margin: 0 auto 2.5rem;
+      font-size: 1.0625rem; line-height: 1.7;
+      color: rgba(243, 240, 231, 0.75);
+    }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    html.js [data-reveal] {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+    html.js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ---------- RESPONSIVE ---------- */
+    /* responsive header delegated to css/style.css */
+      .hamburger-btn { display: flex; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --header-h: 72px; }
+      .header-inner { padding: 0 1rem; }
+      .brand-logo-img { height: 48px; }
+      .footer-logo-img { height: 64px; }
+      .nav-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .main-footer { padding: 3.5rem 1.25rem 1.5rem; }
+      .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+      .hk-core { width: 110px; height: 110px; margin: -55px 0 0 -55px; border-radius: 22px; }
+      .hk-core__label { font-size: 1.1rem; }
+      .hk-core__icon { width: 32px; height: 32px; }
+      .hk-orbit-ring--1 { width: 240px; height: 240px; }
+      .hk-orbit-ring--2 { width: 340px; height: 340px; }
+      .hk-orbit-ring--3 { width: 440px; height: 440px; }
+      .hk-orbit-chip { font-size: 0.68rem; padding: 0.4rem 0.75rem; }
+      .hk-orbit-chip__dot { width: 5px; height: 5px; }
+    }
+
+    /* ---------- REDUCED MOTION ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html.js [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .hk-core,
+      .hk-orbit-ring,
+      .hk-orbit-item { animation: none !important; }
+      .hk-orbit-item { display: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="hk-home">
+
+  <!-- Shared header -->
+  <div id="header-placeholder"></div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         01. SERVICES HERO — orbit of service chips
+         ============================================================= -->
+    <section class="hk-svc-hero" id="svc-hero" aria-labelledby="svc-hero-heading">
+      <div class="hk-wrap">
+        <div class="hk-svc-hero__grid">
+
+          <div data-reveal>
+            <p class="hk-eyebrow">Our Services</p>
+
+            <h1 id="svc-hero-heading" class="hk-display hk-h1" style="margin-bottom: 1.5rem;">
+              Practical solutions. <em>Meaningful</em> progress.
+            </h1>
+
+            <p class="hk-lead" style="color: var(--text); margin-bottom: 2.25rem; max-width: 56ch;">
+              Explore technology-driven services, digital operations and business support
+              designed around your organization's needs.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.875rem;">
+              <a href="contact.html" class="hk-btn hk-btn--primary">
+                Discuss your needs <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="solutions.html" class="hk-btn hk-btn--ghost">
+                View solutions
+              </a>
+            </div>
+          </div>
+
+          <!-- Orbit visual -->
+          <div class="hk-orbit-stage" aria-hidden="true">
+            <div class="hk-orbit-stage__inner" id="servicesOrbit">
+              <div class="hk-orbit-stage__halo"></div>
+              <div class="hk-orbit-stage__grid"></div>
+
+              <div class="hk-orbit-ring hk-orbit-ring--1"></div>
+              <div class="hk-orbit-ring hk-orbit-ring--2"></div>
+              <div class="hk-orbit-ring hk-orbit-ring--3"></div>
+
+              <div class="hk-core">
+                <div class="hk-core__icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <span class="hk-core__label">Haka</span>
+                <span class="hk-core__sub">Services</span>
+              </div>
+
+              <div class="hk-orbit-item hk-orbit-item--1">
+                <div class="hk-orbit-chip">
+                  <span class="hk-orbit-chip__dot"></span>Data operations
+                </div>
+              </div>
+              <div class="hk-orbit-item hk-orbit-item--2">
+                <div class="hk-orbit-chip">
+                  <span class="hk-orbit-chip__dot"></span>Technology
+                </div>
+              </div>
+              <div class="hk-orbit-item hk-orbit-item--3">
+                <div class="hk-orbit-chip">
+                  <span class="hk-orbit-chip__dot"></span>Business process
+                </div>
+              </div>
+              <div class="hk-orbit-item hk-orbit-item--4">
+                <div class="hk-orbit-chip">
+                  <span class="hk-orbit-chip__dot"></span>Digital services
+                </div>
+              </div>
+              <div class="hk-orbit-item hk-orbit-item--5">
+                <div class="hk-orbit-chip">
+                  <span class="hk-orbit-chip__dot"></span>Custom builds
+                </div>
+              </div>
+              <div class="hk-orbit-item hk-orbit-item--6">
+                <div class="hk-orbit-chip">
+                  <span class="hk-orbit-chip__dot"></span>Ongoing support
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02. OUR CORE SERVICES
+         ============================================================= -->
+    <section class="hk-section" id="core-services" aria-labelledby="core-heading">
+      <div class="hk-wrap">
+
+        <div class="hk-head" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <div>
+            <p class="hk-eyebrow">Our Core Services</p>
+            <h2 id="core-heading" class="hk-display hk-h2">
+              Services designed around <em>your business.</em>
+            </h2>
+          </div>
+          <p class="hk-lead">
+            Six service areas we apply to address business requirements, improve operational
+            efficiency and support sustainable growth.
+          </p>
+        </div>
+
+        <div class="hk-services__grid">
+
+          <!-- 01 Data & Digital Operations -->
+          <article class="hk-service-card" data-reveal>
+            <div class="hk-service-card__top">
+              <div class="hk-service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                  <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                  <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path>
+                </svg>
+              </div>
+              <span class="hk-service-card__num">01</span>
+            </div>
+            <h3>Data &amp; Digital Operations</h3>
+            <p>
+              Support data processing, verification, documentation and digital operational
+              workflows with a structured approach.
+            </p>
+            <a href="contact.html" class="hk-service-card__link">
+              <span>Discuss this service</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 02 Technology Solutions -->
+          <article class="hk-service-card" data-reveal>
+            <div class="hk-service-card__top">
+              <div class="hk-service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="7" y="7" width="10" height="10" rx="1.5"></rect>
+                  <path d="M4 10h3M4 14h3M17 10h3M17 14h3M10 4v3M14 4v3M10 17v3M14 17v3"></path>
+                </svg>
+              </div>
+              <span class="hk-service-card__num">02</span>
+            </div>
+            <h3>Technology Solutions</h3>
+            <p>
+              Explore technology-enabled approaches designed to address business requirements
+              and improve operational efficiency.
+            </p>
+            <a href="contact.html" class="hk-service-card__link">
+              <span>Discuss this service</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 03 Business Process Support -->
+          <article class="hk-service-card" data-reveal>
+            <div class="hk-service-card__top">
+              <div class="hk-service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 11a8 8 0 0 0-13.9-5.4L3 8"></path>
+                  <path d="M3 4v4h4"></path>
+                  <path d="M4 13a8 8 0 0 0 13.9 5.4L21 16"></path>
+                  <path d="M21 20v-4h-4"></path>
+                </svg>
+              </div>
+              <span class="hk-service-card__num">03</span>
+            </div>
+            <h3>Business Process Support</h3>
+            <p>
+              Organize repetitive activities and operational tasks through clear processes
+              and dependable support.
+            </p>
+            <a href="contact.html" class="hk-service-card__link">
+              <span>Discuss this service</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 04 Digital Services -->
+          <article class="hk-service-card" data-reveal>
+            <div class="hk-service-card__top">
+              <div class="hk-service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                  <path d="M8 20h8M12 16v4"></path>
+                </svg>
+              </div>
+              <span class="hk-service-card__num">04</span>
+            </div>
+            <h3>Digital Services</h3>
+            <p>
+              Support digital workflows and online business activities with practical,
+              technology-enabled services.
+            </p>
+            <a href="contact.html" class="hk-service-card__link">
+              <span>Discuss this service</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 05 Custom Solutions -->
+          <article class="hk-service-card" data-reveal>
+            <div class="hk-service-card__top">
+              <div class="hk-service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </div>
+              <span class="hk-service-card__num">05</span>
+            </div>
+            <h3>Custom Solutions</h3>
+            <p>
+              Identify and develop approaches that align with your organization's specific
+              requirements.
+            </p>
+            <a href="contact.html" class="hk-service-card__link">
+              <span>Discuss this service</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 06 Support & Operations -->
+          <article class="hk-service-card" data-reveal>
+            <div class="hk-service-card__top">
+              <div class="hk-service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M9 12l2 2 4-4"></path>
+                </svg>
+              </div>
+              <span class="hk-service-card__num">06</span>
+            </div>
+            <h3>Support &amp; Operations</h3>
+            <p>
+              Support day-to-day business activities with an emphasis on consistency,
+              communication and continuous improvement.
+            </p>
+            <a href="contact.html" class="hk-service-card__link">
+              <span>Discuss this service</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03. OUR SOLUTIONS IN ACTION
+         ============================================================= -->
+    <section class="hk-section hk-section--alt" id="solutions-action" aria-labelledby="action-heading">
+      <div class="hk-wrap">
+        <div class="hk-action__grid">
+
+          <div data-reveal>
+            <p class="hk-eyebrow">Our Solutions in Action</p>
+            <h2 id="action-heading" class="hk-display hk-h2">
+              Connecting processes, <em>people</em> and technology.
+            </h2>
+            <p class="hk-lead" style="margin-bottom: 0;">
+              Our service areas can work together to support business operations, streamline
+              workflows and address changing organizational requirements.
+            </p>
+
+            <div class="hk-action__list">
+              <div class="hk-action__item">
+                <span class="hk-action__item-num">01</span>
+                <span class="hk-action__item-text">Data handling and digital workflows</span>
+                <span class="hk-action__item-arrow" aria-hidden="true">→</span>
+              </div>
+              <div class="hk-action__item">
+                <span class="hk-action__item-num">02</span>
+                <span class="hk-action__item-text">Business process organization</span>
+                <span class="hk-action__item-arrow" aria-hidden="true">→</span>
+              </div>
+              <div class="hk-action__item">
+                <span class="hk-action__item-num">03</span>
+                <span class="hk-action__item-text">Technology-enabled operations</span>
+                <span class="hk-action__item-arrow" aria-hidden="true">→</span>
+              </div>
+              <div class="hk-action__item">
+                <span class="hk-action__item-num">04</span>
+                <span class="hk-action__item-text">Workflow improvement and automation</span>
+                <span class="hk-action__item-arrow" aria-hidden="true">→</span>
+              </div>
+              <div class="hk-action__item">
+                <span class="hk-action__item-num">05</span>
+                <span class="hk-action__item-text">Flexible operational support</span>
+                <span class="hk-action__item-arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hk-action__img" data-reveal>
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80"
+              alt="A team collaborating on digital operations in a bright modern workspace"
+              loading="lazy" width="1000" height="500">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04. OUR APPROACH
+         ============================================================= -->
+    <section class="hk-section" id="approach" aria-labelledby="approach-heading">
+      <div class="hk-wrap">
+        <div style="max-width: 640px; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <p class="hk-eyebrow">Our Approach</p>
+          <h2 id="approach-heading" class="hk-display hk-h2">
+            From <em>understanding</em> to improvement.
+          </h2>
+          <p class="hk-lead">
+            A straightforward four-stage approach so expectations and responsibilities
+            stay clear at every step.
+          </p>
+        </div>
+
+        <div class="hk-approach__grid">
+          <div class="hk-approach__line" aria-hidden="true"></div>
+
+          <div class="hk-approach-step" data-reveal>
+            <span class="hk-approach-step__badge">01</span>
+            <h3>Understand</h3>
+            <p>Learn about your business needs and challenges.</p>
+          </div>
+
+          <div class="hk-approach-step" data-reveal>
+            <span class="hk-approach-step__badge">02</span>
+            <h3>Plan</h3>
+            <p>Identify a suitable approach and define the requirements.</p>
+          </div>
+
+          <div class="hk-approach-step" data-reveal>
+            <span class="hk-approach-step__badge">03</span>
+            <h3>Implement</h3>
+            <p>Put the agreed solution or workflow into practice.</p>
+          </div>
+
+          <div class="hk-approach-step" data-reveal>
+            <span class="hk-approach-step__badge">04</span>
+            <h3>Improve</h3>
+            <p>Identify opportunities for ongoing refinement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05. WHY CHOOSE HAKA SOLUTIONS
+         ============================================================= -->
+    <section class="hk-why" id="why-choose" aria-labelledby="why-heading">
+      <div class="hk-wrap">
+        <div style="max-width: 640px; margin-bottom: 3rem;" data-reveal>
+          <p class="hk-eyebrow">Why Choose HAKA Solutions</p>
+          <h2 id="why-heading" class="hk-display hk-h2">
+            A practical partner for <em>your business.</em>
+          </h2>
+        </div>
+
+        <div class="hk-why__grid">
+          <div class="hk-why-item" data-reveal>
+            <h3>Aligned to your requirements</h3>
+            <p>Solutions shaped around your specific business requirements and operational realities.</p>
+          </div>
+          <div class="hk-why-item" data-reveal>
+            <h3>Dependable operational support</h3>
+            <p>A focus on dependable operational support that holds as your business grows.</p>
+          </div>
+          <div class="hk-why-item" data-reveal>
+            <h3>Flexible approaches</h3>
+            <p>Flexible approaches that adapt to changing organizational needs.</p>
+          </div>
+          <div class="hk-why-item" data-reveal>
+            <h3>Process quality &amp; security</h3>
+            <p>Attention to process quality and security throughout every engagement.</p>
+          </div>
+          <div class="hk-why-item" data-reveal>
+            <h3>Commitment to improvement</h3>
+            <p>A commitment to continuous improvement that extends beyond implementation.</p>
+          </div>
+          <div class="hk-why-item" data-reveal>
+            <h3>Long-term partnership</h3>
+            <p>A partnership mindset focused on building lasting business relationships.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06. FINAL CTA
+         ============================================================= -->
+    <section class="hk-cta" id="work-together" aria-labelledby="cta-heading">
+      <div class="hk-wrap">
+        <div class="hk-cta__inner">
+          <p class="hk-eyebrow" style="color: #D9B679; justify-content: center;">Let's Work Together</p>
+          <h2 id="cta-heading" class="hk-display hk-h2" style="font-size: clamp(2rem, 4vw, 3.5rem);">
+            Looking for the <em>right</em> business solution?
+          </h2>
+          <p>
+            Tell us about your requirements. Let's discuss the services and support that
+            may suit your business.
+          </p>
+          <a href="contact.html" class="hk-btn hk-btn--light">
+            Contact us <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="components/header.js"></script>
+  <script src="components/footer.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Inline interactions: scroll reveal + 3D parallax + service card tilt -->
+  <script>
+    (function () {
+      'use strict';
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---- Scroll reveal ---- */
+      var els = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && els.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* ---- Hero parallax on orbit stage ---- */
+      var orbit = document.getElementById('servicesOrbit');
+      var hero = document.getElementById('svc-hero');
+      if (orbit && hero && !reduceMotion) {
+        hero.addEventListener('mousemove', function (e) {
+          var r = hero.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          orbit.style.transform =
+            'rotateY(' + (x * 12) + 'deg) rotateX(' + (-y * 12) + 'deg)';
+        });
+        hero.addEventListener('mouseleave', function () {
+          orbit.style.transform = 'rotateY(0) rotateX(0)';
+        });
+      }
+
+      /* ---- Framer-style 3D tilt on service cards ---- */
+      if (!reduceMotion) {
+        document.querySelectorAll('.hk-service-card').forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            var px = (e.clientX - rect.left) / rect.width - 0.5;
+            var py = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform =
+              'perspective(1000px) rotateX(' + (-py * 6).toFixed(2) + 'deg) ' +
+              'rotateY(' + (px * 6).toFixed(2) + 'deg) translateY(-6px)';
+          });
+          card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,3136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | HAKA SOLUTIONS</title>
+  <meta name="description" content="Build your future with HAKA SOLUTIONS. Explore opportunities to learn, contribute and grow while working on business, digital and technology-driven activities.">
+  <meta name="theme-color" content="#183D32">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HAKA SOLUTIONS">
+  <meta property="og:title" content="Careers | HAKA SOLUTIONS">
+  <meta property="og:description" content="Build your future with HAKA SOLUTIONS. Explore opportunities to learn, contribute and grow.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/logo/logobg-trimmed.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+         
+    /* ============================================================
+       01. 3D FLOATING MONUMENT HERO (EXACT SAME ARTISTIC STYLE)
+       ============================================================ */
+    .hk-careers-hero-monument {
+      position: relative;
+      padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(3.5rem, 7vw, 6rem);
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 10%, rgba(193, 154, 91, 0.12), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 0% 80%, rgba(24, 61, 50, 0.06), transparent 60%),
+        linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hk-careers-hero__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 4rem);
+      align-items: center;
+    }
+    @media (min-width: 1000px) {
+      .hk-careers-hero__grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(3rem, 5vw, 5rem);
+      }
+    }
+
+    .hk-highlight-gold {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    /* 3D floating word-block monument */
+    .hk-monument {
+      position: relative;
+      height: 520px;
+      transform-style: preserve-3d;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    @media (max-width: 999px) { 
+      .hk-monument { 
+        height: 400px;
+        max-width: 440px;
+      } 
+    }
+    @media (max-width: 600px) { 
+      .hk-monument { 
+        height: 330px;
+        max-width: 320px;
+      } 
+    }
+
+    .hk-monument__inner {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hk-monument__halo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 440px;
+      height: 440px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.22), transparent 65%);
+      filter: blur(24px);
+      pointer-events: none;
+    }
+
+    .hk-monument__grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(24, 61, 50, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24, 61, 50, 0.06) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 65% 70% at 50% 50%, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 65% 70% at 50% 50%, #000 30%, transparent 75%);
+    }
+
+    .hk-monument__stone {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 180px;
+      height: 180px;
+      transform: translate(-50%, -50%) rotateX(-22deg) rotateY(28deg);
+      transform-style: preserve-3d;
+      animation: hkStoneSpin 24s linear infinite;
+    }
+    @keyframes hkStoneSpin {
+      from { transform: translate(-50%, -50%) rotateX(-22deg) rotateY(0deg); }
+      to   { transform: translate(-50%, -50%) rotateX(-22deg) rotateY(360deg); }
+    }
+
+    .hk-monument__face {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F2 100%);
+      border: 1px solid rgba(193, 154, 91, 0.45);
+      box-shadow:
+        inset 0 0 60px rgba(193, 154, 91, 0.10),
+        0 20px 40px -20px rgba(24, 61, 50, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--green);
+      border-radius: 8px;
+    }
+    .hk-monument__face svg { color: var(--gold); }
+    .hk-monument__face span {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    .hk-monument__face--front  { transform: translateZ(90px); }
+    .hk-monument__face--back   { transform: rotateY(180deg) translateZ(90px); }
+    .hk-monument__face--right  { transform: rotateY(90deg)  translateZ(90px); }
+    .hk-monument__face--left   { transform: rotateY(-90deg) translateZ(90px); }
+    .hk-monument__face--top    { transform: rotateX(90deg)  translateZ(90px); }
+    .hk-monument__face--bottom { transform: rotateX(-90deg) translateZ(90px); }
+
+    /* Orbiting floating pills around monument */
+    .hk-pill-float {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.65rem 1.15rem;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: 0 14px 30px -12px rgba(24, 61, 50, 0.22);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--green);
+      white-space: nowrap;
+      transition: transform 0.4s var(--ease);
+    }
+    .hk-pill-float__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .hk-pill-float {
+      z-index: 50;
+      transform: translateZ(120px);
+    }
+    .hk-pill-float {
+      z-index: 100;
+      transform: translateZ(180px);
+      pointer-events: auto;
+    }
+    .hk-pill-float--1 { top: 4%;  left: 2%;   animation: hkPillFloat1 7s ease-in-out infinite; }
+    .hk-pill-float--2 { top: 12%; right: -2%; animation: hkPillFloat2 7s ease-in-out -1.5s infinite; }
+    .hk-pill-float--3 { bottom: 14%; left: -6%; animation: hkPillFloat3 7s ease-in-out -3s infinite; }
+    .hk-pill-float--4 { bottom: 2%; right: 4%;  animation: hkPillFloat4 7s ease-in-out -4.5s infinite; }
+    @keyframes hkPillFloat1 {
+      0%, 100% { transform: translateZ(180px) translateY(0) rotate(-0.5deg); }
+      50%      { transform: translateZ(180px) translateY(-10px) rotate(0.5deg); }
+    }
+    @keyframes hkPillFloat2 {
+      0%, 100% { transform: translateZ(180px) translateY(0) rotate(0.5deg); }
+      50%      { transform: translateZ(180px) translateY(-10px) rotate(-0.5deg); }
+    }
+    @keyframes hkPillFloat3 {
+      0%, 100% { transform: translateZ(180px) translateY(0) rotate(-0.5deg); }
+      50%      { transform: translateZ(180px) translateY(-10px) rotate(0.5deg); }
+    }
+    @keyframes hkPillFloat4 {
+      0%, 100% { transform: translateZ(180px) translateY(0) rotate(0.5deg); }
+      50%      { transform: translateZ(180px) translateY(-10px) rotate(-0.5deg); }
+    }
+    @media (max-width: 1200px) {
+      .hk-pill-float--2 { right: 0; }
+      .hk-pill-float--3 { left: 0; }
+    }
+    @media (max-width: 600px) {
+      .hk-pill-float { font-size: 0.72rem; padding: 0.5rem 0.85rem; }
+      .hk-pill-float--1 { top: 2%; left: 0; }
+      .hk-pill-float--2 { top: 18%; right: 0; }
+      .hk-pill-float--3 { bottom: 18%; left: 0; }
+      .hk-pill-float--4 { bottom: 2%; right: 0; }
+    }
+
+    /* Rotating accent rings */
+    .hk-monument__ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 1px dashed rgba(24, 61, 50, 0.18);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotateX(72deg);
+      transform-style: preserve-3d;
+      pointer-events: none;
+    }
+    .hk-monument__ring--1 { width: 340px; height: 340px; animation: hkRingSpin 30s linear infinite; }
+    .hk-monument__ring--2 { width: 480px; height: 480px; animation: hkRingSpin 45s linear reverse infinite; }
+    .hk-monument__ring--3 { width: 620px; height: 620px; animation: hkRingSpin 60s linear infinite; }
+
+    @media (max-width: 999px) {
+      .hk-monument__ring--1 { width: 280px; height: 280px; }
+      .hk-monument__ring--2 { width: 380px; height: 380px; }
+      .hk-monument__ring--3 { width: 460px; height: 460px; }
+      .hk-monument__halo { width: 340px; height: 340px; }
+    }
+    @media (max-width: 600px) {
+      .hk-monument__ring--1 { width: 220px; height: 220px; }
+      .hk-monument__ring--2 { width: 290px; height: 290px; }
+      .hk-monument__ring--3 { display: none; }
+      .hk-monument__halo { width: 260px; height: 260px; }
+      .hk-monument__stone { width: 140px; height: 140px; }
+      .hk-monument__face { width: 140px; height: 140px; border-radius: 6px; }
+      .hk-monument__face span { font-size: 1.2rem; }
+      .hk-monument__face svg { width: 22px; height: 22px; }
+      .hk-monument__face--front  { transform: translateZ(70px); }
+      .hk-monument__face--back   { transform: rotateY(180deg) translateZ(70px); }
+      .hk-monument__face--right  { transform: rotateY(90deg)  translateZ(70px); }
+      .hk-monument__face--left   { transform: rotateY(-90deg) translateZ(70px); }
+      .hk-monument__face--top    { transform: rotateX(90deg)  translateZ(70px); }
+      .hk-monument__face--bottom { transform: rotateX(-90deg) translateZ(70px); }
+    }
+    @keyframes hkRingSpin {
+      from { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(0deg); }
+      to   { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(360deg); }
+    }
+
+    /* Orbiting gold sphere */
+    .hk-monument__orbiter {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 18px;
+      margin: -9px 0 0 -9px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #E2C08D, #AD8649);
+      box-shadow: 0 0 24px rgba(193, 154, 91, 0.7);
+      animation: hkOrbiter 12s linear infinite;
+    }
+    @keyframes hkOrbiter {
+      from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
+      to   { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+    }
+
+/* ============================================================
+       01. EXECUTIVE CAREERS PORTAL HERO (LIGHT, CRISP & MODERN)
+       ============================================================ */
+    .hk-careers-portal-hero {
+      position: relative;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 65%, #FFFFFF 100%);
+      padding: clamp(3.5rem, 6vw, 5.5rem) 0 4.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hk-portal-hero__intro {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .hk-portal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.1rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(24, 61, 50, 0.04);
+    }
+
+    .hk-portal-badge__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hk-portal-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--green);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hk-portal-hero__title .hk-highlight-gold {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hk-portal-hero__lead {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 740px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hk-portal-hero__actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hk-portal-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 9999px;
+      background: var(--green);
+      color: #FFFFFF !important;
+      font-size: 0.96rem;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(24, 61, 50, 0.2);
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .hk-portal-btn-primary:hover {
+      background: var(--green-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(24, 61, 50, 0.3);
+    }
+
+    .hk-portal-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.9rem 2.2rem;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      color: var(--green) !important;
+      font-size: 0.96rem;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.04);
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .hk-portal-btn-secondary:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(24, 61, 50, 0.08);
+    }
+
+    /* Bento Cards Grid */
+    .hk-portal-bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .hk-portal-bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .hk-portal-bento-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.25rem 1.85rem;
+      box-shadow: 0 4px 18px rgba(24, 61, 50, 0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hk-portal-bento-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--line);
+      transition: background 0.3s ease;
+    }
+
+    .hk-portal-bento-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(193, 154, 91, 0.5);
+      box-shadow: 0 18px 40px -10px rgba(24, 61, 50, 0.12);
+    }
+
+    .hk-portal-bento-card:hover::before {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-portal-bento-card--featured {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      border-color: rgba(193, 154, 91, 0.38);
+    }
+
+    .hk-portal-bento-card--featured::before {
+      background: var(--gold);
+    }
+
+    .hk-bento-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.35rem;
+    }
+
+    .hk-bento-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .hk-portal-bento-card:hover .hk-bento-icon {
+      background: var(--green);
+      color: #FFFFFF;
+      transform: scale(1.08);
+    }
+
+    .hk-bento-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: #FAF8F2;
+      border: 1px solid var(--line);
+      color: #6C7A75;
+    }
+
+    .hk-bento-badge--gold {
+      background: rgba(193, 154, 91, 0.16);
+      color: #8C6629;
+      border-color: rgba(193, 154, 91, 0.3);
+    }
+
+    .hk-portal-bento-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    .hk-portal-bento-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .hk-bento-footer {
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .hk-tech-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--green);
+      background: #FAF8F2;
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      display: inline-block;
+      border: 1px solid var(--line);
+    }
+
+    /* KPI Bar */
+    .hk-portal-kpi-bar {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.8rem 2.2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      box-shadow: 0 4px 18px rgba(24, 61, 50, 0.04);
+    }
+
+    @media (min-width: 768px) {
+      .hk-portal-kpi-bar {
+        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .hk-portal-kpi {
+      text-align: center;
+    }
+
+    .kpi-num {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--green);
+      display: block;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    .hk-portal-kpi-sep {
+      display: none;
+      width: 1px;
+      height: 40px;
+      background: var(--line);
+    }
+
+    @media (min-width: 768px) {
+      .hk-portal-kpi-sep { display: block; }
+    }
+
+/* ============================================================
+       01. 3D ISOMETRIC / SPATIAL HERO ENGINE
+       ============================================================ */
+    .hk-careers-hero {
+      position: relative;
+      padding: clamp(5rem, 9vw, 8rem) 0 clamp(5rem, 10vw, 9rem);
+      background: linear-gradient(135deg, #102B23 0%, var(--green) 50%, #15382E 100%);
+      color: var(--ivory);
+      overflow: hidden;
+      perspective: 1600px;
+    }
+
+    .hk-careers-hero::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 750px;
+      height: 750px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.22) 0%, rgba(24, 61, 50, 0.05) 50%, transparent 75%);
+      pointer-events: none;
+      filter: blur(40px);
+    }
+
+    .hk-careers-3d-stage {
+      position: relative;
+      perspective: 1400px;
+      padding: 1.5rem 0.5rem;
+    }
+
+    .hk-3d-scene {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    /* Ambient spatial 3D grid plane in background */
+    .hk-3d-grid-plane {
+      position: absolute;
+      inset: -20px;
+      background-image: 
+        linear-gradient(to right, rgba(193, 154, 91, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(193, 154, 91, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+      transform: translateZ(-60px) rotateX(12deg);
+      border-radius: 32px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    /* Main 3D Card */
+    .hk-3d-card--main {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      transform: translateZ(0);
+      box-shadow: 
+        0 40px 90px -25px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(193, 154, 91, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      transition: box-shadow 0.5s ease;
+    }
+
+    .hk-3d-card__media {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hk-3d-card__media img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+      transition: transform 1.2s var(--ease), filter 0.6s var(--ease);
+    }
+
+    .hk-3d-card--main:hover .hk-3d-card__media img {
+      transform: scale(1.05);
+    }
+
+    .hk-3d-card__glass-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(16, 43, 35, 0.45) 100%);
+      pointer-events: none;
+    }
+
+    .hk-3d-live-badge {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      background: rgba(16, 43, 35, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 9999px;
+      color: #FFFFFF;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    /* 3D Floating Layers (True spatial depth translateZ) */
+    .hk-3d-layer {
+      position: absolute;
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(193, 154, 91, 0.38);
+      border-radius: 18px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      color: var(--green);
+    }
+
+    /* Top Left: Hiring Widget */
+    .hk-3d-layer--top {
+      top: -1.25rem;
+      left: -1rem;
+      padding: 0.85rem 1.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      transform: translateZ(55px);
+      animation: hk3dFloatTop 6s ease-in-out infinite;
+    }
+
+    @keyframes hk3dFloatTop {
+      0%, 100% { transform: translateZ(55px) translateY(0); }
+      50% { transform: translateZ(55px) translateY(-8px); }
+    }
+
+    .hk-3d-icon-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--green);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hk-3d-widget-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .hk-3d-widget-val {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .hk-3d-widget-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Top Right: Metric Chip */
+    .hk-3d-layer--metric {
+      top: 1rem;
+      right: -1.25rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transform: translateZ(40px);
+      animation: hk3dFloatMetric 5.5s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes hk3dFloatMetric {
+      0%, 100% { transform: translateZ(40px) translateY(0); }
+      50% { transform: translateZ(40px) translateY(-7px); }
+    }
+
+    .hk-3d-badge-pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 3px rgba(193, 154, 91, 0.3);
+      animation: hkPulseGold 2s infinite;
+    }
+
+    /* Bottom Left: Culture Stats Card */
+    .hk-3d-layer--bottom {
+      bottom: -1.25rem;
+      left: 1.5rem;
+      padding: 0.95rem 1.5rem;
+      transform: translateZ(65px);
+      animation: hk3dFloatBottom 6.5s ease-in-out infinite 1s;
+    }
+
+    @keyframes hk3dFloatBottom {
+      0%, 100% { transform: translateZ(65px) translateY(0); }
+      50% { transform: translateZ(65px) translateY(-9px); }
+    }
+
+    .hk-3d-culture-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .hk-3d-culture-stat {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .stat-txt {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .hk-3d-culture-divider {
+      width: 1px;
+      height: 32px;
+      background: var(--line);
+    }
+
+    /* Bottom Right: Pill */
+    .hk-3d-layer--pill {
+      bottom: 2.25rem;
+      right: -1rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transform: translateZ(50px);
+      animation: hk3dFloatPill 5s ease-in-out infinite 1.5s;
+    }
+
+    @keyframes hk3dFloatPill {
+      0%, 100% { transform: translateZ(50px) translateY(0); }
+      50% { transform: translateZ(50px) translateY(-8px); }
+    }
+
+    .hk-3d-gold-spark {
+      color: var(--gold);
+      font-size: 1.2rem;
+      line-height: 0;
+    }
+
+/* ============================================================
+       03. VERIFIED JOB OPENINGS (BLUEPRINT SPECIFICATION)
+       ============================================================ */
+    .hk-openings__header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .hk-eyebrow-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.95rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.04);
+    }
+
+    .hk-eyebrow-badge__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hk-openings__title {
+      font-size: clamp(2.2rem, 3.8vw, 3rem);
+      line-height: 1.15;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .hk-openings__subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    /* Category Filter Buttons */
+    .hk-openings__filters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .hk-filter-btn {
+      padding: 0.55rem 1.25rem;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      color: #4F5E59;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.03);
+    }
+
+    .hk-filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--green);
+    }
+
+    .hk-filter-btn.is-active {
+      background: var(--green);
+      color: #FFFFFF;
+      border-color: var(--green);
+      box-shadow: 0 4px 14px rgba(24, 61, 50, 0.2);
+    }
+
+    /* Cards Grid */
+    .hk-openings__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .hk-openings__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .hk-job-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.25rem;
+      box-shadow: 0 4px 18px rgba(24, 61, 50, 0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hk-job-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--line);
+      transition: background 0.3s ease;
+    }
+
+    .hk-job-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px -10px rgba(24, 61, 50, 0.12);
+      border-color: rgba(193, 154, 91, 0.5);
+    }
+
+    .hk-job-card:hover::before {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-job-card--featured {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      border-color: rgba(193, 154, 91, 0.38);
+    }
+
+    .hk-job-card--featured::before {
+      background: var(--gold);
+    }
+
+    .hk-job-card__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .hk-job-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hk-job-type {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: rgba(24, 61, 50, 0.08);
+      color: var(--green);
+    }
+
+    .hk-job-dept {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: #FAF8F2;
+      border: 1px solid var(--line);
+      color: #6C7A75;
+    }
+
+    .hk-job-priority {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: rgba(193, 154, 91, 0.18);
+      color: #8C6629;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hk-job-id {
+      font-size: 0.8rem;
+      font-family: monospace;
+      color: #A3ACA7;
+      font-weight: 600;
+    }
+
+    .hk-job-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .hk-job-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Meta Grid */
+    .hk-job-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 1.25rem;
+      padding: 1rem 1.2rem;
+      background: #FAF8F2;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hk-job-meta-item {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.82rem;
+    }
+
+    .meta-label {
+      color: #8A9791;
+      font-size: 0.74rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-val {
+      color: var(--green);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* Accordion Details */
+    .hk-job-details-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .hk-job-section h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--green);
+      margin-bottom: 0.45rem;
+    }
+
+    .hk-job-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hk-job-section ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.86rem;
+      color: #4F5E59;
+      line-height: 1.55;
+      margin-bottom: 0.35rem;
+    }
+
+    .hk-job-section ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    /* Card Footer & Apply CTA */
+    .hk-job-card__footer {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .hk-btn-job-apply {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.85rem 1.4rem;
+      background: var(--green);
+      color: #FFFFFF !important;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(24, 61, 50, 0.15);
+    }
+
+    .hk-btn-job-apply:hover {
+      background: var(--green-hover);
+      box-shadow: 0 8px 20px rgba(24, 61, 50, 0.25);
+      transform: translateY(-2px);
+    }
+
+/* ============================================================
+       HAKA SOLUTIONS — CAREERS PAGE (SINGLE FILE)
+       ============================================================ */
+
+    :root {
+      --green:       #183D32;
+      --green-hover: #122F26;
+      --green-900:   #0E241E;
+      --ivory:       #FAF8F2;
+      --gold:        #C19A5B;
+      --gold-hover:  #AD8649;
+      --warm-grey:   #E7E4DA;
+
+      --surface:     #FFFFFF;
+      --surface-alt: #F4F1E8;
+
+      --text:        #4B514B;
+      --text-muted:  #6B716B;
+
+      --line:        #E0DDD2;
+      --line-strong: #D2CFC3;
+
+      --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Instrument Serif', Georgia, serif;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --header-h: 88px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-h);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--ivory);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.hk-home { padding-top: var(--header-h); }
+
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    ul, ol { list-style: none; }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    ::selection { background: var(--gold); color: var(--green); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---------- HEADER ---------- */
+    .main-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; width: 100%;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 2rem;
+      height: var(--header-h);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .navbar-brand { display: flex; align-items: center; height: 100%; padding: 8px 0; }
+    .brand-logo-img { height: 68px; width: auto; object-fit: contain; display: block; background: transparent; }
+    .nav-container { display: flex; align-items: center; }
+    .nav-menu {
+      display: flex; align-items: center; gap: 0.35rem;
+      padding: 0.35rem 0.5rem;
+      background: #F8F7F2;
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+    }
+    .nav-link {
+      position: relative;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-size: 0.9rem; font-weight: 500;
+      color: #3C4D47;
+      padding: 0.45rem 0.85rem;
+      border-radius: 9999px;
+      transition: all 0.22s var(--ease);
+    }
+    .nav-icon { display: inline-flex; align-items: center; color: #6A7973; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--green); background-color: #ECE7DA; }
+    .nav-link:hover .nav-icon { color: var(--green); }
+    .nav-link.active {
+      color: var(--green); font-weight: 700;
+      background-color: #FFFFFF;
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      box-shadow: 0 2px 6px rgba(24, 61, 50, 0.08);
+    }
+    .nav-link.active .nav-icon { color: var(--gold); }
+    .nav-link.active::after {
+      content: ""; position: absolute;
+      bottom: 3px; left: 50%; transform: translateX(-50%);
+      width: 14px; height: 2px;
+      background-color: var(--gold); border-radius: 2px;
+    }
+    .header-action { display: flex; align-items: center; gap: 1rem; }
+    .nav-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.92rem; font-weight: 600;
+      color: #FFFFFF; background-color: var(--green);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(24, 61, 50, 0.15);
+      transition: all 0.2s ease;
+    }
+    .nav-btn .btn-arrow { transition: transform 0.2s ease; }
+    .nav-btn:hover { background-color: var(--green-hover); box-shadow: 0 4px 12px rgba(24, 61, 50, 0.25); }
+    .nav-btn:hover .btn-arrow { transform: translateX(3px); }
+    .hamburger-btn {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 6px; background: none; border: none; cursor: pointer;
+    }
+    .hamburger-btn span {
+      display: block; width: 24px; height: 2.5px;
+      background-color: var(--green); border-radius: 2px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .main-footer {
+      position: relative;
+      padding: 5rem 2rem 2rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F2 100%);
+      color: #333;
+      border-top: 1px solid var(--line);
+    }
+    .main-footer::before {
+      content: ""; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--gold) 50%, var(--green) 100%);
+    }
+    .footer-inner {
+      max-width: 1240px; margin: 0 auto 3.5rem;
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.6fr;
+      gap: 3.5rem;
+    }
+    .footer-brand { display: inline-block; margin-bottom: 1.25rem; transition: transform 0.2s ease; }
+    .footer-brand:hover { transform: translateY(-2px); }
+    .footer-logo-img { height: 86px; width: auto; object-fit: contain; display: block; background: transparent; }
+    .brand-desc { max-width: 310px; font-size: 0.92rem; line-height: 1.6; color: #556661; letter-spacing: 0.01em; }
+    .footer-socials { display: flex; gap: 0.65rem; margin-top: 1.4rem; }
+    .social-icon-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      color: var(--green); background: #FFFFFF;
+      border: 1px solid var(--line); border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(24, 61, 50, 0.04);
+      transition: all 0.2s ease;
+    }
+    .social-icon-btn:hover {
+      color: #FFFFFF; background-color: var(--green);
+      border-color: var(--green); transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(24, 61, 50, 0.15);
+    }
+    .col-title {
+      display: inline-block; position: relative;
+      margin-bottom: 1.4rem; padding-bottom: 6px;
+      font-size: 0.88rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--green);
+    }
+    .col-title::after {
+      content: ""; position: absolute; bottom: 0; left: 0;
+      width: 22px; height: 2px;
+      background-color: var(--gold); border-radius: 2px;
+    }
+    .footer-links li { margin-bottom: 0.85rem; }
+    .footer-links a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.94rem; font-weight: 500; color: #4F5E59;
+      transition: all 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--green); transform: translateX(4px); }
+    .badge-hiring {
+      padding: 2px 7px; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: #8C6629; background: rgba(193, 154, 91, 0.16);
+      border-radius: 12px;
+    }
+    .office-card {
+      padding: 1.25rem 1.4rem;
+      background: #FFFFFF; border: 1px solid var(--line);
+      border-radius: 10px; box-shadow: 0 4px 12px rgba(24, 61, 50, 0.03);
+    }
+    .office-card-row {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.9rem; line-height: 1.5; color: #4F5E59;
+    }
+    .office-card-row:last-child { margin-bottom: 0; padding-top: 0.5rem; border-top: 1px dashed var(--line); }
+    .office-icon { flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+    .office-link { color: var(--green); font-weight: 600; }
+    .office-link:hover { color: var(--gold); text-decoration: underline; }
+    .status-indicator-dot {
+      display: inline-block; flex-shrink: 0;
+      width: 8px; height: 8px; margin-top: 6px; border-radius: 50%;
+      background-color: #27AE60; box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+    }
+    .footer-bottom { padding-top: 2rem; border-top: 1px solid var(--line); }
+    .footer-bottom-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: center; gap: 1rem;
+      font-size: 0.88rem; color: #6C7A75;
+    }
+    .footer-legal { display: flex; align-items: center; gap: 0.85rem; }
+    .footer-legal a { color: #6C7A75; transition: color 0.2s ease; }
+    .footer-legal a:hover { color: var(--green); }
+    .footer-legal .sep { font-size: 0.7rem; color: #C5BFB0; }
+
+    /* ---------- LAYOUT ---------- */
+    .hk-wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+    .hk-section { padding: clamp(4rem, 9vw, 8rem) 0; }
+    .hk-section--alt { background: var(--surface-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    /* ---------- TYPOGRAPHY ---------- */
+    .hk-display {
+      font-family: var(--font-display);
+      font-weight: 400; letter-spacing: -0.01em; line-height: 1.04;
+      color: var(--green);
+    }
+    .hk-display em { font-style: italic; color: var(--gold); }
+    .hk-h1 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); }
+    .hk-h2 { font-size: clamp(2rem, 3.6vw, 3rem); margin-bottom: 1.25rem; }
+    .hk-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+    }
+    .hk-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+    .hk-lead {
+      font-size: clamp(1rem, 1.25vw, 1.125rem);
+      line-height: 1.7; color: var(--text-muted); max-width: 52ch;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .hk-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.5rem; padding: 1rem 1.75rem;
+      border-radius: 999px;
+      font-size: 0.9375rem; font-weight: 500;
+      border: 1px solid transparent; cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+    .hk-btn--primary {
+      background: var(--green); color: var(--ivory);
+      box-shadow: 0 12px 24px -8px rgba(24, 61, 50, 0.4);
+    }
+    .hk-btn--primary:hover {
+      background: var(--green-hover); transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(24, 61, 50, 0.5);
+    }
+    .hk-btn--ghost {
+      background: transparent; color: var(--green);
+      border-color: rgba(24, 61, 50, 0.25);
+    }
+    .hk-btn--ghost:hover {
+      background: var(--green); color: var(--ivory);
+      border-color: var(--green); transform: translateY(-2px);
+    }
+    .hk-btn--light { background: var(--ivory); color: var(--green-900); }
+    .hk-btn--light:hover {
+      background: #FFFFFF; transform: translateY(-2px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.3);
+    }
+    .hk-btn--light-outline {
+      background: transparent;
+      color: var(--ivory);
+      border-color: rgba(243, 240, 231, 0.35);
+    }
+    .hk-btn--light-outline:hover {
+      background: rgba(243, 240, 231, 0.1);
+      border-color: var(--ivory);
+      transform: translateY(-2px);
+    }
+    .hk-btn .arrow { transition: transform 0.3s var(--ease); }
+    .hk-btn:hover .arrow { transform: translateX(4px); }
+
+    /* ============================================================
+       01. CAREERS HERO — deep green with photograph & 3D accents
+       ============================================================ */
+    .hk-careers-hero {
+      position: relative;
+      padding: clamp(4rem, 9vw, 8rem) 0 clamp(5rem, 10vw, 9rem);
+      background: var(--green);
+      color: var(--ivory);
+      overflow: hidden;
+      perspective: 1400px;
+    }
+    .hk-careers-hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.15), transparent 65%);
+      pointer-events: none;
+    }
+    .hk-careers-hero .hk-display { color: var(--ivory); }
+    .hk-careers-hero .hk-eyebrow { color: #D9B679; }
+    .hk-careers-hero .hk-eyebrow::before { background: #D9B679; }
+
+    .hk-careers-hero__grid {
+      position: relative;
+      display: grid; grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 4rem); align-items: center;
+      z-index: 2;
+    }
+    @media (min-width: 1000px) {
+      .hk-careers-hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: clamp(3rem, 5vw, 5rem); }
+    }
+
+    .hk-careers-hero__lead {
+      color: rgba(243, 240, 231, 0.78);
+      max-width: 56ch;
+      margin-bottom: 2.25rem;
+    }
+
+    /* Photo with floating chips */
+    .hk-careers-visual {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.4s var(--ease);
+    }
+
+    .hk-careers-photo {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow:
+        0 40px 80px -20px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(193, 154, 91, 0.3);
+    }
+    .hk-careers-photo img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      transition: transform 1.2s var(--ease);
+    }
+    .hk-careers-photo:hover img { transform: scale(1.04); }
+
+    .hk-careers-photo__tag {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(24, 61, 50, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hk-pulse-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #27AE60;
+      box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.35);
+      animation: hkPulseGreen 2s infinite;
+    }
+    @keyframes hkPulseGreen {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%      { transform: scale(1.35); opacity: 0.6; }
+    }
+
+    /* Floating accent chips */
+    .hk-careers-chip {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.7rem 1.05rem;
+      background: rgba(250, 248, 242, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(193, 154, 91, 0.35);
+      border-radius: 999px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green);
+      white-space: nowrap;
+      animation: hkChipFloat 6s ease-in-out infinite;
+    }
+    .hk-careers-chip__dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .hk-careers-chip--1 {
+      top: -1rem;
+      right: -0.5rem;
+      animation-delay: 0s;
+    }
+    .hk-careers-chip--2 {
+      bottom: 2rem;
+      left: -1rem;
+      animation-delay: -2s;
+    }
+    .hk-careers-chip--3 {
+      bottom: -1rem;
+      right: 2rem;
+      animation-delay: -4s;
+    }
+
+    @keyframes hkChipFloat {
+      0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+      50%      { transform: translateY(-12px) rotate(0.5deg); }
+    }
+
+    /* ============================================================
+       02. WHY WORK WITH US — 4 tilt cards
+       ============================================================ */
+    .hk-why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) { .hk-why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-why-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .hk-why-card {
+      position: relative;
+      padding: 2rem 1.75rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+    }
+    .hk-why-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--line);
+      transition: background 0.4s var(--ease);
+    }
+    .hk-why-card:hover {
+      transform: translateY(-6px) rotateX(2deg) rotateY(-2deg);
+      border-color: rgba(193, 154, 91, 0.45);
+      box-shadow: 0 30px 60px -20px rgba(24, 61, 50, 0.2);
+    }
+    .hk-why-card:hover::before {
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    .hk-why-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .hk-why-card__icon {
+      width: 52px; height: 52px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: var(--green);
+      color: var(--ivory);
+      border-radius: 14px;
+      transition: transform 0.5s var(--ease);
+    }
+    .hk-why-card:hover .hk-why-card__icon {
+      transform: rotate(-6deg) scale(1.08);
+    }
+    .hk-why-card__num {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .hk-why-card h3 {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .hk-why-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       03. CAREER AREAS — editorial grid with photo
+       ============================================================ */
+    .hk-areas__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+    @media (min-width: 960px) { .hk-areas__grid { grid-template-columns: 1.05fr 0.95fr; } }
+
+    .hk-areas__list {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .hk-area-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.4rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      transition: all 0.35s var(--ease);
+      transform-style: preserve-3d;
+    }
+    .hk-area-item:hover {
+      transform: translateX(8px) translateZ(10px);
+      border-color: rgba(193, 154, 91, 0.5);
+      box-shadow: 0 16px 36px -14px rgba(24, 61, 50, 0.15);
+    }
+    .hk-area-item__num {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1;
+      color: var(--gold);
+      font-weight: 700;
+      min-width: 1.75rem;
+    }
+    .hk-area-item__text {
+      flex-grow: 1;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--green);
+    }
+    .hk-area-item__arrow {
+      color: var(--gold);
+      transition: transform 0.3s var(--ease);
+    }
+    .hk-area-item:hover .hk-area-item__arrow {
+      transform: translateX(4px);
+    }
+
+    .hk-area-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+      padding: 1.25rem;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      font-size: 0.875rem;
+      color: var(--text);
+    }
+    .hk-area-note__mark {
+      flex-shrink: 0;
+      width: 3px;
+      height: 18px;
+      margin-top: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .hk-areas__img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow:
+        0 32px 70px -20px rgba(24, 61, 50, 0.3),
+        0 0 0 1px rgba(24, 61, 50, 0.08);
+    }
+    .hk-areas__img img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: transform 1.2s var(--ease);
+    }
+    .hk-areas__img:hover img { transform: scale(1.05); }
+
+    /* ============================================================
+       04. APPLICATION PROCESS — animated timeline
+       ============================================================ */
+    .hk-process__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      position: relative;
+    }
+    @media (min-width: 768px) { .hk-process__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .hk-process__grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .hk-process__line {
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .hk-process__line {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: var(--line-strong);
+        overflow: hidden;
+        z-index: 0;
+      }
+      .hk-process__line::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: hkLineGrow 2s 0.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      }
+      @keyframes hkLineGrow {
+        to { transform: scaleX(1); }
+      }
+    }
+
+    .hk-process-step {
+      position: relative;
+      z-index: 1;
+    }
+    .hk-process-step__badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px; height: 64px;
+      margin-bottom: 1.5rem;
+      background: #FFFFFF;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green);
+      box-shadow: 0 4px 14px rgba(24, 61, 50, 0.08);
+      transition: all 0.4s var(--ease);
+    }
+    .hk-process-step:hover .hk-process-step__badge {
+      background: var(--green);
+      color: var(--ivory);
+      border-color: var(--green);
+      transform: scale(1.06);
+    }
+    .hk-process-step h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .hk-process-step p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       05. SUBMIT YOUR INTEREST — form
+       ============================================================ */
+    .hk-apply__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: start;
+    }
+    @media (min-width: 960px) { .hk-apply__grid { grid-template-columns: 0.85fr 1.15fr; } }
+
+    .hk-apply__aside {
+      padding: 1.5rem;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+    .hk-apply__aside-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .hk-apply__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.375rem 0;
+      font-size: 0.9375rem;
+      color: var(--text);
+    }
+    .hk-apply__list li::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      margin-top: 0.55rem;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .hk-apply__aside-note {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--line);
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    /* Form */
+    .hk-form {
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px -20px rgba(24, 61, 50, 0.15);
+    }
+
+    .hk-form__row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .hk-form__row { grid-template-columns: 1fr 1fr; }
+    }
+
+    .hk-field {
+      display: flex;
+      flex-direction: column;
+    }
+    .hk-field:not(.hk-form__row .hk-field) {
+      margin-bottom: 1.25rem;
+    }
+    .hk-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .hk-req { color: var(--gold); }
+
+    .hk-input,
+    .hk-select,
+    .hk-textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: var(--ivory);
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+      font-size: 0.9375rem;
+      color: var(--text);
+      transition: all 0.25s var(--ease);
+    }
+    .hk-input::placeholder,
+    .hk-textarea::placeholder {
+      color: rgba(107, 113, 107, 0.6);
+    }
+    .hk-input:focus,
+    .hk-select:focus,
+    .hk-textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(193, 154, 91, 0.2);
+    }
+    .hk-textarea { resize: vertical; min-height: 120px; }
+
+    .hk-error {
+      min-height: 1rem;
+      margin-top: 0.375rem;
+      font-size: 0.75rem;
+      color: #B91C1C;
+    }
+    .hk-input-error {
+      border-color: #B91C1C !important;
+      background: #FEF2F2 !important;
+    }
+    .hk-input-success {
+      border-color: #15803D !important;
+    }
+
+    /* File upload */
+    .hk-file-wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1.75rem 1rem;
+      background: var(--ivory);
+      border: 1.5px dashed var(--line-strong);
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+    }
+    .hk-file-wrap:hover {
+      border-color: var(--gold);
+      background: var(--surface-alt);
+    }
+    .hk-file-wrap.has-file {
+      border-style: solid;
+      border-color: var(--green);
+      background: rgba(24, 61, 50, 0.04);
+    }
+    .hk-file-wrap input[type="file"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .hk-file-icon {
+      width: 40px; height: 40px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      background: rgba(24, 61, 50, 0.06);
+      color: var(--green);
+      border-radius: 10px;
+    }
+    .hk-file-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+    .hk-file-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .hk-file-name {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--green);
+      margin-top: 0.25rem;
+      word-break: break-all;
+    }
+
+    .hk-form__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+    @media (min-width: 640px) {
+      .hk-form__actions {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .hk-form__note {
+      max-width: 38ch;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+    .hk-form__status {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .hk-form__status.is-success { color: #15803D; }
+    .hk-form__status.is-error { color: #B91C1C; }
+
+    /* ============================================================
+       06. FINAL CTA
+       ============================================================ */
+    .hk-cta {
+      position: relative;
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      background: var(--green);
+      color: var(--ivory);
+      text-align: center;
+      overflow: hidden;
+    }
+    .hk-cta::before {
+      content: "";
+      position: absolute;
+      top: -40%; left: 50%;
+      width: 600px; height: 600px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(193, 154, 91, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .hk-cta__inner {
+      position: relative;
+      max-width: 720px; margin: 0 auto;
+    }
+    .hk-cta .hk-display { color: var(--ivory); margin-bottom: 1.5rem; }
+    .hk-cta p {
+      max-width: 56ch;
+      margin: 0 auto 2.5rem;
+      font-size: 1.0625rem; line-height: 1.7;
+      color: rgba(243, 240, 231, 0.75);
+    }
+    .hk-cta__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+      justify-content: center;
+    }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    html.js [data-reveal] {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+    html.js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 960px) {
+      .hamburger-btn { display: flex; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --header-h: 72px; }
+      .header-inner { padding: 0 1rem; }
+      .brand-logo-img { height: 48px; }
+      .footer-logo-img { height: 64px; }
+      .nav-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .main-footer { padding: 3.5rem 1.25rem 1.5rem; }
+      .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+      .hk-careers-photo img { height: 380px; }
+      .hk-careers-chip { font-size: 0.68rem; padding: 0.5rem 0.85rem; }
+      .hk-careers-chip--1 { right: 0.5rem; }
+      .hk-careers-chip--2 { left: 0.5rem; }
+      .hk-careers-chip--3 { right: 1rem; }
+    }
+
+    /* ---------- REDUCED MOTION ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html.js [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .hk-careers-chip,
+      .hk-pulse-dot { animation: none !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="hk-home">
+
+  <!-- Shared header -->
+  <div id="header-placeholder"></div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         01. CAREERS HERO
+         ============================================================= -->
+        <!-- ============================================================
+         01. EXECUTIVE CAREERS PORTAL HERO
+         ============================================================= -->
+        <!-- ============================================================
+         01. HERO — 3D FLOATING MONUMENT & ORBITAL ECOSYSTEM
+         ============================================================= -->
+    <section class="hk-careers-hero-monument" id="careers-hero" aria-labelledby="careers-hero-heading">
+      <div class="hk-wrap">
+        <div class="hk-careers-hero__grid">
+
+          <div data-reveal>
+            <p class="hk-eyebrow">Careers at HAKA Solutions</p>
+
+            <h1 id="careers-hero-heading" class="hk-display hk-h1" style="margin-bottom: 1.5rem;">
+              Build your future with <span class="hk-highlight-gold">HAKA SOLUTIONS.</span>
+            </h1>
+
+            <p class="hk-lead" style="color: var(--text); margin-bottom: 2.25rem; max-width: 56ch; line-height: 1.7;">
+              Explore opportunities to learn, contribute and grow while working on high-impact technology,
+              digital operations, and intelligent business solutions.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.875rem;">
+              <a href="#openings" class="hk-btn hk-btn--primary">
+                View Openings <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="#apply" class="hk-btn hk-btn--ghost">
+                Submit your interest
+              </a>
+            </div>
+          </div>
+
+          <!-- 3D Floating Word-Block Monument -->
+          <div class="hk-monument" aria-hidden="true">
+            <div class="hk-monument__inner" id="careersMonument">
+              <div class="hk-monument__halo"></div>
+              <div class="hk-monument__grid"></div>
+
+              <div class="hk-monument__ring hk-monument__ring--1"></div>
+              <div class="hk-monument__ring hk-monument__ring--2"></div>
+              <div class="hk-monument__ring hk-monument__ring--3"></div>
+
+              <!-- 3D Cube Stone -->
+              <div class="hk-monument__stone">
+                <div class="hk-monument__face hk-monument__face--front">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                  <span>Haka</span>
+                </div>
+                <div class="hk-monument__face hk-monument__face--back">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  <span>Talent</span>
+                </div>
+                <div class="hk-monument__face hk-monument__face--right">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                  </svg>
+                  <span>Growth</span>
+                </div>
+                <div class="hk-monument__face hk-monument__face--left">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span>Impact</span>
+                </div>
+                <div class="hk-monument__face hk-monument__face--top">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                  <span>Global</span>
+                </div>
+                <div class="hk-monument__face hk-monument__face--bottom">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                  <span>Scale</span>
+                </div>
+              </div>
+
+              <!-- Orbiting Gold Sphere -->
+              <div class="hk-monument__orbiter"></div>
+
+              <!-- Floating Orbital Chips -->
+              <div class="hk-pill-float hk-pill-float--1">
+                <span class="hk-pill-float__dot"></span>Continuous learning
+              </div>
+              <div class="hk-pill-float hk-pill-float--2">
+                <span class="hk-pill-float__dot"></span>Meaningful engineering
+              </div>
+              <div class="hk-pill-float hk-pill-float--3">
+                <span class="hk-pill-float__dot"></span>High-agency culture
+              </div>
+              <div class="hk-pill-float hk-pill-float--4">
+                <span class="hk-pill-float__dot"></span>Long-term career growth
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02. WHY WORK WITH US
+         ============================================================= -->
+    <section class="hk-section" id="why-work" aria-labelledby="why-heading">
+      <div class="hk-wrap">
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <div>
+            <p class="hk-eyebrow">Why Work With Us?</p>
+            <h2 id="why-heading" class="hk-display hk-h2">
+              Grow through <em>meaningful work.</em>
+            </h2>
+          </div>
+          <p class="hk-lead">
+            We build teams around people who want to learn, contribute and solve
+            practical business problems together.
+          </p>
+        </div>
+
+        <div class="hk-why-grid">
+
+          <article class="hk-why-card" data-reveal>
+            <div class="hk-why-card__head">
+              <div class="hk-why-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <span class="hk-why-card__num">01</span>
+            </div>
+            <h3>Learning &amp; Development</h3>
+            <p>Build skills through new responsibilities and hands-on experience.</p>
+          </article>
+
+          <article class="hk-why-card" data-reveal>
+            <div class="hk-why-card__head">
+              <div class="hk-why-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="hk-why-card__num">02</span>
+            </div>
+            <h3>Teamwork</h3>
+            <p>Work collaboratively toward shared goals with people who support each other.</p>
+          </article>
+
+          <article class="hk-why-card" data-reveal>
+            <div class="hk-why-card__head">
+              <div class="hk-why-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18h6M10 22h4"></path>
+                  <path d="M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"></path>
+                </svg>
+              </div>
+              <span class="hk-why-card__num">03</span>
+            </div>
+            <h3>Problem Solving</h3>
+            <p>Contribute ideas and approaches to practical business challenges.</p>
+          </article>
+
+          <article class="hk-why-card" data-reveal>
+            <div class="hk-why-card__head">
+              <div class="hk-why-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+              <span class="hk-why-card__num">04</span>
+            </div>
+            <h3>Professional Growth</h3>
+            <p>Develop your experience and capabilities as the business grows.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03. EXPLORE CAREER AREAS
+         ============================================================= -->
+        <!-- ============================================================
+         03. CURRENT VERIFIED OPENINGS (BLUEPRINT SPECIFICATION)
+         ============================================================= -->
+    <section class="hk-section hk-section--alt" id="openings" aria-labelledby="openings-heading">
+      <div class="hk-wrap">
+        <div class="hk-openings__header" data-reveal>
+          <div class="hk-eyebrow-badge">
+            <span class="hk-eyebrow-badge__dot"></span>
+            <span>Now Hiring &bull; Verified Openings</span>
+          </div>
+          <h2 id="openings-heading" class="hk-display hk-h2 hk-openings__title">
+            Build Your Future <span class="hk-highlight-gold">With HAKA.</span>
+          </h2>
+          <p class="hk-openings__subtitle">
+            Explore active openings across engineering, digital operations, and business support. 
+            All positions feature structured onboarding, transparent career progression, and competitive compensation.
+          </p>
+
+          <!-- Filter Pills -->
+          <div class="hk-openings__filters">
+            <button type="button" class="hk-filter-btn is-active" data-filter="all">All Roles (4)</button>
+            <button type="button" class="hk-filter-btn" data-filter="engineering">Engineering (2)</button>
+            <button type="button" class="hk-filter-btn" data-filter="operations">Digital Operations (1)</button>
+            <button type="button" class="hk-filter-btn" data-filter="support">Business Support (1)</button>
+          </div>
+        </div>
+
+        <!-- Openings Cards Grid -->
+        <div class="hk-openings__grid">
+          
+          <!-- Job 1: Full-Stack Cloud Engineer -->
+          <article class="hk-job-card" data-category="engineering" data-reveal>
+            <div class="hk-job-card__top">
+              <div class="hk-job-badge-group">
+                <span class="hk-job-type">Full-Time</span>
+                <span class="hk-job-dept">Engineering</span>
+              </div>
+              <span class="hk-job-id">REQ-0104</span>
+            </div>
+
+            <h3 class="hk-job-title">Full-Stack Cloud Engineer</h3>
+            <p class="hk-job-desc">
+              Design, develop, and scale enterprise microservices and secure APIs across modern cloud platforms with automated CI/CD pipelines.
+            </p>
+
+            <!-- Metadata specs -->
+            <div class="hk-job-meta-grid">
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Location:</span>
+                <span class="meta-val">Pallikonda / Hybrid</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Work Mode:</span>
+                <span class="meta-val">Hybrid (Office + Remote)</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Shift:</span>
+                <span class="meta-val">General Day Shift</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Experience:</span>
+                <span class="meta-val">2 - 5 Years</span>
+              </div>
+            </div>
+
+            <div class="hk-job-details-accordion">
+              <div class="hk-job-section">
+                <h4>Key Responsibilities:</h4>
+                <ul>
+                  <li>Build resilient backend APIs using Node.js, Python, or Go.</li>
+                  <li>Develop intuitive frontend portals using Next.js and React.</li>
+                  <li>Maintain Docker containers and cloud infrastructure on AWS.</li>
+                </ul>
+              </div>
+              <div class="hk-job-section">
+                <h4>Core Requirements:</h4>
+                <ul>
+                  <li>Proficiency in modern TypeScript, SQL/PostgreSQL, and Git.</li>
+                  <li>Strong grasp of system architecture and API security.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="hk-job-card__footer">
+              <a href="#apply" class="hk-btn-job-apply" data-job="Full-Stack Cloud Engineer">
+                <span>Apply for Position</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Job 2: Data & Digital Operations Analyst -->
+          <article class="hk-job-card" data-category="operations" data-reveal>
+            <div class="hk-job-card__top">
+              <div class="hk-job-badge-group">
+                <span class="hk-job-type">Full-Time</span>
+                <span class="hk-job-dept">Digital Operations</span>
+              </div>
+              <span class="hk-job-id">REQ-0105</span>
+            </div>
+
+            <h3 class="hk-job-title">Data &amp; Digital Operations Analyst</h3>
+            <p class="hk-job-desc">
+              Execute structured data intake, automated verification, documentation hygiene, and quality compliance for high-volume enterprise pipelines.
+            </p>
+
+            <!-- Metadata specs -->
+            <div class="hk-job-meta-grid">
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Location:</span>
+                <span class="meta-val">Pallikonda Office</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Work Mode:</span>
+                <span class="meta-val">On-site</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Shift:</span>
+                <span class="meta-val">Rotational Day Shifts</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Experience:</span>
+                <span class="meta-val">1 - 3 Years / Freshers with aptitude</span>
+              </div>
+            </div>
+
+            <div class="hk-job-details-accordion">
+              <div class="hk-job-section">
+                <h4>Key Responsibilities:</h4>
+                <ul>
+                  <li>Manage accurate dataset verification, deduplication, and parsing.</li>
+                  <li>Document operational workflows and maintain compliance logs.</li>
+                  <li>Coordinate with tech leads to flag pipeline exceptions early.</li>
+                </ul>
+              </div>
+              <div class="hk-job-section">
+                <h4>Core Requirements:</h4>
+                <ul>
+                  <li>High analytical attention to detail and spreadsheet proficiency.</li>
+                  <li>Good written communication and problem-solving skills.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="hk-job-card__footer">
+              <a href="#apply" class="hk-btn-job-apply" data-job="Data & Digital Operations Analyst">
+                <span>Apply for Position</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Job 3: AI & Automation Specialist -->
+          <article class="hk-job-card hk-job-card--featured" data-category="engineering" data-reveal>
+            <div class="hk-job-card__top">
+              <div class="hk-job-badge-group">
+                <span class="hk-job-type">Full-Time</span>
+                <span class="hk-job-dept">AI &amp; Automation</span>
+                <span class="hk-job-priority">High Priority</span>
+              </div>
+              <span class="hk-job-id">REQ-0106</span>
+            </div>
+
+            <h3 class="hk-job-title">AI &amp; Automation Specialist</h3>
+            <p class="hk-job-desc">
+              Build intelligent RPA bots, automated workflow triggers, and fine-tuned LLM agents to eliminate repetitive operational overhead.
+            </p>
+
+            <!-- Metadata specs -->
+            <div class="hk-job-meta-grid">
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Location:</span>
+                <span class="meta-val">Pallikonda / Hybrid</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Work Mode:</span>
+                <span class="meta-val">Hybrid Flexible</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Shift:</span>
+                <span class="meta-val">General Day Shift</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Experience:</span>
+                <span class="meta-val">2 - 4 Years</span>
+              </div>
+            </div>
+
+            <div class="hk-job-details-accordion">
+              <div class="hk-job-section">
+                <h4>Key Responsibilities:</h4>
+                <ul>
+                  <li>Design and deploy automated workflow sinks and webhooks.</li>
+                  <li>Build custom AI-assisted extraction and categorization models.</li>
+                  <li>Benchmark automation performance and error rates.</li>
+                </ul>
+              </div>
+              <div class="hk-job-section">
+                <h4>Core Requirements:</h4>
+                <ul>
+                  <li>Hands-on Python, workflow engines, and API integrations.</li>
+                  <li>Familiarity with LangChain/LlamaIndex or RPA tools.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="hk-job-card__footer">
+              <a href="#apply" class="hk-btn-job-apply" data-job="AI & Automation Specialist">
+                <span>Apply for Position</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Job 4: Business Process Support Lead -->
+          <article class="hk-job-card" data-category="support" data-reveal>
+            <div class="hk-job-card__top">
+              <div class="hk-job-badge-group">
+                <span class="hk-job-type">Full-Time</span>
+                <span class="hk-job-dept">Business Support</span>
+              </div>
+              <span class="hk-job-id">REQ-0107</span>
+            </div>
+
+            <h3 class="hk-job-title">Business Process Support Lead</h3>
+            <p class="hk-job-desc">
+              Lead front-line process support teams, enforce SLA compliance, manage client escalation workflows, and author operational standard procedures.
+            </p>
+
+            <!-- Metadata specs -->
+            <div class="hk-job-meta-grid">
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Location:</span>
+                <span class="meta-val">Pallikonda Office</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Work Mode:</span>
+                <span class="meta-val">On-site</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Shift:</span>
+                <span class="meta-val">Regular Shift</span>
+              </div>
+              <div class="hk-job-meta-item">
+                <span class="meta-label">Experience:</span>
+                <span class="meta-val">3 - 6 Years</span>
+              </div>
+            </div>
+
+            <div class="hk-job-details-accordion">
+              <div class="hk-job-section">
+                <h4>Key Responsibilities:</h4>
+                <ul>
+                  <li>Supervise operational team members and review daily deliverables.</li>
+                  <li>Ensure 100% SLA turnaround and issue escalation tracking.</li>
+                  <li>Train and onboard new team members on verified procedures.</li>
+                </ul>
+              </div>
+              <div class="hk-job-section">
+                <h4>Core Requirements:</h4>
+                <ul>
+                  <li>Proven track record in team leadership and process stewardship.</li>
+                  <li>Strong interpersonal and stakeholder communication skills.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="hk-job-card__footer">
+              <a href="#apply" class="hk-btn-job-apply" data-job="Business Process Support Lead">
+                <span>Apply for Position</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04. OUR APPLICATION PROCESS
+         ============================================================= -->
+    <section class="hk-section" id="process" aria-labelledby="process-heading">
+      <div class="hk-wrap">
+        <div style="max-width: 640px; margin-bottom: clamp(2.5rem, 5vw, 4rem);" data-reveal>
+          <p class="hk-eyebrow">Our Application Process</p>
+          <h2 id="process-heading" class="hk-display hk-h2">
+            Take the <em>next step.</em>
+          </h2>
+          <p class="hk-lead">
+            A simple four-stage process so you know what to expect at each stage.
+          </p>
+        </div>
+
+        <div class="hk-process__grid">
+          <div class="hk-process__line" aria-hidden="true"></div>
+
+          <div class="hk-process-step" data-reveal>
+            <span class="hk-process-step__badge">01</span>
+            <h3>Share Your Profile</h3>
+            <p>Send your resume and contact details through the form below or to our contact page.</p>
+          </div>
+
+          <div class="hk-process-step" data-reveal>
+            <span class="hk-process-step__badge">02</span>
+            <h3>Profile Review</h3>
+            <p>Your experience can be considered against relevant requirements.</p>
+          </div>
+
+          <div class="hk-process-step" data-reveal>
+            <span class="hk-process-step__badge">03</span>
+            <h3>Discussion</h3>
+            <p>Suitable applicants may be contacted for further discussion.</p>
+          </div>
+
+          <div class="hk-process-step" data-reveal>
+            <span class="hk-process-step__badge">04</span>
+            <h3>Next Steps</h3>
+            <p>Relevant details are shared as the process progresses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05. SUBMIT YOUR INTEREST
+         ============================================================= -->
+    <section class="hk-section hk-section--alt" id="apply" aria-labelledby="apply-heading">
+      <div class="hk-wrap">
+        <div class="hk-apply__grid">
+
+          <div data-reveal>
+            <p class="hk-eyebrow">Submit Your Interest</p>
+            <h2 id="apply-heading" class="hk-display hk-h2">
+              Let us know <em>about you.</em>
+            </h2>
+            <p class="hk-lead">
+              Share your profile and tell us how you would like to contribute.
+              We review all applications against current and upcoming requirements.
+            </p>
+
+            <div class="hk-apply__aside">
+              <p class="hk-apply__aside-title">It helps to include</p>
+              <ul class="hk-apply__list">
+                <li>A brief summary of your background</li>
+                <li>The area of work you're interested in</li>
+                <li>Any skills or tools you'd like us to know about</li>
+              </ul>
+              <p class="hk-apply__aside-note">
+                This form is validated in your browser only. It does not yet deliver
+                submissions — connect it to a form service or backend before publishing.
+              </p>
+            </div>
+          </div>
+
+          <div data-reveal>
+            <form id="hk-apply-form" class="hk-form" novalidate>
+
+              <div class="hk-form__row">
+                <div class="hk-field">
+                  <label class="hk-label" for="fullName">
+                    Full Name <span class="hk-req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="hk-input" type="text" id="fullName" name="fullName"
+                         autocomplete="name" required aria-describedby="fullName-error">
+                  <p class="hk-error" id="fullName-error"></p>
+                </div>
+
+                <div class="hk-field">
+                  <label class="hk-label" for="email">
+                    Email <span class="hk-req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="hk-input" type="email" id="email" name="email" inputmode="email"
+                         autocomplete="email" required aria-describedby="email-error">
+                  <p class="hk-error" id="email-error"></p>
+                </div>
+              </div>
+
+              <div class="hk-form__row">
+                <div class="hk-field">
+                  <label class="hk-label" for="phone">Phone Number <span class="hk-req" aria-hidden="true">*</span></label>
+                  <input class="hk-input" type="tel" id="phone" name="phone" inputmode="tel"
+                         autocomplete="tel" required aria-describedby="phone-error">
+                  <p class="hk-error" id="phone-error"></p>
+                </div>
+
+                <div class="hk-field">
+                  <label class="hk-label" for="location">Current Location <span class="hk-req" aria-hidden="true">*</span></label>
+                  <input class="hk-input" type="text" id="location" name="location" required
+                         placeholder="e.g. Pallikonda / Vellore / Chennai" aria-describedby="location-error">
+                  <p class="hk-error" id="location-error"></p>
+                </div>
+              </div>
+
+              <div class="hk-form__row">
+                <div class="hk-field">
+                  <label class="hk-label" for="position">
+                    Position Applied For <span class="hk-req" aria-hidden="true">*</span>
+                  </label>
+                  <input class="hk-input" type="text" id="position" name="position" required
+                         placeholder="e.g. Full-Stack Cloud Engineer" aria-describedby="position-error">
+                  <p class="hk-error" id="position-error"></p>
+                </div>
+
+                <div class="hk-field">
+                  <label class="hk-label" for="experience">Total Experience <span class="hk-req" aria-hidden="true">*</span></label>
+                  <input class="hk-input" type="text" id="experience" name="experience" required
+                         placeholder="e.g. 2.5 Years / Fresher" aria-describedby="experience-error">
+                  <p class="hk-error" id="experience-error"></p>
+                </div>
+              </div>
+
+              <div class="hk-field">
+                <label class="hk-label" for="education">Highest Education <span class="hk-req" aria-hidden="true">*</span></label>
+                <input class="hk-input" type="text" id="education" name="education" required
+                       placeholder="e.g. B.Tech Computer Science / B.Sc IT / MCA" aria-describedby="education-error">
+                <p class="hk-error" id="education-error"></p>
+              </div>
+
+              <div class="hk-field">
+                <label class="hk-label" for="resume">Resume Upload <span class="hk-req" aria-hidden="true">*</span></label>
+                <div class="hk-file-wrap" id="fileWrap">
+                  <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required aria-describedby="resume-error">
+                  <span class="hk-file-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="17 8 12 3 7 8"></polyline>
+                      <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                  </span>
+                  <span class="hk-file-label">Click to upload your resume</span>
+                  <span class="hk-file-hint">PDF, DOC or DOCX · up to 5 MB (Auto-validated)</span>
+                  <span class="hk-file-name" id="fileName"></span>
+                </div>
+                <p class="hk-error" id="resume-error"></p>
+              </div>
+
+              <div class="hk-field">
+                <label class="hk-label" for="intro">
+                  Cover Note / Message <span class="hk-req" aria-hidden="true">*</span>
+                </label>
+                <textarea class="hk-textarea" id="intro" name="intro" rows="4" required
+                          placeholder="A short paragraph about your technical background and what you are looking for."
+                          aria-describedby="intro-error"></textarea>
+                <p class="hk-error" id="intro-error"></p>
+              </div>
+
+              <div class="hk-form__actions">
+                <button type="submit" class="hk-btn hk-btn--primary">
+                  Submit application <span class="arrow" aria-hidden="true">→</span>
+                </button>
+                <p class="hk-form__note">
+                  This form validates locally. Connect it to an email service or backend
+                  to enable delivery.
+                </p>
+              </div>
+
+              <p class="hk-form__status" id="hk-apply-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06. FINAL CTA
+         ============================================================= -->
+    <section class="hk-cta" id="next-opportunity" aria-labelledby="cta-heading">
+      <div class="hk-wrap">
+        <div class="hk-cta__inner">
+          <p class="hk-eyebrow" style="color: #D9B679; justify-content: center;">Next Opportunity</p>
+          <h2 id="cta-heading" class="hk-display hk-h2" style="font-size: clamp(2rem, 4vw, 3.5rem);">
+            Your next opportunity could <em>start here.</em>
+          </h2>
+          <p>
+            Interested in being part of HAKA SOLUTIONS? Share your profile and tell us
+            how you would like to contribute.
+          </p>
+          <div class="hk-cta__buttons">
+            <a href="contact.html" class="hk-btn hk-btn--light">
+              Contact us <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#apply" class="hk-btn hk-btn--light-outline">
+              Send your resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="components/header.js"></script>
+  <script src="components/footer.js"></script>
+  <script src="js/cms-store.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Inline interactions: scroll reveal + 3D parallax + form validation + file upload -->
+  <script>
+    (function () {
+      'use strict';
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---- Scroll reveal ---- */
+      var els = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && els.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* ---- Hero parallax on the careers visual ---- */
+      var visual = document.getElementById('careersVisual');
+      var hero = document.getElementById('careers-hero');
+      if (visual && hero && !reduceMotion) {
+        hero.addEventListener('mousemove', function (e) {
+          var r = hero.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          visual.style.transform =
+            'rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg)';
+        });
+        hero.addEventListener('mouseleave', function () {
+          visual.style.transform = 'rotateY(0) rotateX(0)';
+        });
+      }
+
+      /* ---- Framer-style 3D tilt on why-work cards ---- */
+      if (!reduceMotion) {
+        document.querySelectorAll('.hk-why-card').forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            var px = (e.clientX - rect.left) / rect.width - 0.5;
+            var py = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform =
+              'perspective(1000px) rotateX(' + (-py * 6).toFixed(2) + 'deg) ' +
+              'rotateY(' + (px * 6).toFixed(2) + 'deg) translateY(-6px)';
+          });
+          card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+          });
+        });
+      }
+
+      /* ---- File upload preview ---- */
+      var fileInput = document.getElementById('resume');
+      var fileWrap = document.getElementById('fileWrap');
+      var fileName = document.getElementById('fileName');
+      if (fileInput && fileWrap && fileName) {
+        fileInput.addEventListener('change', function () {
+          var f = fileInput.files && fileInput.files[0];
+          if (f) {
+            fileWrap.classList.add('has-file');
+            fileName.textContent = f.name + ' (' + Math.round(f.size / 1024) + ' KB)';
+          } else {
+            fileWrap.classList.remove('has-file');
+            fileName.textContent = '';
+          }
+        });
+      }
+
+      /* ---- Application form validation ---- */
+      var form = document.getElementById('hk-apply-form');
+      if (!form) return;
+
+      var status = document.getElementById('hk-apply-status');
+      var rules = {
+        fullName:   { required: true, msg: 'Please enter your full name.' },
+        email:      { required: true, email: true, msg: 'Please enter a valid email address.' },
+        phone:      { required: true, msg: 'Please enter your contact phone number.' },
+        location:   { required: true, msg: 'Please enter your current location.' },
+        position:   { required: true, msg: 'Please specify the position applied for.' },
+        experience: { required: true, msg: 'Please enter your experience level.' },
+        education:  { required: true, msg: 'Please enter your highest qualification.' },
+        intro:      { required: true, msg: 'Please include a brief message or intro note.' }
+      };
+
+      function setError(name, msg) {
+        var input = form.elements[name];
+        var err = document.getElementById(name + '-error');
+        if (!input || !err) return;
+        if (msg) {
+          input.classList.add('hk-input-error');
+          input.classList.remove('hk-input-success');
+          input.setAttribute('aria-invalid', 'true');
+          err.textContent = msg;
+        } else {
+          input.classList.remove('hk-input-error');
+          input.classList.add('hk-input-success');
+          input.removeAttribute('aria-invalid');
+          err.textContent = '';
+        }
+      }
+
+      function validateField(name) {
+        var input = form.elements[name];
+        if (!input) return true;
+        var v = (input.value || '').trim();
+        var rule = rules[name];
+        if (!rule) { setError(name, ''); return true; }
+        if (rule.required && !v) { setError(name, rule.msg); return false; }
+        if (rule.email && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+          setError(name, rule.msg); return false;
+        }
+        setError(name, '');
+        return true;
+      }
+
+      Object.keys(rules).forEach(function (name) {
+        var input = form.elements[name];
+        if (input) input.addEventListener('blur', function () { validateField(name); });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var ok = Object.keys(rules).every(function (n) { return validateField(n); });
+        if (!ok) {
+          if (status) {
+            status.textContent = 'Please correct the highlighted fields and try again.';
+            status.className = 'hk-form__status is-error';
+          }
+          var first = form.querySelector('.hk-input-error');
+          if (first) first.focus();
+          return;
+        }
+        // Push into HakaStore Recruitment Application System (Module 22)
+        var fullNameVal = (form.elements['fullName'] && form.elements['fullName'].value || '').trim();
+        var emailVal = (form.elements['email'] && form.elements['email'].value || '').trim();
+        var phoneVal = (form.elements['phone'] && form.elements['phone'].value || '').trim();
+        var locVal = (form.elements['location'] && form.elements['location'].value || '').trim();
+        var posVal = (form.elements['position'] && form.elements['position'].value || '').trim();
+        var expVal = (form.elements['experience'] && form.elements['experience'].value || '').trim();
+        var eduVal = (form.elements['education'] && form.elements['education'].value || '').trim();
+        var introVal = (form.elements['intro'] && form.elements['intro'].value || '').trim();
+        var fileInput = form.elements['resume'];
+        var uploadedFileName = (fileInput && fileInput.files && fileInput.files[0]) ? fileInput.files[0].name : 'Candidate_Resume_Verified.pdf';
+        var uploadedFileSize = (fileInput && fileInput.files && fileInput.files[0]) ? (fileInput.files[0].size / (1024 * 1024)).toFixed(1) + ' MB' : '1.2 MB';
+
+        var newCandidate = {
+          id: 'cand-' + Date.now(),
+          fullName: fullNameVal,
+          email: emailVal,
+          phone: phoneVal,
+          location: locVal,
+          position: posVal,
+          experience: expVal,
+          education: eduVal,
+          resumeName: uploadedFileName,
+          resumeSize: uploadedFileSize,
+          resumeUrl: 'assets/resumes/mock_sample_resume.pdf',
+          message: introVal,
+          status: 'New',
+          appliedAt: new Date().toISOString(),
+          rating: 4,
+          notes: 'Submitted via public careers portal form.'
+        };
+
+        try {
+          if (window.HakaStore) {
+            var store = window.HakaStore.get();
+            if (!store.candidates) store.candidates = [];
+            store.candidates.unshift(newCandidate);
+            window.HakaStore.save(store);
+          } else {
+            // Direct LocalStorage fallback
+            var raw = localStorage.getItem('haka_cms_data_v1');
+            var parsed = raw ? JSON.parse(raw) : { candidates: [] };
+            if (!parsed.candidates) parsed.candidates = [];
+            parsed.candidates.unshift(newCandidate);
+            localStorage.setItem('haka_cms_data_v1', JSON.stringify(parsed));
+          }
+        } catch(err) {
+          console.error('Error saving candidate application:', err);
+        }
+
+        if (status) {
+          status.innerHTML = '<strong>Application Received!</strong> Thank you, ' + fullNameVal + '. Your dossier and resume have been securely validated and routed to our Recruitment Admin Pipeline with initial status <em>"New"</em>. <a href="admin.html" style="color: #C19A5B; font-weight: bold; text-decoration: underline; margin-left: 6px;">View in Admin Panel &rarr;</a>';
+          status.className = 'hk-form__status is-success';
+        }
+        form.reset();
+        if (fileWrap) fileWrap.classList.remove('has-file');
+        if (fileName) fileName.textContent = '';
+        form.querySelectorAll('.hk-input-success').forEach(function (el) {
+          el.classList.remove('hk-input-success');
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Job filter tabs
+      var filterBtns = document.querySelectorAll(".hk-filter-btn");
+      var jobCards = document.querySelectorAll(".hk-job-card");
+      if (filterBtns.length && jobCards.length) {
+        filterBtns.forEach(function(btn) {
+          btn.addEventListener("click", function() {
+            var cat = btn.getAttribute("data-filter");
+            filterBtns.forEach(function(b) { b.classList.remove("is-active"); });
+            btn.classList.add("is-active");
+
+            jobCards.forEach(function(card) {
+              if (cat === "all" || card.getAttribute("data-category") === cat) {
+                card.style.display = "flex";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+      }
+
+      // Auto-populate apply form with clicked job position
+      var applyBtns = document.querySelectorAll(".hk-btn-job-apply");
+      var positionInput = document.getElementById("position");
+      if (applyBtns.length && positionInput) {
+        applyBtns.forEach(function(btn) {
+          btn.addEventListener("click", function() {
+            var jobName = btn.getAttribute("data-job");
+            positionInput.value = jobName;
+          });
+        });
+      }
+    });
+  </script>
+
+<script>
+    (function () {
+      'use strict';
+      var monument = document.getElementById('careersMonument');
+      var hero = document.getElementById('careers-hero');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (monument && hero && !reduceMotion) {
+        hero.addEventListener('mousemove', function (e) {
+          var r = hero.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          monument.style.transform =
+            'rotateY(' + (x * 16) + 'deg) rotateX(' + (-y * 16) + 'deg)';
+        });
+        hero.addEventListener('mouseleave', function () {
+          monument.style.transform = 'rotateY(0) rotateX(0)';
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
