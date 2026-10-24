@@ -1220,7 +1220,7 @@
     html.js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
 
     /* ---------- RESPONSIVE ---------- */
-    /* responsive header delegated to css/style.css */
+    @media (max-width: 900px) {
       .hamburger-btn { display: flex; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
     }
@@ -1235,8 +1235,271 @@
       .main-footer { padding: 3.5rem 1.25rem 1.5rem; }
       .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 
-      .hk-info-card { padding: 1.5rem 1.4rem; }
-      .hk-help-card { padding: 1.5rem 1.4rem; }
+      .hk-wrap { padding: 0 1.25rem; }
+      .hk-section { padding: clamp(3rem, 7vw, 5rem) 0; }
+      .hk-contact-hero-monument { padding: 2.5rem 0 3.5rem; }
+
+      .hk-monument {
+        height: 320px;
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .hk-monument__halo { width: 300px; height: 300px; }
+      .hk-monument__ring--1 { width: 240px; height: 240px; }
+      .hk-monument__ring--2 { width: 320px; height: 320px; }
+      .hk-monument__ring--3 { width: 400px; height: 400px; }
+
+      .hk-pill-float {
+        font-size: 0.72rem;
+        padding: 0.45rem 0.75rem;
+      }
+      .hk-pill-float--1 { top: 2%; left: 0; }
+      .hk-pill-float--2 { top: 16%; right: 0; }
+      .hk-pill-float--3 { bottom: 18%; left: 0; }
+      .hk-pill-float--4 { bottom: 2%; right: 0; }
+
+      .hk-info-card {
+        padding: 1.5rem 1.25rem;
+        min-height: auto;
+      }
+      .hk-info-card p { margin-bottom: 1rem; }
+
+      .hk-form {
+        padding: 1.5rem 1.25rem;
+        border-radius: 16px;
+      }
+
+      .hk-help-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 16px;
+      }
+
+      .hk-location__map {
+        min-height: 320px;
+        padding: 1.5rem 1.25rem;
+      }
+
+      .hk-cta { padding: 3.5rem 0; }
+    }
+
+    @media (max-width: 390px) {
+      .hk-wrap { padding: 0 0.85rem !important; }
+      .hk-contact-hero-monument { padding: 2rem 0 2.75rem !important; }
+
+      .hk-display.hk-h1 {
+        font-size: 2.15rem !important;
+        line-height: 1.08;
+      }
+      .hk-display.hk-h2 {
+        font-size: 1.75rem !important;
+        line-height: 1.12;
+      }
+      .hk-lead {
+        font-size: 0.9rem !important;
+        line-height: 1.6;
+      }
+
+      /* Stack hero action buttons cleanly */
+      .hk-contact-hero__grid div[data-reveal] > div[style*="display: flex"] {
+        flex-direction: column !important;
+        width: 100%;
+        gap: 0.65rem !important;
+      }
+      .hk-contact-hero__grid .hk-btn {
+        width: 100% !important;
+        justify-content: center;
+        padding: 0.85rem 1.25rem !important;
+        font-size: 0.875rem !important;
+      }
+
+      /* 3D Monument container and scaled cube */
+      .hk-monument {
+        height: 280px !important;
+        margin-top: 0.5rem;
+        overflow: hidden;
+      }
+      .hk-monument__halo {
+        width: 240px !important;
+        height: 240px !important;
+      }
+      .hk-monument__ring--1 { width: 200px !important; height: 200px !important; }
+      .hk-monument__ring--2 { width: 260px !important; height: 260px !important; }
+      .hk-monument__ring--3 { width: 320px !important; height: 320px !important; }
+
+      .hk-monument__stone {
+        width: 120px !important;
+        height: 120px !important;
+      }
+      .hk-monument__face {
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 6px !important;
+      }
+      .hk-monument__face svg {
+        width: 22px !important;
+        height: 22px !important;
+      }
+      .hk-monument__face span {
+        font-size: 1.15rem !important;
+      }
+      .hk-monument__face--front  { transform: translateZ(60px) !important; }
+      .hk-monument__face--back   { transform: rotateY(180deg) translateZ(60px) !important; }
+      .hk-monument__face--right  { transform: rotateY(90deg)  translateZ(60px) !important; }
+      .hk-monument__face--left   { transform: rotateY(-90deg) translateZ(60px) !important; }
+      .hk-monument__face--top    { transform: rotateX(90deg)  translateZ(60px) !important; }
+      .hk-monument__face--bottom { transform: rotateX(-90deg) translateZ(60px) !important; }
+
+      /* Floating badges orbiting inside 360px bounds */
+      .hk-pill-float {
+        font-size: 0.65rem !important;
+        padding: 0.35rem 0.6rem !important;
+        gap: 0.35rem !important;
+        transform: translateZ(100px) !important;
+        max-width: 88%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .hk-pill-float__dot {
+        width: 5px !important;
+        height: 5px !important;
+      }
+      .hk-pill-float--1 { top: 3% !important; left: 2% !important; }
+      .hk-pill-float--2 { top: 16% !important; right: 2% !important; }
+      .hk-pill-float--3 { bottom: 18% !important; left: 2% !important; }
+      .hk-pill-float--4 { bottom: 3% !important; right: 2% !important; }
+
+      /* Info Cards */
+      .hk-info-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 16px !important;
+      }
+      .hk-info-card__icon {
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 10px !important;
+      }
+      .hk-info-card__top-badge {
+        font-size: 0.62rem !important;
+        padding: 0.2rem 0.5rem !important;
+      }
+      .hk-info-card h3 {
+        font-size: 1rem !important;
+      }
+      .hk-info-card p {
+        font-size: 0.82rem !important;
+        line-height: 1.5 !important;
+      }
+
+      /* Form elements */
+      .hk-form {
+        padding: 1.25rem 0.95rem !important;
+        border-radius: 14px !important;
+      }
+      .hk-form-aside {
+        padding: 1.15rem 0.95rem !important;
+        border-radius: 12px !important;
+        margin-top: 1.5rem !important;
+      }
+      .hk-form-aside__list li {
+        font-size: 0.85rem !important;
+      }
+      .hk-label {
+        font-size: 0.82rem !important;
+        margin-bottom: 0.35rem !important;
+      }
+      .hk-input,
+      .hk-select,
+      .hk-textarea {
+        padding: 0.72rem 0.8rem !important;
+        font-size: 0.85rem !important;
+        border-radius: 8px !important;
+      }
+      .hk-form__actions {
+        padding-top: 1.15rem !important;
+        gap: 0.75rem !important;
+      }
+      .hk-form__actions .hk-btn {
+        width: 100% !important;
+        padding: 0.85rem 1.25rem !important;
+        font-size: 0.875rem !important;
+      }
+      .hk-form__note {
+        font-size: 0.72rem !important;
+        line-height: 1.4 !important;
+      }
+
+      /* How We Can Help Cards */
+      .hk-help-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 14px !important;
+      }
+      .hk-help-card__icon {
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 10px !important;
+        margin-bottom: 1.1rem !important;
+      }
+      .hk-help-card h3 {
+        font-size: 1.05rem !important;
+      }
+      .hk-help-card p {
+        font-size: 0.85rem !important;
+        margin-bottom: 1.15rem !important;
+      }
+      .hk-help-card__link {
+        font-size: 0.82rem !important;
+        padding-top: 0.85rem !important;
+      }
+
+      /* Location / FAQ */
+      .hk-location__map {
+        min-height: 280px !important;
+        padding: 1.25rem 0.95rem !important;
+        border-radius: 16px !important;
+      }
+      .hk-map-placeholder__icon {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 1rem !important;
+      }
+      .hk-map-placeholder h3 {
+        font-size: 1.25rem !important;
+      }
+      .hk-map-placeholder p {
+        font-size: 0.84rem !important;
+      }
+      .hk-faq-item summary {
+        padding: 0.9rem 1rem !important;
+        font-size: 0.85rem !important;
+      }
+      .hk-faq-item p {
+        padding: 0 1rem 1rem !important;
+        font-size: 0.82rem !important;
+      }
+
+      /* Bottom CTA Section */
+      .hk-cta {
+        padding: 3rem 0 !important;
+      }
+      .hk-cta .hk-display {
+        font-size: 1.85rem !important;
+        margin-bottom: 1rem !important;
+      }
+      .hk-cta p {
+        font-size: 0.9rem !important;
+        margin-bottom: 1.75rem !important;
+      }
+      .hk-cta__buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.65rem !important;
+      }
+      .hk-cta__buttons .hk-btn {
+        width: 100% !important;
+        justify-content: center;
+        padding: 0.85rem 1.25rem !important;
+        font-size: 0.875rem !important;
+      }
     }
 
     /* ---------- REDUCED MOTION ---------- */
