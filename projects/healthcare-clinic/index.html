@@ -469,6 +469,46 @@
       .med-hero-title { font-size: 1.75rem; }
       .med-doc-actions { flex-direction: column; }
     }
+  
+    /* Comprehensive Mobile Polish */
+    @media (max-width: 600px) {
+      .med-header {
+        position: fixed;
+        top: 38px; left: 0; right: 0;
+        height: 56px;
+        padding: 0 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      body { padding-top: 94px; }
+      .med-brand { font-size: 0.92rem; gap: 6px; white-space: nowrap; }
+      .med-brand-cross { width: 26px; height: 26px; }
+      .med-brand-cross svg { width: 14px; height: 14px; }
+      .med-btn-emergency { display: none !important; }
+      .med-btn-book { padding: 6px 12px; font-size: 0.75rem; white-space: nowrap; }
+      .med-ticker-strip { padding: 8px 0.75rem; font-size: 0.75rem; }
+      .med-hero { padding: 2.5rem 1rem 2rem; }
+      .med-hero-title { font-size: 1.95rem; }
+      .med-hero-desc { font-size: 0.9rem; margin-bottom: 1.5rem; }
+      .med-hero-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .med-booking-box { padding: 1.25rem; }
+      .med-booking-title { font-size: 1.15rem; }
+      .med-section { padding: 2.5rem 1rem; }
+      .med-sec-title { font-size: 1.75rem; }
+      .med-sec-head { gap: 1rem; margin-bottom: 1.5rem; }
+      .med-docs-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .med-doc-card { padding: 1.25rem; }
+      .med-modal { width: 95%; max-width: 440px; padding: 1.25rem; }
+      .med-modal form div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 390px) {
+      .med-header { padding: 0 0.5rem; }
+      .med-brand span { font-size: 0.85rem; }
+      .med-btn-book { padding: 5px 9px; font-size: 0.72rem; }
+      .med-hero-title { font-size: 1.7rem; }
+      .med-doc-actions { flex-direction: column; }
+    }
   </style>
 </head>
 <body>

@@ -386,46 +386,143 @@
       .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
       .haka-demo-badge { display: none; }
       .ts-header {
-        padding: 0 0.75rem;
-        height: 60px;
-        gap: 8px;
+        position: fixed;
+        top: 38px; left: 0; right: 0;
+        height: 56px;
+        padding: 0 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
       }
-      body { padding-top: 98px; }
+      body { padding-top: 94px; }
       .ts-brand {
-        font-size: 0.95rem;
+        font-size: 0.88rem;
         gap: 6px;
         white-space: nowrap;
         flex-shrink: 1;
+        overflow: hidden;
       }
       .ts-brand-badge {
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         padding: 2px 6px;
       }
-      .ts-cta-btn {
-        padding: 7px 12px;
-        font-size: 0.75rem;
-        letter-spacing: 0.04em;
+      .ts-header .ts-cta-btn {
+        padding: 6px 10px;
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
         white-space: nowrap;
+        width: auto !important;
         flex-shrink: 0;
       }
-      .ts-hero { padding: 3rem 1rem 2.5rem; }
-      .ts-hero-title { font-size: 2.1rem; }
-      .ts-hero-desc { font-size: 0.95rem; }
-      .ts-hero-btns { flex-direction: column; width: 100%; }
-      .ts-btn-outline, .ts-cta-btn { width: 100%; text-align: center; justify-content: center; }
-      .ts-estimator-card { padding: 1.25rem; border-radius: 8px; }
-      .ts-estimate-price { font-size: 2.2rem; }
-      .ts-gallery-grid { grid-template-columns: 1fr; }
-      .ts-section { padding: 2.5rem 1rem; }
-      .ts-sec-title { font-size: 1.85rem; }
-      .ts-modal { padding: 1.25rem; }
+      .ts-hero {
+        padding: 2.5rem 1rem 2rem;
+        min-height: auto;
+      }
+      .ts-hero-title {
+        font-size: 2rem;
+      }
+      .ts-hero-desc {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+      .ts-hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+      }
+      .ts-hero-btns .ts-btn-outline,
+      .ts-hero-btns .ts-cta-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      .ts-section {
+        padding: 2.5rem 0.75rem;
+        width: 100%;
+      }
+      .ts-sec-title {
+        font-size: 1.75rem;
+      }
+      .ts-sec-header {
+        margin-bottom: 1.75rem;
+        padding: 0 0.5rem;
+      }
+      .ts-estimator-card {
+        padding: 1.25rem 1rem;
+        border-radius: 8px;
+        gap: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .ts-estimator-inputs {
+        width: 100%;
+        min-width: 0;
+      }
+      .ts-select, .ts-input {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 12px;
+        font-size: 0.82rem;
+        box-sizing: border-box;
+      }
+      .ts-range-val {
+        font-size: 0.75rem;
+      }
+      .ts-estimate-summary {
+        padding: 1.25rem;
+        border-radius: 8px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .ts-estimate-price {
+        font-size: 2.2rem;
+      }
+      .ts-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .ts-proj-img {
+        height: 180px;
+      }
+      .ts-modal {
+        width: 95%;
+        max-width: 440px;
+        padding: 1.25rem;
+      }
     }
 
     @media (max-width: 390px) {
-      .ts-header { padding: 0 0.5rem; }
-      .ts-brand { font-size: 0.85rem; }
-      .ts-hero-title { font-size: 1.8rem; }
-      .ts-eyebrow { font-size: 0.72rem; }
+      .ts-header {
+        padding: 0 0.4rem;
+        gap: 4px;
+      }
+      .ts-brand {
+        font-size: 0.8rem;
+      }
+      .ts-header .ts-cta-btn {
+        padding: 5px 8px;
+        font-size: 0.68rem;
+      }
+      .ts-hero-title {
+        font-size: 1.7rem;
+      }
+      .ts-eyebrow {
+        font-size: 0.7rem;
+      }
+      .ts-section {
+        padding: 2rem 0.5rem;
+      }
+      .ts-estimator-card {
+        padding: 1rem 0.75rem;
+      }
+      .ts-select, .ts-input {
+        font-size: 0.78rem;
+        padding: 8px 10px;
+      }
+      .ts-range-val {
+        font-size: 0.68rem;
+      }
     }
   </style>
 </head>

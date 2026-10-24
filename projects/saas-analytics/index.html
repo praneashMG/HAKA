@@ -335,6 +335,42 @@
       .saas-live-badge { font-size: 0.65rem; padding: 3px 6px; }
       .saas-kpi-num { font-size: 1.6rem; }
     }
+  
+    /* Comprehensive Mobile Polish */
+    @media (max-width: 600px) {
+      .saas-header {
+        position: fixed;
+        top: 38px; left: 0; right: 0;
+        height: 56px;
+        padding: 0 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      body { padding-top: 94px; }
+      .saas-brand { font-size: 0.92rem; gap: 6px; white-space: nowrap; }
+      .saas-brand-icon { width: 26px; height: 26px; }
+      .saas-brand-icon svg { width: 14px; height: 14px; }
+      .saas-live-badge { padding: 4px 8px; font-size: 0.7rem; gap: 4px; white-space: nowrap; }
+      .saas-wrap { padding: 1rem 0.75rem; }
+      .saas-kpi-grid { grid-template-columns: 1fr; gap: 0.88rem; margin-bottom: 1.25rem; }
+      .saas-kpi-card { padding: 1.15rem; }
+      .saas-kpi-num { font-size: 1.75rem; }
+      .saas-chart-grid { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+      .saas-panel { padding: 1.15rem; }
+      .saas-panel-head { flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+      .saas-tabs { width: 100%; justify-content: space-between; }
+      .saas-tab-btn { flex: 1; text-align: center; padding: 4px 8px; }
+      .saas-feed { max-height: 240px; }
+      .saas-feed-item { font-size: 0.75rem; gap: 8px; }
+      .saas-table-wrap th, .saas-table-wrap td { padding: 8px 10px; font-size: 0.75rem; }
+    }
+    @media (max-width: 390px) {
+      .saas-header { padding: 0 0.5rem; }
+      .saas-brand { font-size: 0.82rem; }
+      .saas-live-badge { font-size: 0.65rem; padding: 3px 6px; }
+      .saas-kpi-num { font-size: 1.55rem; }
+    }
   </style>
 </head>
 <body>
