@@ -417,7 +417,39 @@
     @media (max-width: 600px) {
       .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
       .haka-demo-badge { display: none; }
-      .med-ticker { padding: 8px 1rem; font-size: 0.75rem; }
+      .med-header {
+        padding: 0 0.75rem;
+        height: 60px;
+        gap: 6px;
+      }
+      body { padding-top: 98px; }
+      .med-brand {
+        font-size: 0.95rem;
+        gap: 6px;
+        flex-shrink: 1;
+        white-space: nowrap;
+      }
+      .med-brand-cross {
+        width: 28px; height: 28px;
+        flex-shrink: 0;
+      }
+      .med-brand-cross svg { width: 16px; height: 16px; }
+      .med-header-actions {
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      .med-btn-emergency {
+        display: none; /* Hide 911 duplicate badge in mobile header to prevent overlapping Book Visit button */
+      }
+      .med-btn-book {
+        padding: 7px 12px;
+        font-size: 0.78rem;
+        white-space: nowrap;
+      }
+      .med-ticker-strip {
+        padding: 8px 0.75rem;
+        font-size: 0.75rem;
+      }
       .med-hero { padding: 3rem 1rem 2rem; }
       .med-hero-title { font-size: 2rem; }
       .med-hero-sub { font-size: 0.95rem; }
@@ -428,11 +460,12 @@
       .med-modal { padding: 1.25rem; border-radius: 12px; }
       .med-filter-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
       .med-pill { white-space: nowrap; flex-shrink: 0; }
-      .med-brand span:last-child { font-size: 1rem; }
-      .med-header .med-cta-btn { font-size: 0.8rem; padding: 7px 12px; }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 390px) {
+      .med-header { padding: 0 0.5rem; }
+      .med-brand span { font-size: 0.88rem; }
+      .med-btn-book { padding: 6px 10px; font-size: 0.75rem; }
       .med-hero-title { font-size: 1.75rem; }
       .med-doc-actions { flex-direction: column; }
     }

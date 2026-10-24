@@ -308,6 +308,25 @@
     @media (max-width: 600px) {
       .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
       .haka-demo-badge { display: none; }
+      .rest-header {
+        padding: 0 0.75rem;
+        height: 60px;
+        gap: 8px;
+      }
+      body { padding-top: 98px; }
+      .rest-brand {
+        font-size: 1.05rem;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+        flex-shrink: 1;
+      }
+      .rest-cta-btn {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
       .rest-hero { padding: 3.5rem 1rem 2.5rem; }
       .rest-hero-title { font-size: 2.2rem; }
       .rest-hero-sub { font-size: 0.95rem; }
@@ -320,11 +339,12 @@
       .rest-pill { white-space: nowrap; flex-shrink: 0; padding: 6px 14px; font-size: 0.78rem; }
       .rest-section { padding: 2.5rem 1rem; }
       .rest-sec-title { font-size: 1.9rem; }
-      .rest-header .rest-cta-btn { font-size: 0.8rem; padding: 7px 12px; }
-      .rest-brand { font-size: 1.05rem; }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 390px) {
+      .rest-header { padding: 0 0.5rem; }
+      .rest-brand { font-size: 0.9rem; letter-spacing: 0.04em; }
+      .rest-cta-btn { padding: 6px 10px; font-size: 0.72rem; }
       .rest-hero-title { font-size: 1.8rem; }
     }
   </style>

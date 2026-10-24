@@ -385,6 +385,29 @@
     @media (max-width: 640px) {
       .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
       .haka-demo-badge { display: none; }
+      .ts-header {
+        padding: 0 0.75rem;
+        height: 60px;
+        gap: 8px;
+      }
+      body { padding-top: 98px; }
+      .ts-brand {
+        font-size: 0.95rem;
+        gap: 6px;
+        white-space: nowrap;
+        flex-shrink: 1;
+      }
+      .ts-brand-badge {
+        font-size: 0.75rem;
+        padding: 2px 6px;
+      }
+      .ts-cta-btn {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
       .ts-hero { padding: 3rem 1rem 2.5rem; }
       .ts-hero-title { font-size: 2.1rem; }
       .ts-hero-desc { font-size: 0.95rem; }
@@ -396,11 +419,11 @@
       .ts-section { padding: 2.5rem 1rem; }
       .ts-sec-title { font-size: 1.85rem; }
       .ts-modal { padding: 1.25rem; }
-      .ts-header .ts-cta-btn { font-size: 0.8rem; padding: 7px 12px; }
-      .ts-brand span:last-child { font-size: 0.95rem; }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 390px) {
+      .ts-header { padding: 0 0.5rem; }
+      .ts-brand { font-size: 0.85rem; }
       .ts-hero-title { font-size: 1.8rem; }
       .ts-eyebrow { font-size: 0.72rem; }
     }

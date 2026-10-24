@@ -365,7 +365,25 @@
     @media (max-width: 600px) {
       .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
       .haka-demo-badge { display: none; }
-      .ev-hero { padding: 4rem 1rem 2.5rem; }
+      .ev-header {
+        padding: 0 0.75rem;
+        height: 60px;
+        gap: 8px;
+      }
+      body { padding-top: 98px; }
+      .ev-brand {
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        flex-shrink: 1;
+      }
+      .ev-btn-ticket {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .ev-hero { padding: 3.5rem 1rem 2.5rem; }
       .ev-hero-title { font-size: 2.1rem; line-height: 1.15; }
       .ev-hero-meta { font-size: 0.95rem; gap: 0.75rem; }
       .ev-countdown { gap: 0.5rem; justify-content: center; width: 100%; }
@@ -377,14 +395,15 @@
       .ev-sec-title { font-size: 1.85rem; }
       .ev-section { padding: 2.5rem 1rem; }
       .ev-modal { padding: 1.25rem; border-radius: 12px; }
-      .ev-header .ev-cta-btn { font-size: 0.8rem; padding: 8px 14px; }
-      .ev-brand { font-size: 1.05rem; }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 390px) {
+      .ev-header { padding: 0 0.5rem; }
+      .ev-brand { font-size: 0.85rem; }
+      .ev-btn-ticket { padding: 6px 10px; font-size: 0.72rem; }
       .ev-hero-title { font-size: 1.8rem; }
-      .ev-count-box { min-width: 60px; padding: 0.5rem 0.35rem; }
-      .ev-count-num { font-size: 1.35rem; }
+      .ev-count-box { min-width: 58px; padding: 0.5rem 0.25rem; }
+      .ev-count-num { font-size: 1.3rem; }
       .ev-day-btn { flex: 1 1 100%; }
     }
   </style>

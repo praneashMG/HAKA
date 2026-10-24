@@ -756,8 +756,26 @@
     @media (max-width: 600px) {
       .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
       .haka-demo-badge { display: none; }
-      .lux-header { padding: 0 1rem; }
-      .lux-brand { font-size: 1.1rem; }
+      .lux-header {
+        padding: 0 0.75rem;
+        height: 60px;
+        gap: 6px;
+      }
+      body { padding-top: 98px; }
+      .lux-brand {
+        font-size: 0.95rem;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+        flex-shrink: 1;
+      }
+      .lux-actions {
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .lux-currency-select {
+        padding: 3px 6px;
+        font-size: 0.72rem;
+      }
       .lux-hero { padding: 3rem 1rem; }
       .lux-hero-title { font-size: 2rem; }
       .lux-pillars { grid-template-columns: 1fr; }
@@ -772,7 +790,9 @@
       .lux-toast { left: 1rem; right: 1rem; bottom: 1rem; }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 390px) {
+      .lux-header { padding: 0 0.5rem; }
+      .lux-brand { font-size: 0.85rem; letter-spacing: 0.08em; }
       .lux-hero-title { font-size: 1.7rem; }
       .lux-hero-actions { flex-direction: column; width: 100%; }
       .lux-btn-primary, .lux-btn-secondary { width: 100%; text-align: center; justify-content: center; }

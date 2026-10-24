@@ -373,6 +373,25 @@
     @media (max-width: 680px) {
       .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
       .haka-demo-badge { display: none; }
+      .re-header {
+        padding: 0 0.75rem;
+        height: 60px;
+        gap: 8px;
+      }
+      body { padding-top: 98px; }
+      .re-brand {
+        font-size: 1.05rem;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        flex-shrink: 1;
+      }
+      .re-header-cta {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
       .re-hero { padding: 3.5rem 1rem 4rem; }
       .re-hero-title { font-size: 2.1rem; line-height: 1.2; }
       .re-search-panel { grid-template-columns: 1fr; margin-top: 1rem; border-radius: 12px; }
@@ -382,13 +401,14 @@
       .re-sec-title { font-size: 1.85rem; }
       .re-modal { border-radius: 12px; }
       .re-modal-inner { padding: 1.25rem; }
-      .re-header .re-cta-btn { font-size: 0.8rem; padding: 7px 12px; }
-      .re-brand { font-size: 1.05rem; }
       .re-filter-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
       .re-pill { white-space: nowrap; flex-shrink: 0; }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 390px) {
+      .re-header { padding: 0 0.5rem; }
+      .re-brand { font-size: 0.9rem; }
+      .re-header-cta { padding: 6px 10px; font-size: 0.72rem; }
       .re-hero-title { font-size: 1.75rem; }
       .re-specs-strip { font-size: 0.75rem; }
       .re-card-actions { flex-direction: column; }

@@ -294,6 +294,30 @@
     @media (max-width: 600px) {
       .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
       .haka-demo-badge { display: none; }
+      .saas-header {
+        padding: 0 0.75rem;
+        height: 60px;
+        gap: 8px;
+      }
+      body { padding-top: 98px; }
+      .saas-brand {
+        font-size: 0.95rem;
+        gap: 6px;
+        white-space: nowrap;
+        flex-shrink: 1;
+      }
+      .saas-brand-icon {
+        width: 26px; height: 26px;
+        flex-shrink: 0;
+      }
+      .saas-brand-icon svg { width: 14px; height: 14px; }
+      .saas-live-badge {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+        gap: 4px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
       .saas-wrap { padding: 1rem; }
       .saas-kpi-grid { grid-template-columns: 1fr; }
       .saas-kpi-num { font-size: 1.8rem; }
@@ -303,11 +327,12 @@
       .saas-tab-btn { flex: 1; text-align: center; }
       .saas-feed-item { font-size: 0.78rem; }
       .saas-table-wrap th, .saas-table-wrap td { padding: 10px 12px; font-size: 0.78rem; }
-      .saas-header .saas-status-pill { font-size: 0.72rem; padding: 4px 10px; }
-      .saas-brand span { font-size: 0.95rem; }
     }
 
-    @media (max-width: 380px) {
+    @media (max-width: 390px) {
+      .saas-header { padding: 0 0.5rem; }
+      .saas-brand { font-size: 0.85rem; }
+      .saas-live-badge { font-size: 0.65rem; padding: 3px 6px; }
       .saas-kpi-num { font-size: 1.6rem; }
     }
   </style>
