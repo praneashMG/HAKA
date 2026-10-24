@@ -2118,20 +2118,101 @@
     }
 
     @media (max-width: 600px) {
-      :root { --header-h: 72px; }
-      .header-inner { padding: 0 1rem; }
-      .brand-logo-img { height: 48px; }
-      .footer-logo-img { height: 64px; }
-      .nav-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      :root { --header-h: 68px; }
+      .header-inner { padding: 0 0.85rem; }
+      .brand-logo-img { height: 44px; }
+      .footer-logo-img { height: 60px; }
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .main-footer { padding: 3.5rem 1.25rem 1.5rem; }
+      .main-footer { padding: 3rem 1rem 1.5rem; }
       .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 
-      .hk-careers-photo img { height: 380px; }
-      .hk-careers-chip { font-size: 0.68rem; padding: 0.5rem 0.85rem; }
-      .hk-careers-chip--1 { right: 0.5rem; }
-      .hk-careers-chip--2 { left: 0.5rem; }
-      .hk-careers-chip--3 { right: 1rem; }
+      .hk-careers-hero-monument { padding: 3rem 0 2rem; }
+      .hk-monument { height: 280px; max-width: 290px; }
+      .hk-monument__stone, .hk-monument__face { width: 110px; height: 110px; }
+      .hk-monument__face--front  { transform: translateZ(55px); }
+      .hk-monument__face--back   { transform: rotateY(180deg) translateZ(55px); }
+      .hk-monument__face--right  { transform: rotateY(90deg)  translateZ(55px); }
+      .hk-monument__face--left   { transform: rotateY(-90deg) translateZ(55px); }
+      .hk-monument__face--top    { transform: rotateX(90deg)  translateZ(55px); }
+      .hk-monument__face--bottom { transform: rotateX(-90deg) translateZ(55px); }
+      .hk-monument__ring--1 { width: 210px; height: 210px; }
+      .hk-monument__ring--2 { width: 290px; height: 290px; }
+      .hk-monument__ring--3 { width: 370px; height: 370px; }
+      .hk-pill-float { font-size: 0.68rem; padding: 0.4rem 0.75rem; }
+
+      .hk-careers-photo img { height: 320px; }
+      .hk-careers-chip { font-size: 0.68rem; padding: 0.45rem 0.75rem; }
+      .hk-careers-chip--1 { right: 0.25rem; top: -0.5rem; }
+      .hk-careers-chip--2 { left: 0.25rem; bottom: 1.5rem; }
+      .hk-careers-chip--3 { right: 0.5rem; bottom: -0.5rem; }
+
+      /* Why Work With Us */
+      .hk-why-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .hk-why-card { padding: 1.5rem 1.25rem; border-radius: 16px; }
+
+      /* Openings Filter & Cards */
+      .hk-openings__filters {
+        gap: 0.45rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+      }
+      .hk-filter-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .hk-openings__grid { gap: 1.25rem; }
+      .hk-job-card { padding: 1.5rem 1.25rem; border-radius: 16px; }
+      .hk-job-card__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .hk-job-title { font-size: 1.2rem; }
+      .hk-job-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding: 0.85rem 1rem;
+      }
+
+      /* Career Areas */
+      .hk-areas__img img { height: 300px; }
+      .hk-area-item { padding: 1rem 1.15rem; }
+
+      /* Timeline Process */
+      .hk-process-step__badge { width: 52px; height: 52px; font-size: 1.2rem; margin-bottom: 1rem; }
+
+      /* Application Form */
+      .hk-form { padding: 1.5rem 1.15rem; border-radius: 16px; }
+      .hk-form__row { gap: 1rem; }
+      .hk-file-wrap { padding: 1.25rem 0.75rem; }
+      .hk-cta__buttons { flex-direction: column; width: 100%; }
+      .hk-cta__buttons a { width: 100%; text-align: center; justify-content: center; }
+    }
+
+    @media (max-width: 390px) {
+      .hk-monument { height: 250px; max-width: 260px; }
+      .hk-monument__stone, .hk-monument__face { width: 95px; height: 95px; }
+      .hk-monument__face--front  { transform: translateZ(47px); }
+      .hk-monument__face--back   { transform: rotateY(180deg) translateZ(47px); }
+      .hk-monument__face--right  { transform: rotateY(90deg)  translateZ(47px); }
+      .hk-monument__face--left   { transform: rotateY(-90deg) translateZ(47px); }
+      .hk-monument__face--top    { transform: rotateX(90deg)  translateZ(47px); }
+      .hk-monument__face--bottom { transform: rotateX(-90deg) translateZ(47px); }
+      .hk-careers-photo img { height: 260px; }
+      .hk-careers-chip { font-size: 0.62rem; padding: 0.35rem 0.65rem; }
+      .hk-job-card { padding: 1.25rem 1rem; }
+      .hk-job-title { font-size: 1.12rem; }
+      .hk-job-badge-group { flex-wrap: wrap; gap: 4px; }
+      .hk-filter-btn { font-size: 0.75rem; padding: 0.4rem 0.85rem; }
+      .hk-form { padding: 1.25rem 0.9rem; }
+      .hk-input, .hk-select, .hk-textarea { padding: 0.75rem 0.85rem; font-size: 0.85rem; }
+      .hk-areas__img img { height: 240px; }
     }
 
     /* ---------- REDUCED MOTION ---------- */
