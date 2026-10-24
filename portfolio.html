@@ -755,11 +755,22 @@
       box-shadow: 0 30px 70px -15px rgba(24, 61, 50, 0.3);
       position: relative;
       padding: 2.5rem;
+      box-sizing: border-box;
+    }
+    .hk-modal-head-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .hk-modal-pill {
+      font-size: 0.75rem;
+      line-height: 1.4;
+      white-space: normal;
+      flex-shrink: 1;
     }
     .hk-modal-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
       width: 36px;
       height: 36px;
       border-radius: 50%;
@@ -771,11 +782,88 @@
       justify-content: center;
       font-size: 1.2rem;
       cursor: pointer;
+      flex-shrink: 0;
       transition: all 0.2s;
     }
     .hk-modal-close:hover {
       background: var(--green);
       color: #FFF;
+    }
+    .hk-modal-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Mobile Responsive Polish for Case Overview (360px & 390px) */
+    @media (max-width: 600px) {
+      .hk-modal-backdrop {
+        padding: 1rem 0.75rem;
+      }
+      .hk-modal-box {
+        padding: 1.5rem 1.15rem;
+        border-radius: 16px;
+        max-height: 88vh;
+      }
+      #modalTitle {
+        font-size: 1.6rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 0.85rem !important;
+      }
+      .hk-modal-head-row {
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+      .hk-modal-pill {
+        font-size: 0.72rem;
+        padding: 0.3rem 0.7rem;
+      }
+      .hk-modal-close {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+      }
+      #modalMetrics {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.75rem !important;
+        padding: 1rem !important;
+      }
+      #modalMetrics div div:first-child {
+        font-size: 1.5rem !important;
+      }
+      .hk-modal-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+      }
+      #modalLaunchBtn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hk-modal-backdrop {
+        padding: 0.75rem 0.5rem;
+      }
+      .hk-modal-box {
+        padding: 1.25rem 0.95rem;
+      }
+      #modalTitle {
+        font-size: 1.4rem !important;
+      }
+      #modalMetrics {
+        grid-template-columns: 1fr !important;
+        gap: 0.65rem !important;
+      }
+      .hk-modal-pill {
+        font-size: 0.68rem;
+      }
     }
 
     /* CTA Bottom Strip */
@@ -795,14 +883,67 @@
       pointer-events: none;
     }
     .hk-port-cta__title {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.15;
       margin-bottom: 1.25rem;
     }
     .hk-port-cta__desc {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--warm-grey);
       max-width: 600px;
-      margin: 0 auto 2.5rem auto;
+      margin: 0 auto 2.25rem auto;
+      line-height: 1.6;
+    }
+    .hk-port-cta__actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .hk-port-cta {
+        padding: 3.5rem 1rem 3rem;
+      }
+      .hk-port-cta__title {
+        font-size: 1.85rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      .hk-port-cta__desc {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin-bottom: 1.75rem;
+      }
+      .hk-port-cta__actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+      }
+      .hk-port-cta__btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 0.85rem 1.25rem;
+        font-size: 0.85rem;
+        box-sizing: border-box;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hk-port-cta {
+        padding: 3rem 0.75rem 2.5rem;
+      }
+      .hk-port-cta__title {
+        font-size: 1.65rem;
+      }
+      .hk-port-cta__desc {
+        font-size: 0.86rem;
+      }
+      .hk-port-cta__btn {
+        font-size: 0.8rem;
+        padding: 0.8rem 1rem;
+      }
     }
 
     @media (max-width: 900px) {
@@ -931,11 +1072,11 @@
         <p class="hk-port-cta__desc">
           Speak with our principal systems engineers and architects. We design, build, and deploy reliable digital business solutions tailored to your operational scale.
         </p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="contact.html" class="hk-btn hk-btn--gold">
+        <div class="hk-port-cta__actions">
+          <a href="contact.html" class="hk-btn hk-btn--gold hk-port-cta__btn">
             Schedule an Architectural Consultation &rarr;
           </a>
-          <a href="services.html" class="hk-btn hk-btn--ghost" style="color: #FFF; border-color: rgba(255,255,255,0.3);">
+          <a href="services.html" class="hk-btn hk-btn--ghost hk-port-cta__btn" style="color: #FFF; border-color: rgba(255,255,255,0.3);">
             Review Engineering Services
           </a>
         </div>
@@ -946,8 +1087,7 @@
   <!-- Deep Dive Case Overview Modal -->
   <div class="hk-modal-backdrop" id="caseModal" onclick="if(event.target===this) closeCaseModal()">
     <div class="hk-modal-box">
-      <button class="hk-modal-close" onclick="closeCaseModal()">&times;</button>
-      <div class="hk-tag-pill" style="margin-bottom:0.75rem;" id="modalPill">Project Case Study</div>
+      <div class="hk-modal-head-row"><div class="hk-tag-pill hk-modal-pill" id="modalPill">Project Case Study</div><button class="hk-modal-close" onclick="closeCaseModal()">&times;</button></div>
       <h3 class="hk-display" style="font-size:2rem; color:var(--green-900); margin-bottom:1rem;" id="modalTitle">Project Title</h3>
       
       <div style="margin-bottom:1.5rem;">
@@ -967,7 +1107,7 @@
         </div>
       </div>
 
-      <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:1.25rem;">
+      <div class="hk-modal-footer">
         <div id="modalTechStack" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
         <a id="modalLaunchBtn" href="#" target="_blank" class="hk-btn hk-btn--primary">
           Launch Live App ↗
