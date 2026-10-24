@@ -371,11 +371,38 @@
       color: var(--text-muted); font-size: 1.5rem;
     }
 
-    @media (max-width: 900px) {
-      .ts-estimator-card { grid-template-columns: 1fr; }
-      .ts-gallery-grid { grid-template-columns: 1fr; }
+    /* Responsive Design - Tablet & Mobile */
+    @media (max-width: 992px) {
+      .ts-header { padding: 0 1.25rem; }
       .ts-nav { display: none; }
-      .ts-hero-title { font-size: 2.6rem; }
+      .ts-hero { padding: 4rem 1.5rem; min-height: auto; }
+      .ts-hero-title { font-size: 2.8rem; }
+      .ts-estimator-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+      .ts-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .ts-section { padding: 3.5rem 1.25rem; }
+    }
+
+    @media (max-width: 640px) {
+      .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
+      .haka-demo-badge { display: none; }
+      .ts-hero { padding: 3rem 1rem 2.5rem; }
+      .ts-hero-title { font-size: 2.1rem; }
+      .ts-hero-desc { font-size: 0.95rem; }
+      .ts-hero-btns { flex-direction: column; width: 100%; }
+      .ts-btn-outline, .ts-cta-btn { width: 100%; text-align: center; justify-content: center; }
+      .ts-estimator-card { padding: 1.25rem; border-radius: 8px; }
+      .ts-estimate-price { font-size: 2.2rem; }
+      .ts-gallery-grid { grid-template-columns: 1fr; }
+      .ts-section { padding: 2.5rem 1rem; }
+      .ts-sec-title { font-size: 1.85rem; }
+      .ts-modal { padding: 1.25rem; }
+      .ts-header .ts-cta-btn { font-size: 0.8rem; padding: 7px 12px; }
+      .ts-brand span:last-child { font-size: 0.95rem; }
+    }
+
+    @media (max-width: 380px) {
+      .ts-hero-title { font-size: 1.8rem; }
+      .ts-eyebrow { font-size: 0.72rem; }
     }
   </style>
 </head>

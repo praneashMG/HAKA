@@ -351,13 +351,41 @@
       position: relative;
     }
 
-    @media (max-width: 900px) {
-      .ev-hero-title { font-size: 2.8rem; }
-      .ev-header { padding: 0 1.5rem; }
+    /* Responsive Design - Tablet & Mobile */
+    @media (max-width: 992px) {
+      .ev-header { padding: 0 1.25rem; }
       .ev-nav { display: none; }
-      .ev-agenda-card { grid-template-columns: 1fr; }
-      .ev-tickets-grid { grid-template-columns: 1fr; }
-      .ev-section { padding: 3rem 1.5rem; }
+      .ev-hero { padding: 5rem 1.5rem 3rem; }
+      .ev-hero-title { font-size: 2.8rem; }
+      .ev-section { padding: 3.5rem 1.25rem; }
+      .ev-agenda-card { grid-template-columns: 1fr; gap: 1rem; }
+      .ev-tickets-grid { grid-template-columns: 1fr; max-width: 500px; margin: 2.5rem auto 0; }
+    }
+
+    @media (max-width: 600px) {
+      .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
+      .haka-demo-badge { display: none; }
+      .ev-hero { padding: 4rem 1rem 2.5rem; }
+      .ev-hero-title { font-size: 2.1rem; line-height: 1.15; }
+      .ev-hero-meta { font-size: 0.95rem; gap: 0.75rem; }
+      .ev-countdown { gap: 0.5rem; justify-content: center; width: 100%; }
+      .ev-count-box { min-width: 68px; padding: 0.6rem 0.5rem; }
+      .ev-count-num { font-size: 1.6rem; }
+      .ev-count-label { font-size: 0.62rem; }
+      .ev-day-tabs { flex-wrap: wrap; gap: 0.5rem; }
+      .ev-day-btn { flex: 1 1 calc(50% - 0.5rem); padding: 10px 14px; font-size: 0.8rem; text-align: center; }
+      .ev-sec-title { font-size: 1.85rem; }
+      .ev-section { padding: 2.5rem 1rem; }
+      .ev-modal { padding: 1.25rem; border-radius: 12px; }
+      .ev-header .ev-cta-btn { font-size: 0.8rem; padding: 8px 14px; }
+      .ev-brand { font-size: 1.05rem; }
+    }
+
+    @media (max-width: 380px) {
+      .ev-hero-title { font-size: 1.8rem; }
+      .ev-count-box { min-width: 60px; padding: 0.5rem 0.35rem; }
+      .ev-count-num { font-size: 1.35rem; }
+      .ev-day-btn { flex: 1 1 100%; }
     }
   </style>
 </head>

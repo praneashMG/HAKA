@@ -358,13 +358,40 @@
       position: relative;
     }
 
-    @media (max-width: 900px) {
-      .re-hero-title { font-size: 2.8rem; }
-      .re-search-panel { grid-template-columns: 1fr; margin-top: 0; }
-      .re-header { padding: 0 1.5rem; }
+    /* Responsive Design - Tablet & Mobile */
+    @media (max-width: 992px) {
+      .re-header { padding: 0 1.25rem; }
       .re-nav { display: none; }
+      .re-hero { padding: 4.5rem 1.5rem 5rem; }
+      .re-hero-title { font-size: 2.8rem; }
+      .re-search-panel { grid-template-columns: repeat(2, 1fr); margin-top: -2rem; gap: 0.75rem; padding: 1.25rem; }
+      .re-btn-search { grid-column: span 2; justify-content: center; }
+      .re-prop-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .re-section { padding: 3.5rem 1.25rem; }
+    }
+
+    @media (max-width: 680px) {
+      .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
+      .haka-demo-badge { display: none; }
+      .re-hero { padding: 3.5rem 1rem 4rem; }
+      .re-hero-title { font-size: 2.1rem; line-height: 1.2; }
+      .re-search-panel { grid-template-columns: 1fr; margin-top: 1rem; border-radius: 12px; }
+      .re-btn-search { grid-column: span 1; }
       .re-prop-grid { grid-template-columns: 1fr; }
-      .re-section { padding: 3rem 1.5rem; }
+      .re-section { padding: 2.5rem 1rem; }
+      .re-sec-title { font-size: 1.85rem; }
+      .re-modal { border-radius: 12px; }
+      .re-modal-inner { padding: 1.25rem; }
+      .re-header .re-cta-btn { font-size: 0.8rem; padding: 7px 12px; }
+      .re-brand { font-size: 1.05rem; }
+      .re-filter-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+      .re-pill { white-space: nowrap; flex-shrink: 0; }
+    }
+
+    @media (max-width: 380px) {
+      .re-hero-title { font-size: 1.75rem; }
+      .re-specs-strip { font-size: 0.75rem; }
+      .re-card-actions { flex-direction: column; }
     }
   </style>
 </head>

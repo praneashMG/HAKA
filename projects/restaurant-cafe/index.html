@@ -294,13 +294,38 @@
       outline: none;
     }
 
-    @media (max-width: 900px) {
-      .rest-hero-title { font-size: 2.8rem; }
-      .rest-menu-grid { grid-template-columns: 1fr; }
-      .rest-res-banner { grid-template-columns: 1fr; padding: 2rem; }
-      .rest-header { padding: 0 1.5rem; }
+    /* Responsive Design - Tablet & Mobile */
+    @media (max-width: 992px) {
+      .rest-header { padding: 0 1.25rem; }
       .rest-nav { display: none; }
-      .rest-section { padding: 3rem 1.5rem; }
+      .rest-hero { padding: 5rem 1.5rem 3.5rem; }
+      .rest-hero-title { font-size: 3rem; }
+      .rest-menu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .rest-res-banner { grid-template-columns: 1fr; padding: 2.5rem; gap: 2rem; }
+      .rest-section { padding: 3.5rem 1.25rem; }
+    }
+
+    @media (max-width: 600px) {
+      .haka-demo-bar { padding: 0 0.75rem; font-size: 0.75rem; }
+      .haka-demo-badge { display: none; }
+      .rest-hero { padding: 3.5rem 1rem 2.5rem; }
+      .rest-hero-title { font-size: 2.2rem; }
+      .rest-hero-sub { font-size: 0.95rem; }
+      .rest-dish-item { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .rest-dish-img { width: 100%; height: 160px; }
+      .rest-dish-content { width: 100%; }
+      .rest-res-banner { padding: 1.5rem; border-radius: 12px; margin-top: 2.5rem; }
+      .rest-res-banner form div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .rest-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+      .rest-pill { white-space: nowrap; flex-shrink: 0; padding: 6px 14px; font-size: 0.78rem; }
+      .rest-section { padding: 2.5rem 1rem; }
+      .rest-sec-title { font-size: 1.9rem; }
+      .rest-header .rest-cta-btn { font-size: 0.8rem; padding: 7px 12px; }
+      .rest-brand { font-size: 1.05rem; }
+    }
+
+    @media (max-width: 380px) {
+      .rest-hero-title { font-size: 1.8rem; }
     }
   </style>
 </head>
