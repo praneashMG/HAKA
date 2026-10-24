@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegis Health Clinic Network | Multi-Specialty Healthcare & Telehealth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --med-teal: #0D7A70;
+      --med-teal-dark: #084C46;
+      --med-teal-light: #E6F7F5;
+      --med-blue: #0E4B75;
+      --navy-900: #0A1926;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-top: 108px;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Top Portfolio Return Bar */
+    .haka-demo-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 38px;
+      background: #183D32;
+      color: #FAF8F2;
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(193, 154, 91, 0.35);
+    }
+    .haka-demo-bar a {
+      color: #C19A5B;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .haka-demo-bar a:hover { color: #fff; }
+    .haka-demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.1);
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+    }
+    .haka-pulse-dot {
+      width: 7px; height: 7px;
+      background: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Clinic Header */
+    .med-header {
+      position: fixed;
+      top: 38px; left: 0; right: 0;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .med-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--med-teal-dark);
+    }
+    .med-brand-cross {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: var(--med-teal);
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .med-nav {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .med-nav a { color: var(--text-muted); transition: color 0.2s; }
+    .med-nav a:hover, .med-nav a.active { color: var(--med-teal); }
+    .med-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .med-btn-emergency {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #DC2626;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 8px 14px;
+      border-radius: 6px;
+      background: #FEF2F2;
+    }
+    .med-btn-book {
+      background: var(--med-teal);
+      color: #FFF;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .med-btn-book:hover {
+      background: var(--med-teal-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Live ER Wait Times Bar */
+    .med-ticker-strip {
+      background: var(--navy-900);
+      color: #FFF;
+      padding: 10px 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      overflow-x: auto;
+    }
+    .med-ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 2rem;
+      white-space: nowrap;
+    }
+    .med-badge-live {
+      background: #10B981;
+      color: #000;
+      font-weight: 700;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Hero */
+    .med-hero {
+      padding: 4.5rem 3rem;
+      background: linear-gradient(135deg, #F0FDF4 0%, #E6F7F5 50%, #EFF6FF 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .med-hero-grid {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .med-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13, 122, 112, 0.12);
+      color: var(--med-teal-dark);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .med-hero-title {
+      font-family: var(--font-heading);
+      font-size: 3.2rem;
+      line-height: 1.15;
+      color: var(--navy-900);
+      margin-bottom: 1.25rem;
+    }
+    .med-hero-title span { color: var(--med-teal); }
+    .med-hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Quick Booking Card */
+    .med-booking-box {
+      background: #FFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px -10px rgba(13, 122, 112, 0.15);
+    }
+    .med-booking-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy-900);
+    }
+    .med-input-group {
+      margin-bottom: 1rem;
+    }
+    .med-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .med-select, .med-input {
+      width: 100%;
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      background: #FFF;
+    }
+    .med-select:focus, .med-input:focus {
+      border-color: var(--med-teal);
+      box-shadow: 0 0 0 3px rgba(13, 122, 112, 0.15);
+    }
+
+    /* Doctor Directory */
+    .med-section {
+      padding: 4.5rem 3rem;
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+    .med-sec-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+    }
+    .med-sec-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: var(--navy-900);
+    }
+    .med-filter-pills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .med-pill {
+      padding: 6px 16px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: #FFF;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .med-pill.active, .med-pill:hover {
+      background: var(--med-teal);
+      color: #FFF;
+      border-color: var(--med-teal);
+    }
+
+    /* Doctor Grid */
+    .med-doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 2rem;
+    }
+    .med-doc-card {
+      background: #FFF;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .med-doc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px -5px rgba(0,0,0,0.08);
+      border-color: var(--med-teal);
+    }
+    .med-doc-top {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .med-doc-avatar {
+      width: 72px; height: 72px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #E2E8F0;
+    }
+    .med-doc-spec {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--med-teal);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .med-doc-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--navy-900);
+      margin: 2px 0 4px 0;
+    }
+    .med-doc-rating {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .med-doc-slot {
+      background: var(--med-teal-light);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      color: var(--med-teal-dark);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .med-doc-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .med-btn-tele {
+      flex: 1;
+      border: 1px solid var(--med-teal);
+      color: var(--med-teal);
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .med-btn-inperson {
+      flex: 1;
+      background: var(--med-teal);
+      color: #FFF;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Modal */
+    .med-modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(10, 25, 38, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 30000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0; visibility: hidden;
+      transition: all 0.25s;
+    }
+    .med-modal-overlay.open { opacity: 1; visibility: visible; }
+    .med-modal {
+      background: #FFF;
+      width: 100%; max-width: 500px;
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    @media (max-width: 900px) {
+      .med-hero-grid { grid-template-columns: 1fr; }
+      .med-header { padding: 0 1.5rem; }
+      .med-nav { display: none; }
+      .med-hero-title { font-size: 2.4rem; }
+      .med-section { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Portfolio Return Bar -->
+  <div class="haka-demo-bar">
+    <a href="../../portfolio.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to HAKA Solutions Portfolio
+    </a>
+    <div class="haka-demo-badge">
+      <span class="haka-pulse-dot"></span>
+      <span>Live Client App Preview &bull; Healthcare &amp; Specialty Clinics</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="med-header">
+    <div class="med-brand">
+      <div class="med-brand-cross">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      </div>
+      <span>AEGIS HEALTH</span>
+    </div>
+    <nav class="med-nav">
+      <a href="#specialties" class="active">Find a Specialist</a>
+      <a href="#clinics">14 Regional Locations</a>
+      <a href="#telehealth">Telehealth 24/7</a>
+      <a href="#portal">Patient Portal</a>
+    </nav>
+    <div class="med-header-actions">
+      <a href="tel:911" class="med-btn-emergency">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        ER Triage: Call 911
+      </a>
+      <button class="med-btn-book" onclick="quickBook('Dr. Sarah Chen, MD (Cardiology)')">Book Visit</button>
+    </div>
+  </header>
+
+  <!-- Live ER Strip -->
+  <div class="med-ticker-strip">
+    <div class="med-ticker-item">
+      <span class="med-badge-live">LIVE STATUS</span>
+      <span>Main Medical Center ER: <strong>7 min wait</strong></span>
+    </div>
+    <div class="med-ticker-item">
+      <span>Westside Children's Pavilion: <strong>4 min wait</strong></span>
+    </div>
+    <div class="med-ticker-item">
+      <span>Downtown Urgent Care: <strong>Walk-ins Welcome (No wait)</strong></span>
+    </div>
+    <div class="med-ticker-item">
+      <span>Telehealth Virtual Queue: <strong>Active (Doctor ready)</strong></span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="med-hero">
+    <div class="med-hero-grid">
+      <div>
+        <div class="med-hero-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Board-Certified Clinical Excellence
+        </div>
+        <h1 class="med-hero-title">Compassionate Care. <span>Connected Specialists.</span></h1>
+        <p class="med-hero-desc">
+          Schedule in-person visits or initiate 24/7 HD telehealth appointments across 35 medical specialties. Same-day appointments available for primary and urgent care.
+        </p>
+        <div style="display:flex; gap:1.5rem; font-size:0.85rem; color:var(--text-muted);">
+          <div><strong style="color:var(--navy-900); font-size:1.2rem; display:block;">14</strong> Clinical Centers</div>
+          <div><strong style="color:var(--navy-900); font-size:1.2rem; display:block;">180+</strong> Board Physicians</div>
+          <div><strong style="color:var(--navy-900); font-size:1.2rem; display:block;">98.4%</strong> Patient Satisfaction</div>
+        </div>
+      </div>
+
+      <!-- Quick Interactive Scheduler Box -->
+      <div class="med-booking-box">
+        <h3 class="med-booking-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--med-teal)" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Instant Appointment Finder
+        </h3>
+
+        <div class="med-input-group">
+          <label class="med-label">Select Medical Specialty</label>
+          <select class="med-select" id="quickSpec" onchange="filterSpecialty(this.value)">
+            <option value="all">All Specialties</option>
+            <option value="cardio">Cardiology &amp; Heart Care</option>
+            <option value="neuro">Neurology &amp; Brain Health</option>
+            <option value="peds">Pediatrics &amp; Child Health</option>
+            <option value="ortho">Orthopedic Surgery &amp; Sports</option>
+            <option value="family">Family &amp; Internal Medicine</option>
+          </select>
+        </div>
+
+        <div class="med-input-group">
+          <label class="med-label">Preferred Location / Mode</label>
+          <select class="med-select">
+            <option>Virtual Telehealth (Consult From Home)</option>
+            <option>Central Metro Pavilion (Downtown)</option>
+            <option>Westlake Specialty Care Center</option>
+            <option>North Suburban Health Center</option>
+          </select>
+        </div>
+
+        <div class="med-input-group">
+          <label class="med-label">Insurance Provider</label>
+          <select class="med-select">
+            <option>BlueCross BlueShield</option>
+            <option>Aetna / CVS Health</option>
+            <option>UnitedHealthcare</option>
+            <option>Medicare / Direct Self-Pay</option>
+          </select>
+        </div>
+
+        <button class="med-btn-book" style="width:100%; padding:14px; font-size:0.95rem;" onclick="quickBook('General Specialist')">
+          Search Available Time Slots &rarr;
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Directory -->
+  <section class="med-section" id="specialties">
+    <div class="med-sec-head">
+      <div>
+        <div style="font-size:0.8rem; font-weight:700; color:var(--med-teal); text-transform:uppercase; letter-spacing:0.1em;">Care Team</div>
+        <h2 class="med-sec-title">Featured Attending Specialists</h2>
+      </div>
+      <div class="med-filter-pills">
+        <button class="med-pill active" onclick="filterDoctors('all', this)">All</button>
+        <button class="med-pill" onclick="filterDoctors('cardio', this)">Cardiology</button>
+        <button class="med-pill" onclick="filterDoctors('neuro', this)">Neurology</button>
+        <button class="med-pill" onclick="filterDoctors('peds', this)">Pediatrics</button>
+        <button class="med-pill" onclick="filterDoctors('ortho', this)">Orthopedics</button>
+      </div>
+    </div>
+
+    <div class="med-doc-grid" id="doctorsGrid">
+      <!-- Injected by JS -->
+    </div>
+  </section>
+
+  <!-- Appointment Modal -->
+  <div class="med-modal-overlay" id="docModal" onclick="if(event.target===this) closeDocModal()">
+    <div class="med-modal">
+      <h3 style="font-family:var(--font-heading); font-size:1.4rem; color:var(--navy-900); margin-bottom:0.5rem;" id="modalDocTitle">Confirm Appointment</h3>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem;">Choose your preferred slot and confirm your details. A secure SMS &amp; HIPAA email confirmation will be sent.</p>
+      
+      <form onsubmit="handleConfirmBooking(event)">
+        <div class="med-input-group">
+          <label class="med-label">Available Time Slots (Tomorrow)</label>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <button type="button" style="border:1px solid var(--med-teal); background:var(--med-teal-light); color:var(--med-teal-dark); padding:8px; border-radius:6px; font-weight:600; font-size:0.85rem;">09:30 AM (In-Clinic)</button>
+            <button type="button" style="border:1px solid var(--border); padding:8px; border-radius:6px; font-size:0.85rem;">11:15 AM (Telehealth)</button>
+            <button type="button" style="border:1px solid var(--border); padding:8px; border-radius:6px; font-size:0.85rem;">02:00 PM (In-Clinic)</button>
+            <button type="button" style="border:1px solid var(--border); padding:8px; border-radius:6px; font-size:0.85rem;">04:30 PM (Telehealth)</button>
+          </div>
+        </div>
+
+        <div class="med-input-group">
+          <label class="med-label">Patient Full Name</label>
+          <input type="text" class="med-input" placeholder="e.g. Robert Vance" required>
+        </div>
+
+        <div class="med-input-group">
+          <label class="med-label">Mobile Number</label>
+          <input type="tel" class="med-input" placeholder="+1 (555) 234-5678" required>
+        </div>
+
+        <button type="submit" class="med-btn-book" style="width:100%; padding:12px; margin-top:0.5rem;">
+          Lock In Appointment Confirmation &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const doctors = [
+      {
+        name: "Dr. Sarah Chen, MD",
+        spec: "cardio",
+        specTitle: "Interventional Cardiology",
+        degrees: "Harvard Medical School &bull; FACC",
+        rating: "4.9 (248 reviews)",
+        slot: "Tomorrow at 09:30 AM",
+        img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=300&auto=format&fit=crop"
+      },
+      {
+        name: "Dr. Marcus Vance, MD",
+        spec: "neuro",
+        specTitle: "Clinical Neurology & Stroke",
+        degrees: "Johns Hopkins &bull; FAAN",
+        rating: "4.95 (190 reviews)",
+        slot: "Tomorrow at 11:15 AM",
+        img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=300&auto=format&fit=crop"
+      },
+      {
+        name: "Dr. Elena Rostova, MD",
+        spec: "peds",
+        specTitle: "Pediatric Primary & Neonatal",
+        degrees: "Stanford Medicine &bull; FAAP",
+        rating: "4.98 (312 reviews)",
+        slot: "Today at 03:00 PM",
+        img: "https://images.unsplash.com/photo-1594824813590-b8c8d8c36e39?q=80&w=300&auto=format&fit=crop"
+      },
+      {
+        name: "Dr. David Kim, MD",
+        spec: "ortho",
+        specTitle: "Orthopedic & Joint Reconstruction",
+        degrees: "Mayo Clinic &bull; AAOS",
+        rating: "4.88 (165 reviews)",
+        slot: "Thursday at 10:00 AM",
+        img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=300&auto=format&fit=crop"
+      }
+    ];
+
+    function renderDocs(filter = 'all') {
+      const container = document.getElementById('doctorsGrid');
+      container.innerHTML = '';
+      const list = filter === 'all' ? doctors : doctors.filter(d => d.spec === filter);
+
+      list.forEach(d => {
+        const card = document.createElement('div');
+        card.className = 'med-doc-card';
+        card.innerHTML = `
+          <div>
+            <div class="med-doc-top">
+              <img class="med-doc-avatar" src="${d.img}" alt="${d.name}">
+              <div>
+                <div class="med-doc-spec">${d.specTitle}</div>
+                <h3 class="med-doc-name">${d.name}</h3>
+                <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:4px;">${d.degrees}</div>
+                <div class="med-doc-rating">
+                  <span style="color:#F59E0B;">&#9733;</span>
+                  <span>${d.rating}</span>
+                </div>
+              </div>
+            </div>
+            <div class="med-doc-slot">
+              <span>Next Available:</span>
+              <strong>${d.slot}</strong>
+            </div>
+          </div>
+          <div class="med-doc-actions">
+            <button class="med-btn-tele" onclick="quickBook('${d.name} (Telehealth)')">Telehealth</button>
+            <button class="med-btn-inperson" onclick="quickBook('${d.name} (In-Person)')">Book In-Clinic</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterDoctors(spec, btn) {
+      document.querySelectorAll('.med-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      renderDocs(spec);
+    }
+
+    function quickBook(doc) {
+      document.getElementById('modalDocTitle').innerText = 'Book with ' + doc;
+      document.getElementById('docModal').classList.add('open');
+    }
+
+    function closeDocModal() {
+      document.getElementById('docModal').classList.remove('open');
+    }
+
+    function handleConfirmBooking(e) {
+      e.preventDefault();
+      closeDocModal();
+      alert("🩺 [Appointment Confirmed!]\n\nThank you for exploring this HAKA SOLUTIONS project showcase!\nIn the production EHR deployment, this integrates directly with Epic / Cerner HL7 APIs, automated calendar invites, and automated SMS reminder loops.");
+    }
+
+    renderDocs();
+  </script>
+</body>
+</html>

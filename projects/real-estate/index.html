@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elysian Luxury Real Estate Portal | Architectural Estates &amp; Penthouses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0C0F14;
+      --card-bg: #131720;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --gold: #D4AF37;
+      --gold-light: #F2DE96;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --accent: #2563EB;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-top: 108px;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Top Portfolio Return Bar */
+    .haka-demo-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 38px;
+      background: #183D32;
+      color: #FAF8F2;
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(193, 154, 91, 0.35);
+    }
+    .haka-demo-bar a {
+      color: #C19A5B;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .haka-demo-bar a:hover { color: #fff; }
+    .haka-demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.1);
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+    }
+    .haka-pulse-dot {
+      width: 7px; height: 7px;
+      background: #3B82F6;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+
+    /* Header */
+    .re-header {
+      position: fixed;
+      top: 38px; left: 0; right: 0;
+      height: 70px;
+      background: rgba(12, 15, 20, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .re-brand {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .re-brand span { color: var(--gold); }
+    .re-nav {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .re-nav a { color: var(--text-muted); transition: color 0.2s; }
+    .re-nav a:hover { color: var(--gold); }
+    .re-header-cta {
+      background: var(--gold);
+      color: #0C0F14;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .re-header-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* Hero */
+    .re-hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem 6rem;
+      background: linear-gradient(180deg, rgba(12, 15, 20, 0.4) 0%, rgba(12, 15, 20, 0.95) 100%),
+                  url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop') center/cover no-repeat;
+    }
+    .re-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .re-hero-title {
+      font-family: var(--font-serif);
+      font-size: 3.8rem;
+      font-weight: 600;
+      line-height: 1.15;
+      max-width: 850px;
+      margin-bottom: 1.25rem;
+    }
+    .re-hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Floating Search Bar */
+    .re-search-panel {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(19, 23, 32, 0.95);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(16px);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      display: grid;
+      grid-template-columns: 1.5fr 1.2fr 1fr 1fr auto;
+      gap: 1rem;
+      align-items: flex-end;
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+    }
+    .re-input-block label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .re-select, .re-input {
+      width: 100%;
+      background: #1B202C;
+      border: 1px solid var(--card-border);
+      color: #FFF;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      outline: none;
+    }
+    .re-btn-search {
+      background: var(--gold);
+      color: #0C0F14;
+      font-weight: 700;
+      padding: 11px 24px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .re-btn-search:hover { background: var(--gold-light); }
+
+    /* Property Catalog */
+    .re-section {
+      padding: 5rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .re-sec-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+    }
+    .re-sec-title {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      color: #FFF;
+      margin-top: 0.4rem;
+    }
+    .re-prop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2.25rem;
+    }
+    .re-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .re-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212, 175, 55, 0.5);
+      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6);
+    }
+    .re-card-img-wrap {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+    }
+    .re-card-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .re-card:hover .re-card-img { transform: scale(1.08); }
+    .re-badge-status {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: rgba(12, 15, 20, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .re-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    .re-card-price {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 0.35rem;
+    }
+    .re-card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #FFF;
+      margin-bottom: 0.4rem;
+    }
+    .re-card-loc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .re-specs-strip {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--card-border);
+      padding-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .re-specs-strip strong { color: #FFF; display: block; font-size: 0.95rem; }
+    .re-card-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 1.25rem;
+    }
+    .re-btn-view {
+      flex: 1;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .re-btn-view:hover { background: var(--gold); color: #0C0F14; }
+    .re-btn-tour {
+      border: 1px solid var(--card-border);
+      color: #FFF;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Detail Modal */
+    .re-modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      z-index: 30000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0; visibility: hidden;
+      transition: all 0.25s;
+    }
+    .re-modal-overlay.open { opacity: 1; visibility: visible; }
+    .re-modal {
+      background: var(--card-bg);
+      border: 1px solid var(--gold);
+      border-radius: 16px;
+      width: 100%; max-width: 860px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    @media (max-width: 900px) {
+      .re-hero-title { font-size: 2.8rem; }
+      .re-search-panel { grid-template-columns: 1fr; margin-top: 0; }
+      .re-header { padding: 0 1.5rem; }
+      .re-nav { display: none; }
+      .re-prop-grid { grid-template-columns: 1fr; }
+      .re-section { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Portfolio Return Bar -->
+  <div class="haka-demo-bar">
+    <a href="../../portfolio.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to HAKA Solutions Portfolio
+    </a>
+    <div class="haka-demo-badge">
+      <span class="haka-pulse-dot"></span>
+      <span>Live Client App Preview &bull; Luxury Real Estate Portal</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="re-header">
+    <div class="re-brand">
+      <span>ELYSIAN</span> ESTATES
+    </div>
+    <nav class="re-nav">
+      <a href="#properties">Featured Estates</a>
+      <a href="#penthouses">Sky Penthouses</a>
+      <a href="#calculator">Mortgage Tool</a>
+      <a href="#private">Private Office</a>
+    </nav>
+    <button class="re-header-cta" onclick="openShowingModal('General Inquiry')">Private Showing</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="re-hero">
+    <div class="re-tag">Exclusively Represented Luxury Residences</div>
+    <h1 class="re-hero-title">Where Architectural Mastery Meets Uncompromised Living.</h1>
+    <p class="re-hero-sub">Explore trophy properties, oceanfront sanctuaries, and iconic sky estates across the globe's most coveted destinations.</p>
+  </section>
+
+  <!-- Search Panel -->
+  <div style="padding: 0 2rem; max-width: 1400px; margin: 0 auto;">
+    <div class="re-search-panel">
+      <div class="re-input-block">
+        <label>Location &amp; Region</label>
+        <select class="re-select" id="searchLoc" onchange="filterProperties()">
+          <option value="all">All Prime Locations</option>
+          <option value="Beverly Hills">Beverly Hills, CA</option>
+          <option value="Manhattan">Tribeca, New York</option>
+          <option value="Miami">Star Island, Miami</option>
+          <option value="Aspen">Aspen Highlands, CO</option>
+        </select>
+      </div>
+
+      <div class="re-input-block">
+        <label>Property Archetype</label>
+        <select class="re-select" id="searchType" onchange="filterProperties()">
+          <option value="all">All Types</option>
+          <option value="Villa">Architectural Villa</option>
+          <option value="Penthouse">Sky Penthouse</option>
+          <option value="Waterfront">Waterfront Haven</option>
+          <option value="Chalet">Alpine Chalet</option>
+        </select>
+      </div>
+
+      <div class="re-input-block">
+        <label>Min Price</label>
+        <select class="re-select" id="searchPrice">
+          <option value="0">$2,000,000+</option>
+          <option value="5000000">$5,000,000+</option>
+          <option value="10000000">$10,000,000+</option>
+        </select>
+      </div>
+
+      <div class="re-input-block">
+        <label>Bedrooms</label>
+        <select class="re-select" id="searchBeds">
+          <option value="all">Any Beds</option>
+          <option value="4">4+ Bedrooms</option>
+          <option value="5">5+ Bedrooms</option>
+          <option value="6">6+ Bedrooms</option>
+        </select>
+      </div>
+
+      <button class="re-btn-search" onclick="filterProperties()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        Search
+      </button>
+    </div>
+  </div>
+
+  <!-- Properties Grid -->
+  <section class="re-section" id="properties">
+    <div class="re-sec-head">
+      <div>
+        <div class="re-tag">Curated Portfolio</div>
+        <h2 class="re-sec-title">Featured Architectural Residences</h2>
+      </div>
+      <div style="font-size:0.85rem; color:var(--gold); font-weight:600;">Showing 4 Premier Estates</div>
+    </div>
+
+    <div class="re-prop-grid" id="propGrid">
+      <!-- Injected by JS -->
+    </div>
+  </section>
+
+  <!-- Interactive Showing Modal -->
+  <div class="re-modal-overlay" id="showingModal" onclick="if(event.target===this) closeShowingModal()">
+    <div class="re-modal">
+      <div style="padding:2rem;">
+        <span class="re-tag">Private VIP Showing</span>
+        <h3 style="font-family:var(--font-serif); font-size:1.8rem; margin:0.4rem 0 0.8rem 0;" id="modalPropTitle">Schedule Exclusive Residence Tour</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">Our private estate director will coordinate a confidential white-glove walkthrough or private chauffeured viewing.</p>
+
+        <form onsubmit="handleShowingSubmit(event)">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+              <label style="font-size:0.75rem; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px;">Full Legal Name</label>
+              <input type="text" placeholder="e.g. Lord Harrington" required style="width:100%; background:#191E28; border:1px solid var(--card-border); color:#fff; padding:10px; border-radius:6px; outline:none;">
+            </div>
+            <div>
+              <label style="font-size:0.75rem; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px;">Direct Phone / WhatsApp</label>
+              <input type="tel" placeholder="+1 (310) 902-8800" required style="width:100%; background:#191E28; border:1px solid var(--card-border); color:#fff; padding:10px; border-radius:6px; outline:none;">
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+            <div>
+              <label style="font-size:0.75rem; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px;">Preferred Date</label>
+              <input type="date" required style="width:100%; background:#191E28; border:1px solid var(--card-border); color:#fff; padding:10px; border-radius:6px; outline:none;">
+            </div>
+            <div>
+              <label style="font-size:0.75rem; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:4px;">Tour Format</label>
+              <select style="width:100%; background:#191E28; border:1px solid var(--card-border); color:#fff; padding:10px; border-radius:6px; outline:none;">
+                <option>Private In-Person Showing</option>
+                <option>Confidential Drone &amp; 3D VR Tour</option>
+                <option>Executive Representative Walkthrough</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="re-btn-search" style="width:100%; justify-content:center; padding:14px;">Confirm Private Showing Request &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const properties = [
+      {
+        id: 1,
+        title: "The Bel-Air Glass Pavilion",
+        location: "Beverly Hills",
+        fullLoc: "10740 Bellagio Rd, Bel Air, Los Angeles",
+        type: "Villa",
+        price: "$18,500,000",
+        beds: 6,
+        baths: 8,
+        sqft: "11,400 sq ft",
+        lot: "1.4 Acres",
+        badge: "Trophy Estate",
+        img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=900&auto=format&fit=crop"
+      },
+      {
+        id: 2,
+        title: "The Tribeca Sky Duplex Penthouse",
+        location: "Manhattan",
+        fullLoc: "56 Leonard Street, Penthouse 54, NYC",
+        type: "Penthouse",
+        price: "$22,000,000",
+        beds: 5,
+        baths: 6,
+        sqft: "8,200 sq ft",
+        lot: "360° Skyline Wrap",
+        badge: "Panoramic Terrace",
+        img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=900&auto=format&fit=crop"
+      },
+      {
+        id: 3,
+        title: "Star Island Modernist Waterfront",
+        location: "Miami",
+        fullLoc: "22 Star Island Drive, Miami Beach, FL",
+        type: "Waterfront",
+        price: "$29,500,000",
+        beds: 7,
+        baths: 9,
+        sqft: "14,800 sq ft",
+        lot: "120ft Private Mega-Yacht Dock",
+        badge: "Deep Water Dock",
+        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop"
+      },
+      {
+        id: 4,
+        title: "Red Mountain Alpine Sanctuary",
+        location: "Aspen",
+        fullLoc: "890 Willoughby Way, Aspen, CO",
+        type: "Chalet",
+        price: "$16,200,000",
+        beds: 5,
+        baths: 7,
+        sqft: "9,600 sq ft",
+        lot: "Ski-In / Ski-Out",
+        badge: "Mountain Peak Views",
+        img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=900&auto=format&fit=crop"
+      }
+    ];
+
+    function renderProperties(list = properties) {
+      const container = document.getElementById('propGrid');
+      container.innerHTML = '';
+
+      if (list.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding:3rem; color:var(--text-muted);">No estates match your selected criteria. Try adjusting the filters.</div>`;
+        return;
+      }
+
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 're-card';
+        card.innerHTML = `
+          <div class="re-card-img-wrap">
+            <img class="re-card-img" src="${p.img}" alt="${p.title}">
+            <span class="re-badge-status">${p.badge}</span>
+          </div>
+          <div class="re-card-body">
+            <div>
+              <div class="re-card-price">${p.price}</div>
+              <h3 class="re-card-title">${p.title}</h3>
+              <div class="re-card-loc">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                ${p.fullLoc}
+              </div>
+            </div>
+            <div>
+              <div class="re-specs-strip">
+                <div><span>Beds</span><strong>${p.beds}</strong></div>
+                <div><span>Baths</span><strong>${p.baths}</strong></div>
+                <div><span>Interior</span><strong>${p.sqft}</strong></div>
+                <div><span>Grounds</span><strong>${p.lot}</strong></div>
+              </div>
+              <div class="re-card-actions">
+                <button class="re-btn-view" onclick="openShowingModal('${p.title}')">Private Showing</button>
+                <button class="re-btn-tour" onclick="alert('3D Virtual Matterport Tour loading in production mode...')">3D Tour</button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterProperties() {
+      const loc = document.getElementById('searchLoc').value;
+      const type = document.getElementById('searchType').value;
+
+      let filtered = properties;
+      if (loc !== 'all') filtered = filtered.filter(p => p.location === loc);
+      if (type !== 'all') filtered = filtered.filter(p => p.type === type);
+
+      renderProperties(filtered);
+    }
+
+    function openShowingModal(title) {
+      document.getElementById('modalPropTitle').innerText = 'VIP Tour: ' + title;
+      document.getElementById('showingModal').classList.add('open');
+    }
+
+    function closeShowingModal() {
+      document.getElementById('showingModal').classList.remove('open');
+    }
+
+    function handleShowingSubmit(e) {
+      e.preventDefault();
+      closeShowingModal();
+      alert("🏡 [Private Showing Dispatched!]\n\nThank you for exploring this HAKA SOLUTIONS project showcase!\nIn the production MLS platform, this triggers encrypted lead sync with Salesforce / HubSpot, calendar scheduling, and automated NDA dispatch.");
+    }
+
+    renderProperties();
+  </script>
+</body>
+</html>

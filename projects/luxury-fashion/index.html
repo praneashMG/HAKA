@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉTOILE Haute Couture & Luxury Goods | Live Project Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D0F12;
+      --card-bg: #14171D;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --gold: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-dark: #997A15;
+      --text: #F1F3F5;
+      --text-muted: #9BA3AF;
+      --accent: #E05A47;
+      --header-h: 74px;
+      --font-serif: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 110px;
+    }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Top Portfolio Return Bar */
+    .haka-demo-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 38px;
+      background: #183D32;
+      color: #FAF8F2;
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(193, 154, 91, 0.35);
+    }
+    .haka-demo-bar a {
+      color: #C19A5B;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .haka-demo-bar a:hover { color: #fff; }
+    .haka-demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.1);
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+    }
+    .haka-pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    }
+
+    /* Main Header */
+    .lux-header {
+      position: fixed;
+      top: 38px;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(13, 15, 18, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .lux-brand {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      letter-spacing: 0.25em;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lux-brand span { color: var(--gold); }
+    .lux-nav {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .lux-nav a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .lux-nav a:hover, .lux-nav a.active {
+      color: var(--gold);
+    }
+    .lux-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .lux-currency-select {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+    .lux-action-btn {
+      position: relative;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.03);
+      transition: all 0.25s;
+    }
+    .lux-action-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .lux-badge-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--gold);
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hero Section */
+    .lux-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 3rem;
+      background: radial-gradient(circle at 75% 30%, rgba(212, 175, 55, 0.15) 0%, rgba(13, 15, 18, 0) 65%),
+                  linear-gradient(180deg, rgba(13, 15, 18, 0.6) 0%, rgba(13, 15, 18, 0.95) 100%),
+                  url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      overflow: hidden;
+    }
+    .lux-hero-content {
+      max-width: 640px;
+      z-index: 2;
+    }
+    .lux-tag {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lux-tag::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .lux-hero-title {
+      font-family: var(--font-serif);
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lux-hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+      max-width: 520px;
+      font-weight: 300;
+    }
+    .lux-hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .lux-btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #0D0F12;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 4px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4);
+    }
+    .lux-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(212, 175, 55, 0.6);
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    }
+    .lux-btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      padding: 14px 28px;
+      border-radius: 4px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .lux-btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    /* Value Pillars Bar */
+    .lux-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      background: #11141A;
+    }
+    .lux-pillar-item {
+      padding: 1.75rem 2rem;
+      border-right: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .lux-pillar-item:last-child { border-right: none; }
+    .lux-pillar-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .lux-pillar-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #FFF;
+      letter-spacing: 0.05em;
+    }
+    .lux-pillar-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Product Showcase Section */
+    .lux-section {
+      padding: 5rem 3rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .lux-section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+    .lux-section-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: #FFF;
+      margin-top: 0.5rem;
+    }
+    .lux-filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .lux-filter-btn {
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.02);
+      transition: all 0.2s;
+    }
+    .lux-filter-btn:hover, .lux-filter-btn.active {
+      background: var(--gold);
+      color: #0D0F12;
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Product Grid */
+    .lux-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .lux-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .lux-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+    .lux-card-media {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+      background: #191D24;
+    }
+    .lux-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lux-card:hover .lux-card-img {
+      transform: scale(1.08);
+    }
+    .lux-badge-exclusive {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(13, 15, 18, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .lux-wishlist-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(13, 15, 18, 0.7);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .lux-wishlist-btn:hover, .lux-wishlist-btn.saved {
+      background: #E05A47;
+      color: #fff;
+    }
+    .lux-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    .lux-card-cat {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+    .lux-card-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: #FFF;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .lux-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+    .lux-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--card-border);
+      padding-top: 1rem;
+      margin-top: auto;
+    }
+    .lux-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFF;
+      font-family: var(--font-body);
+    }
+    .lux-price-old {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-left: 6px;
+      font-weight: 400;
+    }
+    .lux-card-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .lux-btn-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .lux-btn-icon:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .lux-btn-add {
+      background: var(--gold);
+      color: #0D0F12;
+      font-weight: 600;
+      padding: 0 16px;
+      height: 38px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .lux-btn-add:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* Cart Drawer */
+    .lux-cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 20000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+    .lux-cart-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lux-cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -480px;
+      width: 100%;
+      max-width: 460px;
+      height: 100%;
+      background: #14171E;
+      z-index: 20001;
+      border-left: 1px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lux-cart-overlay.open .lux-cart-drawer {
+      right: 0;
+    }
+    .lux-cart-head {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .lux-cart-head h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lux-cart-close {
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .lux-cart-close:hover {
+      background: rgba(255,255,255,0.1);
+      color: #FFF;
+    }
+    .lux-cart-items {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .lux-cart-empty {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+    }
+    .lux-cart-item {
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .lux-cart-item-img {
+      width: 72px;
+      height: 88px;
+      object-fit: cover;
+      border-radius: 6px;
+      background: #20242D;
+    }
+    .lux-cart-item-info {
+      flex-grow: 1;
+    }
+    .lux-cart-item-title {
+      font-size: 0.9rem;
+      color: #FFF;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .lux-cart-item-price {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .lux-cart-qty-ctrl {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      background: rgba(255,255,255,0.03);
+    }
+    .lux-cart-qty-ctrl button {
+      width: 26px;
+      height: 26px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lux-cart-qty-ctrl span {
+      width: 26px;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    .lux-cart-foot {
+      padding: 1.5rem;
+      background: #0F1217;
+      border-top: 1px solid var(--card-border);
+    }
+    .lux-cart-promo {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+    .lux-cart-promo input {
+      flex-grow: 1;
+      background: #1A1E26;
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      padding: 8px 12px;
+      color: #FFF;
+      font-size: 0.8rem;
+      outline: none;
+    }
+    .lux-cart-promo input:focus { border-color: var(--gold); }
+    .lux-cart-promo button {
+      background: rgba(255,255,255,0.08);
+      color: #FFF;
+      padding: 0 14px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+    .lux-cart-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .lux-cart-row.total {
+      font-size: 1.1rem;
+      color: #FFF;
+      font-weight: 700;
+      border-top: 1px solid var(--card-border);
+      padding-top: 10px;
+      margin-top: 8px;
+    }
+    .lux-btn-checkout {
+      width: 100%;
+      background: var(--gold);
+      color: #000;
+      font-weight: 700;
+      padding: 14px;
+      border-radius: 6px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      transition: all 0.2s;
+    }
+    .lux-btn-checkout:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* Modal */
+    .lux-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 30000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s;
+    }
+    .lux-modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lux-modal-box {
+      background: #14171E;
+      width: 100%;
+      max-width: 780px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .lux-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    /* Toast Notification */
+    .lux-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #183D32;
+      color: #FFF;
+      border: 1px solid var(--gold);
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 40000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .lux-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .lux-header { padding: 0 1.5rem; }
+      .lux-nav { display: none; }
+      .lux-hero { padding: 3rem 1.5rem; }
+      .lux-hero-title { font-size: 2.6rem; }
+      .lux-pillars { grid-template-columns: 1fr 1fr; }
+      .lux-modal-box { grid-template-columns: 1fr; }
+      .lux-section { padding: 3rem 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .lux-pillars { grid-template-columns: 1fr; }
+      .lux-section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Return Bar -->
+  <div class="haka-demo-bar">
+    <a href="../../portfolio.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to HAKA Solutions Portfolio
+    </a>
+    <div class="haka-demo-badge">
+      <span class="haka-pulse-dot"></span>
+      <span>Live Client App Preview &bull; Luxury E-Commerce</span>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="lux-header">
+    <a href="#" class="lux-brand">
+      <span>ÉTOILE</span> HAUTE COUTURE
+    </a>
+    <nav class="lux-nav">
+      <a href="#collection" class="active">Collections</a>
+      <a href="#craftsmanship">Atelier</a>
+      <a href="#exclusive">Bespoke</a>
+      <a href="#runway">Runway 2026</a>
+    </nav>
+    <div class="lux-actions">
+      <select class="lux-currency-select" id="currencySelector" onchange="changeCurrency(this.value)">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="INR">INR (₹)</option>
+      </select>
+      <button class="lux-action-btn" title="Wishlist" onclick="toggleCartDrawer()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span class="lux-badge-count" id="wishlistCount">3</span>
+      </button>
+      <button class="lux-action-btn" title="Shopping Bag" onclick="toggleCartDrawer()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="lux-badge-count" id="cartCount">2</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="lux-hero">
+    <div class="lux-hero-content">
+      <div class="lux-tag">Autumn &bull; Winter 2026 Capsule</div>
+      <h1 class="lux-hero-title">Timeless Elegance Reimagined.</h1>
+      <p class="lux-hero-desc">
+        Handcrafted Italian leather, Parisian silk silhouettes, and bespoke fine jewelry designed for the modern connoisseur. Experience peerless craftsmanship.
+      </p>
+      <div class="lux-hero-ctas">
+        <a href="#collection" class="lux-btn-primary">Explore The Atelier</a>
+        <button class="lux-btn-secondary" onclick="openQuickView(1)">Watch Runway Film</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars Strip -->
+  <div class="lux-pillars">
+    <div class="lux-pillar-item">
+      <div class="lux-pillar-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      </div>
+      <div>
+        <div class="lux-pillar-title">Authentic Atelier Craft</div>
+        <div class="lux-pillar-sub">Certified 100% genuine craftsmanship</div>
+      </div>
+    </div>
+    <div class="lux-pillar-item">
+      <div class="lux-pillar-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </div>
+      <div>
+        <div class="lux-pillar-title">Global White-Glove Courier</div>
+        <div class="lux-pillar-sub">Complimentary insured delivery</div>
+      </div>
+    </div>
+    <div class="lux-pillar-item">
+      <div class="lux-pillar-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      </div>
+      <div>
+        <div class="lux-pillar-title">Encrypted Checkout</div>
+        <div class="lux-pillar-sub">PCI-DSS Tier-1 certified security</div>
+      </div>
+    </div>
+    <div class="lux-pillar-item">
+      <div class="lux-pillar-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      </div>
+      <div>
+        <div class="lux-pillar-title">Personal Stylist On-Demand</div>
+        <div class="lux-pillar-sub">24/7 private concierge access</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Showcase Products Section -->
+  <section class="lux-section" id="collection">
+    <div class="lux-section-header">
+      <div>
+        <div class="lux-tag">Curated Catalogue</div>
+        <h2 class="lux-section-title">Iconic Masterpieces</h2>
+      </div>
+      <div class="lux-filter-bar">
+        <button class="lux-filter-btn active" onclick="filterCategory('all', this)">All Creations</button>
+        <button class="lux-filter-btn" onclick="filterCategory('apparel', this)">Haute Couture</button>
+        <button class="lux-filter-btn" onclick="filterCategory('bags', this)">Leather Goods</button>
+        <button class="lux-filter-btn" onclick="filterCategory('jewelry', this)">Fine Jewelry</button>
+        <button class="lux-filter-btn" onclick="filterCategory('footwear', this)">Footwear</button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="lux-grid" id="productGrid">
+      <!-- Injected by JS -->
+    </div>
+  </section>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <div class="lux-cart-overlay" id="cartOverlay" onclick="if(event.target===this) toggleCartDrawer()">
+    <div class="lux-cart-drawer">
+      <div class="lux-cart-head">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
+          Your Shopping Bag
+        </h3>
+        <button class="lux-cart-close" onclick="toggleCartDrawer()">&times;</button>
+      </div>
+
+      <div class="lux-cart-items" id="cartItemList">
+        <!-- Injected by JS -->
+      </div>
+
+      <div class="lux-cart-foot">
+        <div class="lux-cart-promo">
+          <input type="text" id="promoInput" placeholder="Promo code (try HAKA10)">
+          <button onclick="applyPromo()">Apply</button>
+        </div>
+        <div class="lux-cart-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="lux-cart-row">
+          <span>Discount</span>
+          <span id="cartDiscount" style="color: #10B981;">-$0.00</span>
+        </div>
+        <div class="lux-cart-row">
+          <span>White-Glove Shipping</span>
+          <span style="color: var(--gold);">Complimentary</span>
+        </div>
+        <div class="lux-cart-row total">
+          <span>Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="lux-btn-checkout" onclick="triggerCheckout()">Proceed to Secure Checkout &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="lux-modal-overlay" id="quickModal" onclick="if(event.target===this) closeQuickModal()">
+    <div class="lux-modal-box">
+      <button class="lux-modal-close" onclick="closeQuickModal()">&times;</button>
+      <div style="background:#090B0E; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+        <img id="modalImg" src="" alt="" style="width:100%; height:100%; object-fit:cover; max-height:450px;">
+      </div>
+      <div style="padding:2rem; display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <span id="modalCat" style="font-size:0.75rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em;">CATEGORY</span>
+          <h3 id="modalTitle" style="font-family:var(--font-serif); font-size:1.6rem; color:#fff; margin:0.5rem 0;">Item Name</h3>
+          <div style="font-size:1.4rem; font-weight:700; color:var(--gold); margin-bottom:1rem;" id="modalPrice">$0</div>
+          <p id="modalDesc" style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.5rem;">Product description goes here.</p>
+          
+          <div style="margin-bottom:1.25rem;">
+            <label style="font-size:0.75rem; color:#fff; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:6px;">Select Size</label>
+            <div style="display:flex; gap:8px;">
+              <button style="border:1px solid var(--gold); background:rgba(212,175,55,0.1); color:#fff; padding:6px 12px; border-radius:4px; font-size:0.8rem;">38 (S)</button>
+              <button style="border:1px solid var(--card-border); color:var(--text-muted); padding:6px 12px; border-radius:4px; font-size:0.8rem;">40 (M)</button>
+              <button style="border:1px solid var(--card-border); color:var(--text-muted); padding:6px 12px; border-radius:4px; font-size:0.8rem;">42 (L)</button>
+            </div>
+          </div>
+        </div>
+        <button id="modalAddBtn" class="lux-btn-primary" style="width:100%;">Add To Shopping Bag</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="lux-toast" id="toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">Added to shopping bag!</span>
+  </div>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "L'Aurore Silk Evening Gown",
+        category: "apparel",
+        price: 2450,
+        oldPrice: 2800,
+        badge: "Runway Exclusive",
+        image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=900&auto=format&fit=crop",
+        desc: "Hand-stitched in Lyon from 100% mulberry silk with micro-crystal embroidery along the open-back contour."
+      },
+      {
+        id: 2,
+        name: "Vendôme Calfskin Tote Bag",
+        category: "bags",
+        price: 1850,
+        oldPrice: null,
+        badge: "Bestseller",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=900&auto=format&fit=crop",
+        desc: "Full-grain Florentine calfskin leather with 24k gold-plated turn-lock closure and suede-lined compartment."
+      },
+      {
+        id: 3,
+        name: "Solaris 18K Diamond Solitaire",
+        category: "jewelry",
+        price: 4900,
+        oldPrice: 5400,
+        badge: "Fine Jewelry",
+        image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=900&auto=format&fit=crop",
+        desc: "Conflict-free 1.8-carat brilliant cut diamond set in sustainable recycled 18-karat yellow gold bezel."
+      },
+      {
+        id: 4,
+        name: "Milano Velvet Stiletto Pumps",
+        category: "footwear",
+        price: 980,
+        oldPrice: null,
+        badge: "Limited Drop",
+        image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=900&auto=format&fit=crop",
+        desc: "Italian midnight-black velvet exterior, anatomical memory-foam footbed, and sculptural golden stiletto heel."
+      },
+      {
+        id: 5,
+        name: "Monarque Cashmere Overcoat",
+        category: "apparel",
+        price: 3200,
+        oldPrice: 3600,
+        badge: "Winter Atelier",
+        image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=900&auto=format&fit=crop",
+        desc: "Pure Mongolian double-faced cashmere tailored with clean notch lapels and hand-carved horn buttons."
+      },
+      {
+        id: 6,
+        name: "Celeste Mini Crossbody Pochette",
+        category: "bags",
+        price: 1350,
+        oldPrice: null,
+        badge: "Signature",
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=900&auto=format&fit=crop",
+        desc: "Quilted nappa leather clutch with detachable curb link chain and monogram embossed hardware."
+      }
+    ];
+
+    let cart = [
+      { id: 1, qty: 1 },
+      { id: 2, qty: 1 }
+    ];
+    let discountRate = 0;
+    let currentCurrency = "USD";
+    const rates = { USD: 1, EUR: 0.92, GBP: 0.79, INR: 86.5 };
+    const symbols = { USD: "$", EUR: "€", GBP: "£", INR: "₹" };
+
+    function formatPrice(amount) {
+      const conv = amount * rates[currentCurrency];
+      return symbols[currentCurrency] + conv.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+
+    function renderProducts(filter = "all") {
+      const container = document.getElementById("productGrid");
+      container.innerHTML = "";
+      const filtered = filter === "all" ? products : products.filter(p => p.category === filter);
+
+      filtered.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "lux-card";
+        card.innerHTML = `
+          <div class="lux-card-media">
+            <img class="lux-card-img" src="${p.image}" alt="${p.name}">
+            <span class="lux-badge-exclusive">${p.badge}</span>
+            <button class="lux-wishlist-btn" onclick="toggleWishlist(this)" title="Save to Wishlist">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+          </div>
+          <div class="lux-card-body">
+            <div>
+              <div class="lux-card-cat">${p.category}</div>
+              <h3 class="lux-card-name">${p.name}</h3>
+              <p class="lux-card-desc">${p.desc}</p>
+            </div>
+            <div class="lux-card-foot">
+              <div>
+                <span class="lux-price">${formatPrice(p.price)}</span>
+                ${p.oldPrice ? `<span class="lux-price-old">${formatPrice(p.oldPrice)}</span>` : ''}
+              </div>
+              <div class="lux-card-actions">
+                <button class="lux-btn-icon" onclick="openQuickView(${p.id})" title="Quick View">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+                <button class="lux-btn-add" onclick="addToCart(${p.id})">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterCategory(cat, btn) {
+      document.querySelectorAll(".lux-filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderProducts(cat);
+    }
+
+    function toggleWishlist(btn) {
+      btn.classList.toggle("saved");
+      const isSaved = btn.classList.contains("saved");
+      const countEl = document.getElementById("wishlistCount");
+      let count = parseInt(countEl.innerText) || 0;
+      countEl.innerText = isSaved ? count + 1 : Math.max(0, count - 1);
+      showToast(isSaved ? "Saved to your private atelier wishlist." : "Removed from wishlist.");
+    }
+
+    function toggleCartDrawer() {
+      document.getElementById("cartOverlay").classList.toggle("open");
+    }
+
+    function renderCart() {
+      const list = document.getElementById("cartItemList");
+      list.innerHTML = "";
+      let subtotal = 0;
+      let totalQty = 0;
+
+      if (cart.length === 0) {
+        list.innerHTML = `<div class="lux-cart-empty"><p>Your bag is currently empty.</p><button onclick="toggleCartDrawer()" class="lux-btn-primary" style="margin-top:1rem; padding:8px 20px; font-size:0.75rem;">Discover Pieces</button></div>`;
+      } else {
+        cart.forEach(item => {
+          const p = products.find(prod => prod.id === item.id);
+          if (!p) return;
+          subtotal += p.price * item.qty;
+          totalQty += item.qty;
+
+          const itemEl = document.createElement("div");
+          itemEl.className = "lux-cart-item";
+          itemEl.innerHTML = `
+            <img class="lux-cart-item-img" src="${p.image}" alt="${p.name}">
+            <div class="lux-cart-item-info">
+              <div class="lux-cart-item-title">${p.name}</div>
+              <div class="lux-cart-item-price">${formatPrice(p.price)}</div>
+              <div class="lux-cart-qty-ctrl">
+                <button onclick="updateQty(${p.id}, -1)">&minus;</button>
+                <span>${item.qty}</span>
+                <button onclick="updateQty(${p.id}, 1)">&plus;</button>
+              </div>
+            </div>
+            <button onclick="removeFromCart(${p.id})" style="color:var(--text-muted); font-size:1.1rem; height:24px;">&times;</button>
+          `;
+          list.appendChild(itemEl);
+        });
+      }
+
+      const discount = subtotal * discountRate;
+      const total = subtotal - discount;
+
+      document.getElementById("cartCount").innerText = totalQty;
+      document.getElementById("cartSubtotal").innerText = formatPrice(subtotal);
+      document.getElementById("cartDiscount").innerText = discountRate > 0 ? `-${formatPrice(discount)} (10%)` : `-$0.00`;
+      document.getElementById("cartTotal").innerText = formatPrice(total);
+    }
+
+    function addToCart(id) {
+      const existing = cart.find(i => i.id === id);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ id, qty: 1 });
+      }
+      renderCart();
+      const p = products.find(x => x.id === id);
+      showToast(`Added ${p ? p.name : 'item'} to your bag.`);
+    }
+
+    function updateQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          cart = cart.filter(i => i.id !== id);
+        }
+      }
+      renderCart();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(i => i.id !== id);
+      renderCart();
+      showToast("Item removed from your bag.");
+    }
+
+    function applyPromo() {
+      const val = document.getElementById("promoInput").value.trim().toUpperCase();
+      if (val === "HAKA10") {
+        discountRate = 0.10;
+        renderCart();
+        showToast("Exclusive 10% VIP Atelier discount applied!");
+      } else {
+        showToast("Invalid promo code. Use code: HAKA10");
+      }
+    }
+
+    function triggerCheckout() {
+      if (cart.length === 0) {
+        showToast("Your shopping bag is empty.");
+        return;
+      }
+      toggleCartDrawer();
+      alert("✨ [Simulated Demo Checkout]\n\nThank you for exploring this HAKA SOLUTIONS project showcase!\nIn the production deployment, this connects to Stripe Luxury White-Glove checkout, multi-currency settlement, and automated concierge dispatch.");
+    }
+
+    function openQuickView(id) {
+      const p = products.find(item => item.id === id);
+      if (!p) return;
+      document.getElementById("modalImg").src = p.image;
+      document.getElementById("modalCat").innerText = p.category;
+      document.getElementById("modalTitle").innerText = p.name;
+      document.getElementById("modalPrice").innerText = formatPrice(p.price);
+      document.getElementById("modalDesc").innerText = p.desc;
+      document.getElementById("modalAddBtn").onclick = () => {
+        addToCart(p.id);
+        closeQuickModal();
+      };
+      document.getElementById("quickModal").classList.add("open");
+    }
+
+    function closeQuickModal() {
+      document.getElementById("quickModal").classList.remove("open");
+    }
+
+    function changeCurrency(curr) {
+      currentCurrency = curr;
+      renderProducts();
+      renderCart();
+      showToast(`Currency updated to ${curr}`);
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      document.getElementById("toastMsg").innerText = msg;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 3200);
+    }
+
+    // Init
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>

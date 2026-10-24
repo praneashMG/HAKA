@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseMetrics Cloud Analytics &amp; Enterprise BI | Live Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0E14;
+      --card-bg: #121620;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --primary: #6366F1;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      --cyan: #06B6D4;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --font-code: 'JetBrains Mono', monospace;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-top: 108px;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Top Portfolio Return Bar */
+    .haka-demo-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 38px;
+      background: #183D32;
+      color: #FAF8F2;
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(193, 154, 91, 0.35);
+    }
+    .haka-demo-bar a {
+      color: #C19A5B;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .haka-demo-bar a:hover { color: #fff; }
+    .haka-demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.1);
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+    }
+    .haka-pulse-dot {
+      width: 7px; height: 7px;
+      background: #6366F1;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Dashboard Header */
+    .saas-header {
+      position: fixed;
+      top: 38px; left: 0; right: 0;
+      height: 70px;
+      background: rgba(11, 14, 20, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+    }
+    .saas-brand {
+      font-size: 1.3rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #FFF;
+    }
+    .saas-brand-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+    }
+    .saas-nav {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .saas-nav a { color: var(--text-muted); transition: color 0.2s; }
+    .saas-nav a:hover, .saas-nav a.active { color: #FFF; }
+    .saas-live-badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Dashboard Grid Container */
+    .saas-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2.5rem;
+    }
+
+    /* Top Metric KPIs */
+    .saas-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .saas-kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+    .saas-kpi-card:hover { border-color: rgba(99, 102, 241, 0.4); transform: translateY(-3px); }
+    .saas-kpi-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .saas-kpi-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #FFF;
+    }
+    .saas-kpi-delta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+    .delta-up { color: var(--success); }
+    .delta-down { color: var(--danger); }
+
+    /* Main Chart & Side Stream Section */
+    .saas-chart-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .saas-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .saas-panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .saas-panel-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFF;
+    }
+    .saas-tabs {
+      display: flex;
+      gap: 6px;
+      background: #0B0E14;
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+    }
+    .saas-tab-btn {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .saas-tab-btn.active, .saas-tab-btn:hover { background: var(--primary); color: #FFF; }
+
+    /* SVG Chart */
+    .saas-svg-wrap {
+      width: 100%;
+      height: 240px;
+    }
+
+    /* Live Feed */
+    .saas-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .saas-feed-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.82rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .saas-feed-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    /* Transaction Table */
+    .saas-table-wrap {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+    .saas-table-wrap th {
+      padding: 12px 16px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--card-border);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+    }
+    .saas-table-wrap td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--card-border);
+      color: #E2E8F0;
+    }
+    .saas-badge-ok {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 900px) {
+      .saas-kpi-grid { grid-template-columns: 1fr 1fr; }
+      .saas-chart-grid { grid-template-columns: 1fr; }
+      .saas-nav { display: none; }
+      .saas-wrap { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Portfolio Return Bar -->
+  <div class="haka-demo-bar">
+    <a href="../../portfolio.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to HAKA Solutions Portfolio
+    </a>
+    <div class="haka-demo-badge">
+      <span class="haka-pulse-dot"></span>
+      <span>Live Client App Preview &bull; Cloud SaaS Analytics BI</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="saas-header">
+    <div class="saas-brand">
+      <div class="saas-brand-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+      </div>
+      <span>PULSEMETRICS</span> BI
+    </div>
+    <nav class="saas-nav">
+      <a href="#" class="active">Overview</a>
+      <a href="#">Revenue Pipelines</a>
+      <a href="#">Real-time Telemetry</a>
+      <a href="#">Tenants</a>
+    </nav>
+    <div class="saas-live-badge">
+      <span style="width:7px; height:7px; border-radius:50%; background:var(--success);"></span>
+      <span>Live Cluster Healthy</span>
+    </div>
+  </header>
+
+  <div class="saas-wrap">
+    <!-- Top KPIs -->
+    <div class="saas-kpi-grid">
+      <div class="saas-kpi-card">
+        <div class="saas-kpi-head">
+          <span>Monthly Recurring Revenue</span>
+          <span style="color:var(--primary);">&#36;</span>
+        </div>
+        <div class="saas-kpi-num" id="kpiMrr">$184,290</div>
+        <div class="saas-kpi-delta delta-up">
+          &uarr; +14.2% MoM
+        </div>
+      </div>
+
+      <div class="saas-kpi-card">
+        <div class="saas-kpi-head">
+          <span>Active Enterprise Tenants</span>
+          <span style="color:var(--cyan);">&#9737;</span>
+        </div>
+        <div class="saas-kpi-num" id="kpiTenants">1,428</div>
+        <div class="saas-kpi-delta delta-up">
+          &uarr; +32 onboarded this week
+        </div>
+      </div>
+
+      <div class="saas-kpi-card">
+        <div class="saas-kpi-head">
+          <span>P99 Edge Latency</span>
+          <span style="color:var(--success);">&#9889;</span>
+        </div>
+        <div class="saas-kpi-num">24.6 ms</div>
+        <div class="saas-kpi-delta delta-up">
+          &uarr; 3.2ms faster vs baseline
+        </div>
+      </div>
+
+      <div class="saas-kpi-card">
+        <div class="saas-kpi-head">
+          <span>Query Throughput / sec</span>
+          <span style="color:var(--warning);">&#10038;</span>
+        </div>
+        <div class="saas-kpi-num" id="kpiRps">18,450</div>
+        <div class="saas-kpi-delta delta-up">
+          Peak load 99.99% uptime
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart + Stream -->
+    <div class="saas-chart-grid">
+      <div class="saas-panel">
+        <div class="saas-panel-head">
+          <div>
+            <h3 class="saas-panel-title">Real-Time Revenue &amp; Query Velocity</h3>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Dynamic streaming telemetry data</span>
+          </div>
+          <div class="saas-tabs">
+            <button class="saas-tab-btn active">24h</button>
+            <button class="saas-tab-btn">7d</button>
+            <button class="saas-tab-btn">30d</button>
+          </div>
+        </div>
+
+        <svg class="saas-svg-wrap" viewBox="0 0 700 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#6366F1" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#6366F1" stop-opacity="0.0"/>
+            </linearGradient>
+          </defs>
+          <!-- Grid lines -->
+          <line x1="0" y1="40" x2="700" y2="40" stroke="rgba(255,255,255,0.05)"/>
+          <line x1="0" y1="100" x2="700" y2="100" stroke="rgba(255,255,255,0.05)"/>
+          <line x1="0" y1="160" x2="700" y2="160" stroke="rgba(255,255,255,0.05)"/>
+          <line x1="0" y1="220" x2="700" y2="220" stroke="rgba(255,255,255,0.05)"/>
+
+          <!-- Area -->
+          <path d="M0,180 Q100,120 200,140 T400,70 T600,90 T700,50 L700,240 L0,240 Z" fill="url(#chartGrad)"/>
+          <!-- Line -->
+          <path d="M0,180 Q100,120 200,140 T400,70 T600,90 T700,50" stroke="#6366F1" stroke-width="3" stroke-linecap="round"/>
+          <!-- Data points -->
+          <circle cx="200" cy="140" r="5" fill="#6366F1" stroke="#FFF" stroke-width="2"/>
+          <circle cx="400" cy="70" r="5" fill="#6366F1" stroke="#FFF" stroke-width="2"/>
+          <circle cx="600" cy="90" r="5" fill="#6366F1" stroke="#FFF" stroke-width="2"/>
+          <circle cx="700" cy="50" r="5" fill="#06B6D4" stroke="#FFF" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <!-- Live Event Feed -->
+      <div class="saas-panel">
+        <div class="saas-panel-head">
+          <h3 class="saas-panel-title">Streaming Audit Log</h3>
+          <span style="font-size:0.75rem; color:var(--success);">&#9679; Streaming</span>
+        </div>
+
+        <div class="saas-feed" id="feedList">
+          <div class="saas-feed-item">
+            <div class="saas-feed-dot"></div>
+            <div>
+              <div style="font-weight:600;">Tenant Stripe Checkout OK</div>
+              <div style="font-size:0.75rem; color:var(--text-muted);">$4,200 annual plan &bull; 2s ago</div>
+            </div>
+          </div>
+          <div class="saas-feed-item">
+            <div class="saas-feed-dot" style="background:var(--cyan);"></div>
+            <div>
+              <div style="font-weight:600;">PostgreSQL Read Replica Scaled</div>
+              <div style="font-size:0.75rem; color:var(--text-muted);">us-east-1 auto-scale &bull; 14s ago</div>
+            </div>
+          </div>
+          <div class="saas-feed-item">
+            <div class="saas-feed-dot" style="background:var(--success);"></div>
+            <div>
+              <div style="font-weight:600;">OAuth2 SSO SAML Verified</div>
+              <div style="font-size:0.75rem; color:var(--text-muted);">Enterprise tenant auth &bull; 45s ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <div class="saas-panel">
+      <div class="saas-panel-head">
+        <h3 class="saas-panel-title">Live Enterprise Transactions</h3>
+        <button onclick="alert('Exporting CSV report in production stack...')" style="background:rgba(255,255,255,0.06); color:#fff; font-size:0.75rem; padding:6px 14px; border-radius:6px;">Export CSV</button>
+      </div>
+
+      <table class="saas-table-wrap">
+        <thead>
+          <tr>
+            <th>Organization</th>
+            <th>Tier Plan</th>
+            <th>Nodes / Regions</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>BioGen Health Corp</strong></td>
+            <td>Enterprise Dedicated</td>
+            <td>24 Shards &bull; AWS Frankfurt</td>
+            <td>$9,800/mo</td>
+            <td><span class="saas-badge-ok">Active &bull; Settled</span></td>
+          </tr>
+          <tr>
+            <td><strong>Apex Financial AI</strong></td>
+            <td>Tier-1 Hyperscale</td>
+            <td>48 Shards &bull; GCP Tokyo</td>
+            <td>$18,500/mo</td>
+            <td><span class="saas-badge-ok">Active &bull; Settled</span></td>
+          </tr>
+          <tr>
+            <td><strong>Nordic Logistics GmbH</strong></td>
+            <td>Standard Cloud Pro</td>
+            <td>8 Shards &bull; Azure Stockholm</td>
+            <td>$3,400/mo</td>
+            <td><span class="saas-badge-ok">Active &bull; Settled</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Live subtle ticker
+    setInterval(() => {
+      const rps = 18400 + Math.floor(Math.random() * 200);
+      document.getElementById('kpiRps').innerText = rps.toLocaleString();
+    }, 2000);
+  </script>
+</body>
+</html>

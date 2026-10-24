@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Mirador Artisan Café & Fine Dining | Live Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0F1210;
+      --card-bg: #161B18;
+      --border: rgba(255, 255, 255, 0.08);
+      --olive: #3D5A45;
+      --gold: #D1A85A;
+      --gold-light: #E7C98C;
+      --cream: #F8F5EE;
+      --text: #E5E7EB;
+      --text-muted: #9CA3AF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-top: 108px;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Top Portfolio Return Bar */
+    .haka-demo-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 38px;
+      background: #183D32;
+      color: #FAF8F2;
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(193, 154, 91, 0.35);
+    }
+    .haka-demo-bar a {
+      color: #C19A5B;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .haka-demo-bar a:hover { color: #fff; }
+    .haka-demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.1);
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+    }
+    .haka-pulse-dot {
+      width: 7px; height: 7px;
+      background: #D1A85A;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(209, 168, 90, 0.3);
+    }
+
+    /* Header */
+    .rest-header {
+      position: fixed;
+      top: 38px; left: 0; right: 0;
+      height: 70px;
+      background: rgba(15, 18, 16, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .rest-brand {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rest-brand span { color: var(--gold); }
+    .rest-nav {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .rest-nav a { color: var(--text-muted); transition: color 0.2s; }
+    .rest-nav a:hover { color: var(--gold); }
+    .rest-cta-btn {
+      background: var(--gold);
+      color: #0F1210;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .rest-cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* Hero */
+    .rest-hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(180deg, rgba(15, 18, 16, 0.5) 0%, rgba(15, 18, 16, 0.95) 100%),
+                  url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    }
+    .rest-hero-wrap { max-width: 800px; }
+    .rest-hero-tag {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .rest-hero-title {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+    .rest-hero-title em { font-style: italic; color: var(--gold); }
+    .rest-hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 2.5rem auto;
+      font-weight: 300;
+    }
+    .rest-hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    /* Menu Section */
+    .rest-section {
+      padding: 5rem 3rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .rest-sec-head {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+    }
+    .rest-sec-title {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      color: var(--cream);
+      margin-top: 0.4rem;
+    }
+    .rest-filter-strip {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .rest-pill {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 20px;
+      border-radius: 99px;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .rest-pill.active, .rest-pill:hover {
+      background: var(--gold);
+      color: #0F1210;
+      font-weight: 700;
+      border-color: var(--gold);
+    }
+
+    /* Menu Grid */
+    .rest-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+    .rest-dish-item {
+      display: flex;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px dashed var(--border);
+      align-items: center;
+    }
+    .rest-dish-img {
+      width: 90px; height: 90px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .rest-dish-content { flex-grow: 1; }
+    .rest-dish-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .rest-dish-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--cream);
+      font-weight: 600;
+    }
+    .rest-dish-price {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .rest-dish-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .rest-dish-tags {
+      display: flex;
+      gap: 6px;
+    }
+    .rest-tag {
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(209, 168, 90, 0.12);
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Reservation Box */
+    .rest-res-banner {
+      background: linear-gradient(135deg, #161B18 0%, #1A221E 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 4rem;
+    }
+    .rest-form-group { margin-bottom: 1rem; }
+    .rest-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .rest-select, .rest-input {
+      width: 100%;
+      background: #111512;
+      border: 1px solid var(--border);
+      color: #FFF;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    @media (max-width: 900px) {
+      .rest-hero-title { font-size: 2.8rem; }
+      .rest-menu-grid { grid-template-columns: 1fr; }
+      .rest-res-banner { grid-template-columns: 1fr; padding: 2rem; }
+      .rest-header { padding: 0 1.5rem; }
+      .rest-nav { display: none; }
+      .rest-section { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Portfolio Return Bar -->
+  <div class="haka-demo-bar">
+    <a href="../../portfolio.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to HAKA Solutions Portfolio
+    </a>
+    <div class="haka-demo-badge">
+      <span class="haka-pulse-dot"></span>
+      <span>Live Client App Preview &bull; Restaurant &amp; Artisan Café Platform</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="rest-header">
+    <div class="rest-brand">
+      <span>LE MIRADOR</span> BISTRO
+    </div>
+    <nav class="rest-nav">
+      <a href="#menu">Carte &bull; Menu</a>
+      <a href="#wine">Cellar Reserve</a>
+      <a href="#chef">Artisan Roasts</a>
+      <a href="#reservation">Table Booking</a>
+    </nav>
+    <a href="#reservation" class="rest-cta-btn">Book A Table</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="rest-hero">
+    <div class="rest-hero-wrap">
+      <span class="rest-hero-tag">Two Michelin Keys &bull; Artisan Micro-Roastery</span>
+      <h1 class="rest-hero-title">A Symphony of <em>Flavors</em>, Earth &amp; Terroir.</h1>
+      <p class="rest-hero-sub">Where heritage French technique harmonizes with organic biodynamic farming and rare Ethiopian single-origin micro-lot coffees.</p>
+      <div class="rest-hero-actions">
+        <a href="#reservation" class="rest-cta-btn" style="padding:14px 32px;">Reserve Your Table</a>
+        <a href="#menu" class="rest-pill" style="padding:14px 28px; color:#fff; border-color:var(--border);">Explore Tasting Menu &darr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="rest-section" id="menu">
+    <div class="rest-sec-head">
+      <span class="rest-hero-tag">Curated Culinary Offerings</span>
+      <h2 class="rest-sec-title">The Seasonal Carte</h2>
+    </div>
+
+    <div class="rest-filter-strip">
+      <button class="rest-pill active" onclick="filterMenu('all', this)">All Offerings</button>
+      <button class="rest-pill" onclick="filterMenu('coffee', this)">Artisan Roasts</button>
+      <button class="rest-pill" onclick="filterMenu('starters', this)">Starters &amp; Small Plates</button>
+      <button class="rest-pill" onclick="filterMenu('mains', this)">Wood-Fired Mains</button>
+      <button class="rest-pill" onclick="filterMenu('desserts', this)">Pastry Atelier</button>
+    </div>
+
+    <div class="rest-menu-grid" id="menuGrid">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Table Reservation Box -->
+    <div class="rest-res-banner" id="reservation">
+      <div>
+        <span class="rest-hero-tag">Intimate Dining</span>
+        <h3 style="font-family:var(--font-serif); font-size:2.4rem; color:var(--cream); margin-bottom:1rem;">Table Reservations</h3>
+        <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.5rem;">
+          Reservations open 30 days in advance. For parties exceeding 8 guests or private veranda celebrations, please note your request below.
+        </p>
+        <div style="font-size:0.85rem; color:var(--gold);">
+          &bull; Lunch: 12:00 PM &ndash; 03:00 PM <br>
+          &bull; Dinner: 06:30 PM &ndash; 11:00 PM
+        </div>
+      </div>
+
+      <form onsubmit="handleReserve(event)">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="rest-form-group">
+            <label class="rest-label">Dining Guests</label>
+            <select class="rest-select">
+              <option>2 Guests (Intimate Table)</option>
+              <option>4 Guests (Corner Banquette)</option>
+              <option>6 Guests (Veranda Table)</option>
+              <option>8+ Guests (Chef's Private Room)</option>
+            </select>
+          </div>
+          <div class="rest-form-group">
+            <label class="rest-label">Date</label>
+            <input type="date" class="rest-input" required>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="rest-form-group">
+            <label class="rest-label">Dining Experience</label>
+            <select class="rest-select">
+              <option>7-Course Tasting Menu ($185/person)</option>
+              <option>A La Carte Dinner</option>
+              <option>Afternoon Tea &amp; Viennoiserie</option>
+            </select>
+          </div>
+          <div class="rest-form-group">
+            <label class="rest-label">Preferred Time</label>
+            <select class="rest-select">
+              <option>07:00 PM (Dinner)</option>
+              <option>07:30 PM (Dinner)</option>
+              <option>08:15 PM (Dinner)</option>
+              <option>01:00 PM (Lunch)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="rest-form-group">
+          <label class="rest-label">Guest Contact (Phone &amp; Name)</label>
+          <input type="text" class="rest-input" placeholder="e.g. Claire Boucher &bull; +1 (555) 782-9901" required>
+        </div>
+
+        <button type="submit" class="rest-cta-btn" style="width:100%; padding:14px; justify-content:center;">
+          Confirm Table Reservation &rarr;
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const dishes = [
+      {
+        name: "Yirgacheffe Single-Origin Pour Over",
+        category: "coffee",
+        price: "$9.50",
+        desc: "Notes of bergamot, candied peach blossom, and jasmine honey roasted in-house.",
+        tags: ["Micro-Lot", "Organic"],
+        img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=400&auto=format&fit=crop"
+      },
+      {
+        name: "Wild Hokkaido Scallop Crudo",
+        category: "starters",
+        price: "$28.00",
+        desc: "Thinly sliced diver scallops, finger lime pearls, white truffle dashi, and sea grape caviar.",
+        tags: ["Signature", "Gluten-Free"],
+        img: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=400&auto=format&fit=crop"
+      },
+      {
+        name: "Wood-Fired Wagyu A5 Striploin",
+        category: "mains",
+        price: "$94.00",
+        desc: "Kagoshima A5 Wagyu grilled over binchotan charcoal, smoked marrow glaze, and roasted sunchokes.",
+        tags: ["Chef's Selection"],
+        img: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=400&auto=format&fit=crop"
+      },
+      {
+        name: "Handmade Agnolotti al Tartufo",
+        category: "mains",
+        price: "$46.00",
+        desc: "36-month aged Parmigiano Reggiano mousse folded in silk pasta with freshly shaved Norcia black winter truffle.",
+        tags: ["Vegetarian"],
+        img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=400&auto=format&fit=crop"
+      },
+      {
+        name: "Valrhona Guanaja Chocolate Soufflé",
+        category: "desserts",
+        price: "$22.00",
+        desc: "Warm 70% dark chocolate soufflé paired with Tahitian vanilla bean anglaise and fleur de sel caramel.",
+        tags: ["Atelier Special"],
+        img: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=400&auto=format&fit=crop"
+      },
+      {
+        name: "Artisan Pain au Chocolat & Pistachio Cruffin",
+        category: "coffee",
+        price: "$8.50",
+        desc: "72-layer laminated Normandy butter pastry filled with Sicilian bronte pistachio cream.",
+        tags: ["Baked Hourly"],
+        img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=400&auto=format&fit=crop"
+      }
+    ];
+
+    function renderMenu(filter = 'all') {
+      const container = document.getElementById('menuGrid');
+      container.innerHTML = '';
+      const list = filter === 'all' ? dishes : dishes.filter(d => d.category === filter);
+
+      list.forEach(d => {
+        const item = document.createElement('div');
+        item.className = 'rest-dish-item';
+        item.innerHTML = `
+          <img class="rest-dish-img" src="${d.img}" alt="${d.name}">
+          <div class="rest-dish-content">
+            <div class="rest-dish-head">
+              <h4 class="rest-dish-name">${d.name}</h4>
+              <div class="rest-dish-price">${d.price}</div>
+            </div>
+            <p class="rest-dish-desc">${d.desc}</p>
+            <div class="rest-dish-tags">
+              ${d.tags.map(t => `<span class="rest-tag">${t}</span>`).join('')}
+            </div>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function filterMenu(cat, btn) {
+      document.querySelectorAll('.rest-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderMenu(cat);
+    }
+
+    function handleReserve(e) {
+      e.preventDefault();
+      alert("🍷 [Table Reserved!]\n\nThank you for exploring this HAKA SOLUTIONS project showcase!\nIn the production hospitality stack, this connects to OpenTable / SevenRooms API with instant SMS table confirmation and sommelier preference matching.");
+    }
+
+    renderMenu();
+  </script>
+</body>
+</html>

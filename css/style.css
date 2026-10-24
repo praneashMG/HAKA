@@ -671,6 +671,71 @@ body {
 /* ==============================================================
    RESPONSIVE DESIGN
    ============================================================== */
+
+/* ==============================================================
+   IPAD MINI LANDSCAPE & TABLET LANDSCAPE (993px - 1180px)
+   ============================================================== */
+.nav-link, .nav-btn, .nav-btn-admin {
+  white-space: nowrap !important;
+}
+
+@media (min-width: 993px) and (max-width: 1180px) {
+  .header-inner {
+    padding: 0 1rem !important;
+    gap: 0.5rem !important;
+  }
+  .navbar-brand {
+    padding: 4px 0 !important;
+    margin-right: 0.25rem !important;
+  }
+  .brand-logo-img {
+    height: 48px !important;
+    max-height: 48px !important;
+  }
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.15rem !important;
+    padding: 0.25rem 0.35rem !important;
+  }
+  .nav-link {
+    font-size: 0.78rem !important;
+    padding: 0.35rem 0.5rem !important;
+    gap: 0.25rem !important;
+    white-space: nowrap !important;
+  }
+  .nav-icon {
+    display: inline-flex !important;
+  }
+  .nav-icon svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .header-action {
+    gap: 0.4rem !important;
+    margin-left: 0.25rem !important;
+  }
+  .nav-btn-admin {
+    padding: 0.4rem 0.65rem !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+    gap: 0.3rem !important;
+  }
+  .nav-btn-admin svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .nav-btn {
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+    gap: 0.35rem !important;
+  }
+  .hamburger-btn {
+    display: none !important;
+  }
+}
+
 @media (max-width: 992px) {
   body {
     padding-top: 75px !important;
@@ -878,6 +943,121 @@ body {
   .footer-inner {
     grid-template-columns: 1fr;
   }
+
+  /* Mobile (<= 480px and 360px Galaxy S8+ / Small Viewports) Footer Alignment */
+  .main-footer {
+    padding: 3rem 1rem 2rem !important;
+    overflow-x: hidden !important;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    margin-bottom: 2.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .footer-col {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .brand-desc {
+    max-width: 100% !important;
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .footer-logo-img {
+    height: 70px !important;
+    max-height: 70px !important;
+  }
+
+  .footer-socials {
+    margin-top: 1rem !important;
+  }
+
+  .col-title {
+    font-size: 0.85rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .footer-links {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.65rem !important;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem !important;
+    padding: 2px 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+  }
+
+  /* Office Card - Flawless 360px Fit & Alignment */
+  .office-card {
+    padding: 1.1rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .office-card-row {
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.75rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    gap: 0.6rem !important;
+  }
+
+  .office-link {
+    word-break: break-all !important;
+    font-size: 0.84rem !important;
+  }
+
+  /* Allow live status to wrap neatly on narrow 360px screens */
+  .hk-live-status {
+    white-space: normal !important;
+    max-width: 100% !important;
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+  }
+
+  .hk-live-status span:last-child {
+    word-break: break-word !important;
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem !important;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .footer-legal {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    font-size: 0.78rem !important;
+  }
+
 
   .hero-title {
     font-size: 2rem;

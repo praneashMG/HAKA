@@ -38,6 +38,7 @@ function renderFooter() {
           <h4 class="col-title">Company</h4>
           <ul class="footer-links">
             <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Live Portfolio <span class="badge-hiring" style="background: rgba(193, 154, 91, 0.15); color: #C19A5B; border-color: rgba(193, 154, 91, 0.3);">New</span></a></li>
             <li><a href="careers.html">Careers <span class="badge-hiring">Hiring</span></a></li>
             <li><a href="about.html#leadership">Leadership</a></li>
             <li><a href="contact.html">Contact Us</a></li>
